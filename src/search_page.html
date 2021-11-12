@@ -1,0 +1,698 @@
+<div class="columns">
+
+    <div class="column is-9 results_column" style="padding-top: 1.2rem; padding-right: 0.5rem">
+        <div class="column" id="loading_bar" style="padding-top: 0px; display: none">
+            <div class="column" style="padding-top: 0; padding-bottom: 0; margin-bottom: 0"></div>
+            <div class="card" style="margin-bottom: 0px">
+                <div class="card-content">
+                    <div class="content">
+                        <noscript>It appears that your Javascript is disabled. To view results on
+                            this page, you will need to enable it. You might want to visit our
+                            <a href="/lite/results">lite results</a>.
+                        </noscript>
+                        <progress class="progress is-large" max="100">60%</progress>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="results">
+            <div class="column" style="padding-top: 0">
+                <div class="card" style="margin-bottom: 0px">
+                    <div class="card-content">
+                        <div class="content">
+                            It looks like you're not logged in right now. you will need to
+                            <a href="/login" target="_self">login to Pro</a> or become a
+                            <a href="https://coil.com/?ref=InfinitySearch2229" target="_self">Coil Member</a>
+                            to access the results.
+                            <div class="block"></div>
+                            <div class="columns" style="text-align: center">
+                                <div class="column is-one-third">
+                                    <a class="button" style="width: 100%" href="/login" target="_self">Login</a>
+                                </div>
+                                <div class="column is-one-third">
+                                    <a class="button" style="width: 100%" href="/pro" target="_self">Learn more about
+                                        Infinity Pro</a>
+                                </div>
+                                <div class="column is-one-third">
+                                    <a class="button" style="width: 100%"
+                                        href="https://coil.com/?ref=InfinitySearch2229" target="_self">Learn more about
+                                        Coil</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div hidden="" id="id-custom-tab-page">
+            <div class="columns" style="margin-top: 1rem">
+                <div class="column is-one-quarter is-offset-2">
+                    <p class="heading">Current Tabs</p>
+                    <div id="id-current-tab-list">
+                        <nav class="level is-mobile" id="id-web-tab">
+                            <div class="level-item has-text-centered is-capitalized">web</div>
+                            <div class="level-item has-text-centered is-one-quarter">
+                                <div style="order: 2; margin-left: auto; margin-right: 0.5rem">
+                                    <img class="handle fa-ellipsis-v" src="/static/images/fa/ellipsis-v.svg" style="
+                      cursor: pointer;
+                      min-width: 0.5em;
+                      width: 16px;
+                      height: 16px;
+                    " />
+                                    <img class="handle trash" src="/static/images/fa/trash-alt.svg"
+                                        id="id-remove-tab-icon-web" style="
+                      cursor: pointer;
+                      min-width: 0.5em;
+                      width: 16px;
+                      height: 16px;
+                      margin-left: 0.5rem;
+                    " onclick="removeTab(this);" />
+                                </div>
+                            </div>
+                        </nav>
+                        <nav class="level is-mobile" id="id-images-tab">
+                            <div class="level-item has-text-centered is-capitalized">
+                                images
+                            </div>
+                            <div class="level-item has-text-centered is-one-quarter">
+                                <div style="order: 2; margin-left: auto; margin-right: 0.5rem">
+                                    <img class="handle fa-ellipsis-v" src="/static/images/fa/ellipsis-v.svg" style="
+                      cursor: pointer;
+                      min-width: 0.5em;
+                      width: 16px;
+                      height: 16px;
+                    " />
+                                    <img class="handle trash" src="/static/images/fa/trash-alt.svg"
+                                        id="id-remove-tab-icon-images" style="
+                      cursor: pointer;
+                      min-width: 0.5em;
+                      width: 16px;
+                      height: 16px;
+                      margin-left: 0.5rem;
+                    " onclick="removeTab(this);" />
+                                </div>
+                            </div>
+                        </nav>
+                        <nav class="level is-mobile" id="id-videos-tab">
+                            <div class="level-item has-text-centered is-capitalized">
+                                videos
+                            </div>
+                            <div class="level-item has-text-centered is-one-quarter">
+                                <div style="order: 2; margin-left: auto; margin-right: 0.5rem">
+                                    <img class="handle fa-ellipsis-v" src="/static/images/fa/ellipsis-v.svg" style="
+                      cursor: pointer;
+                      min-width: 0.5em;
+                      width: 16px;
+                      height: 16px;
+                    " />
+                                    <img class="handle trash" src="/static/images/fa/trash-alt.svg"
+                                        id="id-remove-tab-icon-videos" style="
+                      cursor: pointer;
+                      min-width: 0.5em;
+                      width: 16px;
+                      height: 16px;
+                      margin-left: 0.5rem;
+                    " onclick="removeTab(this);" />
+                                </div>
+                            </div>
+                        </nav>
+                        <nav class="level is-mobile" id="id-homepages-tab">
+                            <div class="level-item has-text-centered is-capitalized">
+                                homepages
+                            </div>
+                            <div class="level-item has-text-centered is-one-quarter">
+                                <div style="order: 2; margin-left: auto; margin-right: 0.5rem">
+                                    <img class="handle fa-ellipsis-v" src="/static/images/fa/ellipsis-v.svg" style="
+                      cursor: pointer;
+                      min-width: 0.5em;
+                      width: 16px;
+                      height: 16px;
+                    " />
+                                    <img class="handle trash" src="/static/images/fa/trash-alt.svg"
+                                        id="id-remove-tab-icon-homepages" style="
+                      cursor: pointer;
+                      min-width: 0.5em;
+                      width: 16px;
+                      height: 16px;
+                      margin-left: 0.5rem;
+                    " onclick="removeTab(this);" />
+                                </div>
+                            </div>
+                        </nav>
+                        <nav class="level is-mobile" id="id-food-tab">
+                            <div class="level-item has-text-centered is-capitalized">
+                                food
+                            </div>
+                            <div class="level-item has-text-centered is-one-quarter">
+                                <div style="order: 2; margin-left: auto; margin-right: 0.5rem">
+                                    <img class="handle fa-ellipsis-v" src="/static/images/fa/ellipsis-v.svg" style="
+                      cursor: pointer;
+                      min-width: 0.5em;
+                      width: 16px;
+                      height: 16px;
+                    " />
+                                    <img class="handle trash" src="/static/images/fa/trash-alt.svg"
+                                        id="id-remove-tab-icon-food" style="
+                      cursor: pointer;
+                      min-width: 0.5em;
+                      width: 16px;
+                      height: 16px;
+                      margin-left: 0.5rem;
+                    " onclick="removeTab(this);" />
+                                </div>
+                            </div>
+                        </nav>
+                        <nav class="level is-mobile" id="id-books-tab">
+                            <div class="level-item has-text-centered is-capitalized">
+                                books
+                            </div>
+                            <div class="level-item has-text-centered is-one-quarter">
+                                <div style="order: 2; margin-left: auto; margin-right: 0.5rem">
+                                    <img class="handle fa-ellipsis-v" src="/static/images/fa/ellipsis-v.svg" style="
+                      cursor: pointer;
+                      min-width: 0.5em;
+                      width: 16px;
+                      height: 16px;
+                    " />
+                                    <img class="handle trash" src="/static/images/fa/trash-alt.svg"
+                                        id="id-remove-tab-icon-books" style="
+                      cursor: pointer;
+                      min-width: 0.5em;
+                      width: 16px;
+                      height: 16px;
+                      margin-left: 0.5rem;
+                    " onclick="removeTab(this);" />
+                                </div>
+                            </div>
+                        </nav>
+                        <nav class="level is-mobile" id="id-movies-tab">
+                            <div class="level-item has-text-centered is-capitalized">
+                                movies
+                            </div>
+                            <div class="level-item has-text-centered is-one-quarter">
+                                <div style="order: 2; margin-left: auto; margin-right: 0.5rem">
+                                    <img class="handle fa-ellipsis-v" src="/static/images/fa/ellipsis-v.svg" style="
+                      cursor: pointer;
+                      min-width: 0.5em;
+                      width: 16px;
+                      height: 16px;
+                    " />
+                                    <img class="handle trash" src="/static/images/fa/trash-alt.svg"
+                                        id="id-remove-tab-icon-movies" style="
+                      cursor: pointer;
+                      min-width: 0.5em;
+                      width: 16px;
+                      height: 16px;
+                      margin-left: 0.5rem;
+                    " onclick="removeTab(this);" />
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="column is-one-quarter is-offset-1">
+                    <p class="heading">Add New Tabs</p>
+                    <nav class="level">
+                        <div class="level-item">
+                            <div class="select">
+                                <select id="id-add-tab-selector" style="
+                    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI',
+                      Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans',
+                      'Droid Sans', 'Helvetica Neue', Helvetica, Arial,
+                      sans-serif;
+                  ">
+                                    <option id="id-tab-selector-web" value="web" style="display: none">
+                                        Web
+                                    </option>
+                                    <option id="id-tab-selector-images" value="images" style="display: none">
+                                        Images
+                                    </option>
+                                    <option id="id-tab-selector-videos" value="videos" style="display: none">
+                                        Videos
+                                    </option>
+                                    <option id="id-tab-selector-homepages" value="homepages" style="display: none">
+                                        Homepages
+                                    </option>
+                                    <option id="id-tab-selector-general" value="general">
+                                        General
+                                    </option>
+                                    <option id="id-tab-selector-food" value="food" style="display: none">
+                                        Food
+                                    </option>
+                                    <option id="id-tab-selector-books" value="books" style="display: none">
+                                        Books
+                                    </option>
+                                    <option id="id-tab-selector-movies" value="movies" style="display: none">
+                                        Movies
+                                    </option>
+                                    <option id="id-tab-selector-music" value="music">
+                                        Music
+                                    </option>
+                                    <option id="id-tab-selector-infinity" value="infinity">
+                                        Infinity
+                                    </option>
+                                    <option id="id-tab-selector-edu" value="edu">Edu</option>
+                                    <option id="id-tab-selector-pdf" value="pdf">Pdf</option>
+                                    <option id="id-tab-selector-qa" value="qa">Qa</option>
+                                    <option id="id-tab-selector-reddit" value="reddit">
+                                        Reddit
+                                    </option>
+                                    <option id="id-tab-selector-fandom" value="fandom">
+                                        Fandom
+                                    </option>
+                                    <option id="id-tab-selector-coil" value="coil">Coil</option>
+                                    <option id="id-tab-selector-no_js" value="no_js">
+                                        No Javascript
+                                    </option>
+                                    <option id="id-tab-selector-decentralized" value="decentralized">
+                                        Decentralized
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="level-item">
+                            <button class="button" id="id-add-tab-button" onclick="addTab();" style="
+                  font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI',
+                    Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+                    'Helvetica Neue', Helvetica, Arial, sans-serif;
+                ">
+                                Add
+                            </button>
+                        </div>
+                    </nav>
+                    <br />
+                    <nav class="level">
+                        <div class="level-item">
+                            <button class="button" id="id-update-tabs-button" style="
+                  order: 2;
+                  margin-left: auto;
+                  font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI',
+                    Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+                    'Helvetica Neue', Helvetica, Arial, sans-serif;
+                " onclick="resetTabsToOriginal();">
+                                Reset
+                            </button>
+                        </div>
+                    </nav>
+                    <div id="id-custom-tabs-error"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="id-side-bar" class="column is-3 sidebar_column" style="padding-top: 1.2rem; padding-right: 1.5rem">
+        <div id="externals" class="">
+            <div class="card" name="external_card" style="margin-bottom: 0px">
+                <header class="card-header">
+                    <p class="card-header-title" style="font-weight: normal; padding-right: 5px">
+                        <a id="https://en.wikipedia.org/w/index.php?search="
+                            href="https://en.wikipedia.org/w/index.php?search=test" name="external_link_0"
+                            style="display: block" rel="noreferrer noopener" target="_self">
+                            <img onerror="imgError(this)" src="/static/images/favicons/wikipedia.ico"
+                                name="external_icon_0'" class="external-icon" />
+                            <span hidden="" class="external-text" name="external_text_0"
+                                style="font-size: 0.95rem; display: inline">
+                                Wikipedia Results
+                            </span>
+                        </a>
+                    </p>
+                    <span class="clickableIcon" onclick="removeExternalClickable(this)" style="
+              cursor: pointer;
+              display: block;
+              margin: auto;
+              margin-right: 6px;
+              min-width: 0.5em;
+            ">
+                        <img class="handle fa-ellipsis-v" src="/static/images/fa/ellipsis-v.svg" style="
+                cursor: pointer;
+                display: block;
+                margin: auto;
+                margin-right: 12px;
+                min-width: 0.5em;
+                width: 16px;
+                height: 16px;
+              " />
+                    </span>
+                </header>
+            </div>
+            <div class="card" name="external_card" style="margin-bottom: 0px">
+                <header class="card-header">
+                    <p class="card-header-title" style="font-weight: normal; padding-right: 5px">
+                        <a id="https://duckduckgo.com/?q=" href="https://duckduckgo.com/?q=test" name="external_link_1"
+                            style="display: block" rel="noreferrer noopener" target="_self">
+                            <img onerror="imgError(this)" src="/static/images/favicons/duckduckgo.ico"
+                                name="external_icon_1'" class="external-icon" />
+                            <span hidden="" class="external-text" name="external_text_1"
+                                style="font-size: 0.95rem; display: inline">
+                                DuckDuckGo Results
+                            </span>
+                        </a>
+                    </p>
+                    <span class="clickableIcon" onclick="removeExternalClickable(this)" style="
+              cursor: pointer;
+              display: block;
+              margin: auto;
+              margin-right: 6px;
+              min-width: 0.5em;
+            ">
+                        <img class="handle fa-ellipsis-v" src="/static/images/fa/ellipsis-v.svg" style="
+                cursor: pointer;
+                display: block;
+                margin: auto;
+                margin-right: 12px;
+                min-width: 0.5em;
+                width: 16px;
+                height: 16px;
+              " />
+                    </span>
+                </header>
+            </div>
+            <div class="card" name="external_card" style="margin-bottom: 0px">
+                <header class="card-header">
+                    <p class="card-header-title" style="font-weight: normal; padding-right: 5px">
+                        <a id="https://www.google.com/search?q=" href="https://www.google.com/search?q=test"
+                            name="external_link_2" style="display: block" rel="noreferrer noopener" target="_self">
+                            <img onerror="imgError(this)" src="/static/images/favicons/google.ico"
+                                name="external_icon_2'" class="external-icon" />
+                            <span hidden="" class="external-text" name="external_text_2"
+                                style="font-size: 0.95rem; display: inline">
+                                Google Results
+                            </span>
+                        </a>
+                    </p>
+                    <span class="clickableIcon" onclick="removeExternalClickable(this)" style="
+              cursor: pointer;
+              display: block;
+              margin: auto;
+              margin-right: 6px;
+              min-width: 0.5em;
+            ">
+                        <img class="handle fa-ellipsis-v" src="/static/images/fa/ellipsis-v.svg" style="
+                cursor: pointer;
+                display: block;
+                margin: auto;
+                margin-right: 12px;
+                min-width: 0.5em;
+                width: 16px;
+                height: 16px;
+              " />
+                    </span>
+                </header>
+            </div>
+            <div class="card" name="external_card" style="margin-bottom: 0px">
+                <header class="card-header">
+                    <p class="card-header-title" style="font-weight: normal; padding-right: 5px">
+                        <a id="https://www.youtube.com/results?search_query="
+                            href="https://www.youtube.com/results?search_query=test" name="external_link_3"
+                            style="display: block" rel="noreferrer noopener" target="_self">
+                            <img onerror="imgError(this)" src="/static/images/favicons/youtube.svg"
+                                name="external_icon_3'" class="external-icon" />
+                            <span hidden="" class="external-text" name="external_text_3"
+                                style="font-size: 0.95rem; display: inline">
+                                Youtube Results
+                            </span>
+                        </a>
+                    </p>
+                    <span class="clickableIcon" onclick="removeExternalClickable(this)" style="
+              cursor: pointer;
+              display: block;
+              margin: auto;
+              margin-right: 6px;
+              min-width: 0.5em;
+            ">
+                        <img class="handle fa-ellipsis-v" src="/static/images/fa/ellipsis-v.svg" style="
+                cursor: pointer;
+                display: block;
+                margin: auto;
+                margin-right: 12px;
+                min-width: 0.5em;
+                width: 16px;
+                height: 16px;
+              " />
+                    </span>
+                </header>
+            </div>
+            <div class="card" name="external_card" style="margin-bottom: 0px">
+                <header class="card-header">
+                    <p class="card-header-title" style="font-weight: normal; padding-right: 5px">
+                        <a id="https://www.amazon.com/s?k=" href="https://www.amazon.com/s?k=test"
+                            name="external_link_4" style="display: block" rel="noreferrer noopener" target="_self">
+                            <img onerror="imgError(this)" src="/static/images/favicons/amazon.ico"
+                                name="external_icon_4'" class="external-icon" />
+                            <span hidden="" class="external-text" name="external_text_4"
+                                style="font-size: 0.95rem; display: inline">
+                                Amazon Results
+                            </span>
+                        </a>
+                    </p>
+                    <span class="clickableIcon" onclick="removeExternalClickable(this)" style="
+              cursor: pointer;
+              display: block;
+              margin: auto;
+              margin-right: 6px;
+              min-width: 0.5em;
+            ">
+                        <img class="handle fa-ellipsis-v" src="/static/images/fa/ellipsis-v.svg" style="
+                cursor: pointer;
+                display: block;
+                margin: auto;
+                margin-right: 12px;
+                min-width: 0.5em;
+                width: 16px;
+                height: 16px;
+              " />
+                    </span>
+                </header>
+            </div>
+            <div class="card" name="external_card" style="margin-bottom: 0px">
+                <header class="card-header">
+                    <p class="card-header-title" style="font-weight: normal; padding-right: 5px">
+                        <a id="https://twitter.com/search?q=" href="https://twitter.com/search?q=test"
+                            name="external_link_5" style="display: block" rel="noreferrer noopener" target="_self">
+                            <img onerror="imgError(this)" src="/static/images/favicons/twitter.png"
+                                name="external_icon_5'" class="external-icon" />
+                            <span hidden="" class="external-text" name="external_text_5"
+                                style="font-size: 0.95rem; display: inline">
+                                Twitter Results
+                            </span>
+                        </a>
+                    </p>
+                    <span class="clickableIcon" onclick="removeExternalClickable(this)" style="
+              cursor: pointer;
+              display: block;
+              margin: auto;
+              margin-right: 6px;
+              min-width: 0.5em;
+            ">
+                        <img class="handle fa-ellipsis-v" src="/static/images/fa/ellipsis-v.svg" style="
+                cursor: pointer;
+                display: block;
+                margin: auto;
+                margin-right: 12px;
+                min-width: 0.5em;
+                width: 16px;
+                height: 16px;
+              " />
+                    </span>
+                </header>
+            </div>
+            <div class="card" name="external_card" style="margin-bottom: 0px">
+                <header class="card-header">
+                    <p class="card-header-title" style="font-weight: normal; padding-right: 5px">
+                        <a id="https://www.reddit.com/search/?q=" href="https://www.reddit.com/search/?q=test"
+                            name="external_link_6" style="display: block" rel="noreferrer noopener" target="_self">
+                            <img onerror="imgError(this)" src="/static/images/favicons/reddit.ico"
+                                name="external_icon_6'" class="external-icon" />
+                            <span hidden="" class="external-text" name="external_text_6"
+                                style="font-size: 0.95rem; display: inline">
+                                Reddit Results
+                            </span>
+                        </a>
+                    </p>
+                    <span class="clickableIcon" onclick="removeExternalClickable(this)" style="
+              cursor: pointer;
+              display: block;
+              margin: auto;
+              margin-right: 6px;
+              min-width: 0.5em;
+            ">
+                        <img class="handle fa-ellipsis-v" src="/static/images/fa/ellipsis-v.svg" style="
+                cursor: pointer;
+                display: block;
+                margin: auto;
+                margin-right: 12px;
+                min-width: 0.5em;
+                width: 16px;
+                height: 16px;
+              " />
+                    </span>
+                </header>
+            </div>
+            <div class="card" name="external_card" style="margin-bottom: 0px">
+                <header class="card-header">
+                    <p class="card-header-title" style="font-weight: normal; padding-right: 5px">
+                        <a id="https://github.com/search?q=" href="https://github.com/search?q=test"
+                            name="external_link_7" style="display: block" rel="noreferrer noopener" target="_self">
+                            <img onerror="imgError(this)" src="/static/images/favicons/github.ico"
+                                name="external_icon_7'" class="external-icon" />
+                            <span hidden="" class="external-text" name="external_text_7"
+                                style="font-size: 0.95rem; display: inline">
+                                GitHub Results
+                            </span>
+                        </a>
+                    </p>
+                    <span class="clickableIcon" onclick="removeExternalClickable(this)" style="
+              cursor: pointer;
+              display: block;
+              margin: auto;
+              margin-right: 6px;
+              min-width: 0.5em;
+            ">
+                        <img class="handle fa-ellipsis-v" src="/static/images/fa/ellipsis-v.svg" style="
+                cursor: pointer;
+                display: block;
+                margin: auto;
+                margin-right: 12px;
+                min-width: 0.5em;
+                width: 16px;
+                height: 16px;
+              " />
+                    </span>
+                </header>
+            </div>
+            <div class="card" name="external_card" style="margin-bottom: 0px">
+                <header class="card-header">
+                    <p class="card-header-title" style="font-weight: normal; padding-right: 5px">
+                        <a id="https://www.reuters.com/search/news?blob="
+                            href="https://www.reuters.com/search/news?blob=test" name="external_link_8"
+                            style="display: block" rel="noreferrer noopener" target="_self">
+                            <img onerror="imgError(this)" src="/static/images/favicons/reuters.ico"
+                                name="external_icon_8'" class="external-icon" />
+                            <span hidden="" class="external-text" name="external_text_8"
+                                style="font-size: 0.95rem; display: inline">
+                                Reuters Results
+                            </span>
+                        </a>
+                    </p>
+                    <span class="clickableIcon" onclick="removeExternalClickable(this)" style="
+              cursor: pointer;
+              display: block;
+              margin: auto;
+              margin-right: 6px;
+              min-width: 0.5em;
+            ">
+                        <img class="handle fa-ellipsis-v" src="/static/images/fa/ellipsis-v.svg" style="
+                cursor: pointer;
+                display: block;
+                margin: auto;
+                margin-right: 12px;
+                min-width: 0.5em;
+                width: 16px;
+                height: 16px;
+              " />
+                    </span>
+                </header>
+            </div>
+        </div>
+        <div id="externals_menu">
+            <div class="card is-fullwidth" id="plus-minus-info" style="
+          margin-top: 0.5rem;
+          margin-bottom: 0px;
+          height: 2.5rem;
+          padding: 0.7rem;
+        ">
+                <div class="columns is-vcentered is-mobile">
+                    <div class="column" style="text-align: center">
+                        <button class="button is-small" id="external_add" style="
+                border-color: transparent;
+                font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI',
+                  Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+                  'Helvetica Neue', Helvetica, Arial, sans-serif;
+              ">
+                            <img src="/static/images/fa/plus.svg" class="cl-external-link-img" />
+                        </button>
+                    </div>
+                    <div class="column is-narrow" style="text-align: center">|</div>
+                    <div class="column" style="text-align: center">
+                        <button class="button is-small" id="external_minus" style="
+                border-color: transparent;
+                font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI',
+                  Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+                  'Helvetica Neue', Helvetica, Arial, sans-serif;
+              ">
+                            <img src="/static/images/fa/minus.svg" class="cl-external-link-img" />
+                        </button>
+                    </div>
+                    <div class="column is-narrow" style="text-align: center">|</div>
+                    <div class="column" style="text-align: center">
+                        <div id="external-info-button" style="text-align: center">
+                            <div style="cursor: pointer" id="externals_layout_button"
+                                onclick="toggleExternalsLayout();">
+                                <img id="id-externals-layout-img" class="cl-external-link-img"
+                                    src="/static/images/fa/list.svg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="external_link_add_box" style="margin: 0.5rem" hidden="">
+                <div class="box is-fullwidth is" style="margin: 0; padding: 0.5rem">
+                    <input class="input is-small" id="new_external_label" placeholder="Search Label" style="
+              margin: 0.25rem;
+              font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto,
+                Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+                'Helvetica Neue', Helvetica, Arial, sans-serif;
+            " />
+                    <input class="input is-small" id="new_external_link"
+                        placeholder="Search Link (https://is.com/results?q=)" style="
+              margin: 0.25rem;
+              font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto,
+                Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+                'Helvetica Neue', Helvetica, Arial, sans-serif;
+            " />
+                    <input class="input is-small" id="new_external_icon"
+                        placeholder="Icon Link (https://is.com/img.png)" style="
+              margin: 0.25rem;
+              font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto,
+                Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+                'Helvetica Neue', Helvetica, Arial, sans-serif;
+            " />
+                </div>
+                <button class="button is-small is-outlined" id="external_input_add" style="
+            float: right;
+            margin: 0.5rem;
+            font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto,
+              Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+              'Helvetica Neue', Helvetica, Arial, sans-serif;
+          ">
+                    Add
+                </button>
+                <button class="button is-small is-outlined is-danger" id="external_input_cancel" style="
+            float: right;
+            margin-top: 0.5rem;
+            font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto,
+              Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+              'Helvetica Neue', Helvetica, Arial, sans-serif;
+          ">
+                    Cancel
+                </button>
+            </div>
+            <div id="external_input_defaults" hidden="">
+                <button class="button is-small is-outlined is-danger" id="external_input_defaults_button" style="
+            float: right;
+            margin-top: 0.5rem;
+            font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto,
+              Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+              'Helvetica Neue', Helvetica, Arial, sans-serif;
+          ">
+                    Reset
+                </button>
+            </div>
+        </div>
+        <br />
+    </div>
+
+    
+</div>

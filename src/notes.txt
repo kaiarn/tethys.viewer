@@ -1,0 +1,43 @@
+// <script lang="ts">
+// import { Options, Vue } from "vue-class-component";
+// import HelloWorld from "./components/HelloWorld/HelloWorld.vue";
+// import VsInput from "./components/vs-input/vs-input.vue";
+
+// @Options({
+//   components: {
+//     HelloWorld,
+//     VsInput,
+//   },
+// })
+// export default class App extends Vue {
+//   async onSearch(term: string): Promise<void> {
+//     if (term) {
+//       term = term.trim();
+//     } else {
+//       term = "*%3A*";
+//     }
+//   }
+// }
+// </script>
+
+
+npm install -g @vue/cli
+
+vue --version
+@vue/cli 4.5.15
+
+
+npm install --save rxjs
+
+
+npm install bulma --save-dev
+
+
+
+
+npm install --save @openfonts/open-sans_all
+
+
+vue inspect > out.js
+
+npm install --save qs
