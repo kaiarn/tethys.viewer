@@ -9,7 +9,7 @@
             <ul class="filter-items list-unstyled" v-bind:class="{ limited: facetItems.length > 1 && collapsed }">
                 <li v-for="(item, index) in facetItems" :key="index" class="list-group-item titlecase">
                     <!-- <span :class="item.Active ? 'disabled' : ''" @click.prevent="activateItem(item)">{{ item.val }} ({{ item.count }}) </span> -->
-                    <span @click.prevent="activateItem(item)">{{ item.val }} ({{ item.count }}) </span>
+                    <span :class="item.active ? 'disabled' : ''" @click.prevent="activateItem(item)">{{ item.val }} ({{ item.count }}) </span>
                 </li>
             </ul>
             <ul class="overflowing" v-if="overflowing == true">

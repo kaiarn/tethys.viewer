@@ -41,3 +41,5 @@ npm install --save @openfonts/open-sans_all
 vue inspect > out.js
 
 npm install --save qs
+
+npm install --save class-transformer

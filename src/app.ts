@@ -8,6 +8,7 @@ import { DatasetService } from "./services/dataset.service";
 import { Dataset, Suggestion } from "./models/dataset";
 import { SolrResponse, FacetFields, FacetItem, FacetResults } from "./models/headers";
 import { ActiveFilterCategories } from "@/models/solr";
+import { deserialize } from "class-transformer";
 
 @Options({
     components: {
@@ -63,6 +64,7 @@ export default class App extends Vue {
         // }
 
         this.activeFilterCategories = new ActiveFilterCategories();
+        this.facets = new FacetResults();
 
         // this.facets = {};
         this.searchTerm = suggestion;
@@ -72,7 +74,7 @@ export default class App extends Vue {
         );
     }
 
-    private dataHandler(res: SolrResponse): void {
+    private dataHandler(res: SolrResponse, filterItem?: FacetItem): void {
         // this.results = datasets;
         this.results = res.response.docs;
         this.numFound = res.response.numFound;
@@ -108,7 +110,25 @@ export default class App extends Vue {
             const facetCategory = facet_fields[prop];
             if (facetCategory.buckets) {
                 const facetItems: Array<FacetItem> = facetCategory.buckets;
-                const facetValues = facetItems.filter(function (el) {
+
+                let facetValues = facetItems.map((facetItem, index) => {
+                    let rObj: FacetItem;
+                    if (filterItem?.val == facetItem.val) {
+                        rObj = filterItem;
+                    } else if (this.facets[prop]?.some((e) => e.val === facetItem.val)) {
+                        // console.log(facetValue + " is included")
+                        const indexOfFacetValue = this.facets[prop].findIndex((i) => i.val === facetItem.val);
+                        // console.log(indexOfFacetValue);
+                        rObj = this.facets[prop][indexOfFacetValue];
+                        rObj.count = facetItem.count;
+                        // rObj = new FacetItem(val, count);
+                    } else {
+                        rObj = new FacetItem(facetItem.val, facetItem.count);
+                    }
+                    return rObj;
+                });
+
+                facetValues = facetValues.filter(function (el) {
                     return el != null && el.count > 0;
                 });
                 // this.facets[prop] = facetCategory;
@@ -131,8 +151,9 @@ export default class App extends Vue {
         // if (!this.activeFilterCategories[facetItem.category].some((e) => e === facetItem.val)) {
         if (!this.activeFilterCategories[facetItem.category].some((e) => e === facetItem.val)) {
             this.activeFilterCategories[facetItem.category].push(facetItem.val);
+
             this.rdrAPI.facetedSearch(this.searchTerm, this.activeFilterCategories, this.solr.core, this.solr.host, undefined).subscribe(
-                (res: SolrResponse) => this.dataHandler(res),
+                (res: SolrResponse) => this.dataHandler(res, facetItem),
                 (error: any) => this.errorHandler(error),
             );
             // alert(this.activeFilterCategories[filter.Category]);

@@ -67,9 +67,16 @@ export interface FacetInstance {
     // buckets: Array<FacetItem>;
 }
 
-export interface FacetItem {
+export class FacetItem {
     val: string;
     count: number;
     category: string;
     active: boolean;
+
+    constructor(value: string, count: number) {
+        this.val = value;
+        this.count = count;
+        this.active = false;
+        this.category = "";
+    }
 }
