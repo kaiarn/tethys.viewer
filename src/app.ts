@@ -5,10 +5,9 @@ import VsResult from "./components/vs-result/vs-result.vue";
 import FacetCategory from "./components/face-category/facet-category.vue";
 import { SolrSettings } from "@/models/solr";
 import { DatasetService } from "./services/dataset.service";
-import { Dataset, Suggestion } from "./models/dataset";
+import { Suggestion } from "./models/dataset";
 import { SolrResponse, FacetFields, FacetItem, FacetResults } from "./models/headers";
 import { ActiveFilterCategories } from "@/models/solr";
-import { deserialize } from "class-transformer";
 
 @Options({
     components: {

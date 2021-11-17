@@ -115,7 +115,7 @@ export default class VsInput extends Vue {
         // this.$emit("clear");
     }
 
-    // @Emit("search-change")
+    @Emit("search-change")
     search(): string {
         this.results = [];
         // this.$emit("search", this.display)
