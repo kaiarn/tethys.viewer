@@ -17,7 +17,7 @@
         </a>
       </div> -->
 
-        <vs-input @search-change="onSearch" title="searching solr datasets" placeholder="Enter your search term..." />
+        <vs-input v-on:search-change="onSearch" v-bind:placeholder="'Enter your search term...'"></vs-input>
 
         <div class="column is-half is-offset-one-quarter" style="padding-top: 0; margin-top: 0">
             <!-- <div class="tabs is-centered">

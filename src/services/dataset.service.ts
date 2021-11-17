@@ -14,6 +14,7 @@ export class DatasetService {
         // const host = 'https://www.tethys.at/';''
         const host = "https://" + solrHost;
         const path = "/solr/" + solrCore + "/select?";
+        // const base = "https://geomon.geologie.ac.at/52n-sos-webapp/api/features"; //host + path;
         const base = host + path;
 
         //const fields = 'id,server_date_published,abstract_output,title_output,title_additional,author,subject'; // fields we want returned

@@ -12,11 +12,11 @@ import { Dataset, Suggestion, SearchType } from "@/models/dataset";
     name: "VsInput",
 })
 export default class VsInput extends Vue {
-    @Prop()
-    private title!: string;
+    // @Prop()
+    // private title!: string;
 
     @Prop({ default: "Search" })
-    private placeholder!: string;
+    readonly placeholder!: string;
 
     private display = "";
     private value!: Suggestion;
@@ -31,6 +31,7 @@ export default class VsInput extends Vue {
     };
     private rdrAPI!: DatasetService;
     itemRefs!: Array<any>;
+    emits = ["filter"];
 
     setItemRef(el: any) {
         this.itemRefs.push(el);
@@ -111,10 +112,10 @@ export default class VsInput extends Vue {
         // this.value = null;
         this.results = [];
         this.error = "";
-        this.$emit("clear");
+        // this.$emit("clear");
     }
 
-    @Emit("search-change")
+    // @Emit("search-change")
     search(): string {
         this.results = [];
         // this.$emit("search", this.display)
@@ -202,7 +203,7 @@ export default class VsInput extends Vue {
 
     onEnter(): void {
         if (this.selectedIndex === null) {
-            this.$emit("nothingSelected", this.display);
+            // this.$emit("nothingSelected", this.display);
             return;
         }
         this.select(this.suggestions[this.selectedIndex]);
@@ -210,15 +211,16 @@ export default class VsInput extends Vue {
     }
 
     @Emit("search-change")
-    select(obj: Suggestion): Suggestion {
+    private select(obj: Suggestion): Suggestion {
         // if (!obj) {
         //     return;
         // }
         this.value = obj; //(obj["title_output"]) ? obj["title_output"] : obj.id
         // this.display = obj; // this.formatDisplay(obj)
         this.selectedDisplay = this.display;
-        // this.$emit("search", this.value);
+
         this.close();
+        // this.$emit("update", this.value);
         return this.value;
     }
 
@@ -245,6 +247,6 @@ export default class VsInput extends Vue {
         this.results = [];
         this.error = "";
         //this.removeEventListener()
-        this.$emit("close");
+        // this.$emit("close");
     }
 }
