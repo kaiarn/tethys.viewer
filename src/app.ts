@@ -3,10 +3,11 @@ import HelloWorld from "./components/HelloWorld/HelloWorld.vue";
 import VsInput from "./components/vs-input/vs-input.vue";
 import VsResult from "./components/vs-result/vs-result.vue";
 import FacetCategory from "./components/face-category/facet-category.vue";
+import ActiveFacetCategory from "./components/active-facet-category/active-facet-category.vue";
 import { SolrSettings } from "@/models/solr";
 import { DatasetService } from "./services/dataset.service";
 import { Suggestion } from "./models/dataset";
-import { SolrResponse, FacetFields, FacetItem, FacetResults } from "./models/headers";
+import { SolrResponse, FacetFields, FacetItem, FacetResults, FacetInstance } from "./models/headers";
 import { ActiveFilterCategories } from "@/models/solr";
 
 @Options({
@@ -15,6 +16,7 @@ import { ActiveFilterCategories } from "@/models/solr";
         VsInput,
         VsResult,
         FacetCategory,
+        ActiveFacetCategory,
     },
 })
 export default class App extends Vue {
@@ -191,5 +193,53 @@ export default class App extends Vue {
             //   // this.facets.push({ filterName: prop, values: facetValues });
             //   this.facets[prop] = facetValues;
         }
+    }
+
+    onClearFacetCategory(categoryName: string): void {
+        // alert(categoryName);
+        delete this.activeFilterCategories[categoryName];
+
+        this.rdrAPI.facetedSearch(this.searchTerm, this.activeFilterCategories, this.solr.core, this.solr.host, undefined).subscribe(
+            (res: SolrResponse) => {
+                this.results = res.response.docs;
+                this.numFound = res.response.numFound;
+
+                // pagination
+                this.pagination["total"] = res.response.numFound;
+                this.pagination["per_page"] = res.responseHeader.params.rows;
+                this.pagination["current_page"] = 1;
+                this.pagination["data"] = res.response.docs;
+
+                const facet_fields: FacetFields = res.facets;
+                let prop: keyof typeof facet_fields;
+                for (prop in facet_fields) {
+                    const facetCategory: FacetInstance = facet_fields[prop];
+                    if (facetCategory.buckets) {
+                        const facetItems: Array<FacetItem> = facetCategory.buckets;
+
+                        const facetValues = facetItems.map((facetItem, index) => {
+                            let rObj: FacetItem;
+                            if (this.facets[prop]?.some((e) => e.val === facetItem.val)) {
+                                // console.log(facetValue + " is included")
+                                const indexOfFacetValue = this.facets[prop].findIndex((i) => i.val === facetItem.val);
+                                // console.log(indexOfFacetValue);
+                                rObj = this.facets[prop][indexOfFacetValue];
+                                rObj.count = facetItem.count;
+                                // rObj = new FacetItem(val, count);
+                                //if facet ccategory is reactivated category, deactivate all filter items
+                                if (prop == categoryName) {
+                                    rObj.active = false;
+                                }
+                            } else {
+                                rObj = new FacetItem(facetItem.val, facetItem.count);
+                            }
+                            return rObj;
+                        });
+                        this.facets[prop] = facetValues;
+                    }
+                }
+            },
+            (error: any) => this.errorHandler(error),
+        );
     }
 }

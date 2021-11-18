@@ -19,12 +19,6 @@
             </a>
         </div>
 
-        <div class="content column is-half is-offset-6">
-            <span class="active-filter-items" v-for="(values, key, index) in activeFilterCategories" :key="index">
-                <active-facet-category :data="values" :categoryName="key"></active-facet-category>
-            </span>
-        </div>
-
         <vs-input v-on:search-change="onSearch" v-bind:placeholder="'Enter your search term...'"></vs-input>
 
         <div class="column is-half is-offset-one-quarter" style="padding-top: 0; margin-top: 0">
@@ -54,6 +48,12 @@
                 <div class="resultheader">
                     Your search yielded
                     <strong>{{ numFound }}</strong> results:
+                </div>
+            </div>
+            <div v-else-if="results.length == 0">
+                <div class="resultheader">
+                    Your search yielded
+                    <strong> 0</strong> results:
                 </div>
             </div>
 
@@ -128,6 +128,11 @@
             </div>
 
             <div class="column is-8 results_column" style="padding-top: 1.2rem; padding-right: 0.5rem">
+                <div class="column" v-if="activeFilterCategories && Object.keys(activeFilterCategories).length > 0">
+                    <span class="active-filter-items" v-for="(values, key, index) in activeFilterCategories" :key="index">
+                        <active-facet-category v-bind:filterItems="values" :categoryName="key" @clearFacetCategory="onClearFacetCategory"></active-facet-category>
+                    </span>
+                </div>
                 <div class="results">
                     <!-- Results section -->
                     <vs-result v-bind:datasets="results"></vs-result>

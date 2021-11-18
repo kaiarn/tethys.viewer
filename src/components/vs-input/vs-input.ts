@@ -19,7 +19,7 @@ export default class VsInput extends Vue {
     readonly placeholder!: string;
 
     private display = "";
-    private value!: Suggestion;
+    private value!: Suggestion | string;
     private error = "";
     private results: Array<Dataset> = [];
     private loading = false;
@@ -119,6 +119,7 @@ export default class VsInput extends Vue {
     search(): string {
         this.results = [];
         // this.$emit("search", this.display)
+        this.value = this.display; //(obj["title_output"]) ? obj["title_output"] : obj.id
         return this.display;
     }
 
@@ -216,8 +217,8 @@ export default class VsInput extends Vue {
         //     return;
         // }
         this.value = obj; //(obj["title_output"]) ? obj["title_output"] : obj.id
-        // this.display = obj; // this.formatDisplay(obj)
-        this.selectedDisplay = this.display;
+        this.display = obj.value; // this.formatDisplay(obj)
+        // this.selectedDisplay = this.display;
 
         this.close();
         // this.$emit("update", this.value);
@@ -238,12 +239,12 @@ export default class VsInput extends Vue {
      *  Close the results list. If nothing was selected clear the search
      */
     close(): void {
-        if (!this.value || !this.selectedDisplay) {
+        if (!this.value) {
             this.clear();
         }
-        if (this.selectedDisplay !== this.display && this.value) {
-            this.display = this.selectedDisplay;
-        }
+        // if (this.selectedDisplay !== this.display && this.value) {
+        //     this.display = this.selectedDisplay;
+        // }
         this.results = [];
         this.error = "";
         //this.removeEventListener()
