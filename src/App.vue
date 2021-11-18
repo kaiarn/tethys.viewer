@@ -1,21 +1,29 @@
 <template>
     <!-- <HelloWorld msg="Welcome to Your Vue.js plus TypeScript App" /> -->
     <div id="page_style" class="site-content page__style page__description" autocomplete="off">
-        <!-- <div class="content column is-half is-offset-6" style="text-align: right">        
-        <a class="button" href="/default" target="_self"><img class="icon-spacing" src="/static/images/fa/firefox.svg"
-            style="width: 16px; height: 16px;"><img class="icon-spacing" src="/static/images/fa/chrome.svg"
-            style="width: 16px; height: 16px;">
-          <img class="icon-spacing" src="/static/images/fa/opera.svg" style="width: 16px; height: 16px;"> <img
-            src="/static/images/fa/plus.svg" style="width: 16px; height: 16px;"></a>
-        <a class="button" href="/account" target="_self"> <img src="/static/images/fa/user.svg"
-            style="width: 16px; height: 16px;"> </a>
-      </div>
-      <div id="home_padding"></div>
-      <div style="text-align: center;">
-        <a href="/" id="logo_home" target="_self">
-          <img id="logo_img_home" src="/static/images/is/logo_text_black.png" width="20%" style="min-width: 140px;">
-        </a>
-      </div> -->
+        <div class="content column is-half is-offset-6" style="text-align: right">
+            <a class="button" href="/test" target="_self">
+                <img class="icon-spacing" src="./assets/fa/firefox.svg" style="width: 16px; height: 16px" />
+                <img class="icon-spacing" src="./assets/fa/chrome.svg" style="width: 16px; height: 16px" />
+                <img class="icon-spacing" src="./assets/fa/opera.svg" style="width: 16px; height: 16px" />
+                <img src="./assets/fa/plus.svg" style="width: 16px; height: 16px" />
+            </a>
+            <a class="button" href="/test" target="_self">
+                <img src="./assets/fa/user.svg" style="width: 16px; height: 16px" />
+            </a>
+        </div>
+        <!-- <div id="home_padding"></div> -->
+        <div style="text-align: center">
+            <a href="/test" id="logo_home" target="_self">
+                <img id="logo_img_home" src="./assets/images/tethys-icon-mono.png" width="20%" style="min-width: 140px" />
+            </a>
+        </div>
+
+        <div class="content column is-half is-offset-6">
+            <span class="active-filter-items" v-for="(values, key, index) in activeFilterCategories" :key="index">
+                <active-facet-category :data="values" :categoryName="key"></active-facet-category>
+            </span>
+        </div>
 
         <vs-input v-on:search-change="onSearch" v-bind:placeholder="'Enter your search term...'"></vs-input>
 
