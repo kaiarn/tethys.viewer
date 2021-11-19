@@ -1,7 +1,59 @@
 <template>
     <!-- <HelloWorld msg="Welcome to Your Vue.js plus TypeScript App" /> -->
-    <div id="page_style" class="site-content page__style page__description" autocomplete="off">
-        <div class="content column is-half is-offset-6" style="text-align: right">
+
+    <nav class="navbar navbar-light border-bottom" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+                <!-- <img src="./assets/images/TETHYS-Logo.svg" width="240px" height="86" alt="TETHYS Logo" /> -->
+                <img src="./assets/images/TETHYS-Logo.svg" width="240" height="86" />
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navMenu" class="navbar-menu">
+            <ul class="navbar-start" style="flex-grow: 1; justify-content: center">
+                <li class="navbar-item">
+                    <a class="navbar-link is-arrowless active" href="#">STARTSEITE</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link is-arrowless" href="#">INTRO</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link is-arrowless" href="#">SEARCH</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link is-arrowless" href="#">SERVICES</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link is-arrowless" href="#">HELP</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link is-arrowless" href="#">OAI</a>
+                </li>
+                <!-- 
+                <a href="#" class="custom-btn"><i class="fas fa-sign-in-alt"></i>SIGN IN</a> -->
+            </ul>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary">
+                            <span class="icon is-small">
+                                <i class="fas fa-align-left"></i>
+                            </span>
+                            <strong>Sign in</strong>
+                        </a>
+                        <!-- <a class="button is-light"> Log in </a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="page_style" class="rows site-content page__style page__description" autocomplete="off">
+        <!-- <div class="col-6 offset-6 content column is-half is-offset-6" style="text-align: right">
             <a class="button" href="/test" target="_self">
                 <img class="icon-spacing" src="./assets/fa/firefox.svg" style="width: 16px; height: 16px" />
                 <img class="icon-spacing" src="./assets/fa/chrome.svg" style="width: 16px; height: 16px" />
@@ -11,12 +63,30 @@
             <a class="button" href="/test" target="_self">
                 <img src="./assets/fa/user.svg" style="width: 16px; height: 16px" />
             </a>
-        </div>
-        <!-- <div id="home_padding"></div> -->
-        <div style="text-align: center">
+        </div> -->
+
+        <!-- <div class="column" style="text-align: center">
             <a href="/test" id="logo_home" target="_self">
-                <img id="logo_img_home" src="./assets/images/tethys-icon-mono.png" width="20%" style="min-width: 140px" />
+                <img id="logo_img_home" src="./assets/images/tethys-icon-mono.png" width="240px" style="min-width: 140px" />
             </a>
+        </div> -->
+
+        <!-- <div class="column">
+            <div class="col text-center py-3">
+                <h1>Tethys Research Data Repository</h1>
+                <p class="lead">Data Publisher for Geoscience Austria</p>
+                <hr class="center-line" />
+            </div>
+        </div> -->
+        <div class="column header-image align-items-center h-100">
+            <!-- <div class="col mt-3 mx-auto">
+                <div class="search-box mx-auto">
+                    <form class="my-2 my-lg-0 main-search-from-bg d-flex d-row">
+                        <input class="form-control mr-sm-2 border-0" type="text" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-secondary m-0" type="submit"><i class="fas fa-search text-white"></i></button>
+                    </form>
+                </div>
+            </div> -->
         </div>
 
         <vs-input v-on:search-change="onSearch" v-bind:placeholder="'Enter your search term...'"></vs-input>
@@ -127,7 +197,7 @@
                 </div>
             </div>
 
-            <div class="column is-8 results_column" style="padding-top: 1.2rem; padding-right: 0.5rem">
+            <div class="col col-8 column is-8 results_column" style="padding-top: 1.2rem; padding-right: 0.5rem">
                 <div class="column" v-if="activeFilterCategories && Object.keys(activeFilterCategories).length > 0">
                     <span class="active-filter-items" v-for="(values, key, index) in activeFilterCategories" :key="index">
                         <active-facet-category v-bind:filterItems="values" :categoryName="key" @clearFacetCategory="onClearFacetCategory"></active-facet-category>

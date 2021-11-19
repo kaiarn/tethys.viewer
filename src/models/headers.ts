@@ -51,10 +51,12 @@ export interface ResponseContent {
 // }
 
 export class FacetResults {
-    language!: Array<FacetItem>;
-    subject!: Array<FacetItem>;
+    // language!: Array<FacetItem>;
+    // subject!: Array<FacetItem>;
+    [key: string]: Array<FacetItem>;
 }
 
+//#region solr response facets
 export class FacetFields {
     // count: number;
     language!: FacetInstance;
@@ -80,3 +82,4 @@ export class FacetItem {
         this.category = "";
     }
 }
+//#endregion

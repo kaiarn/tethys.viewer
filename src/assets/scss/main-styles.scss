@@ -3,12 +3,58 @@
 // @import "@fontsource/open-sans"; // Defaults to weight 400.
 @import "~@openfonts/open-sans_all/index.css";
 
-html, body {
-    font-family: "Open Sans", sans-serif;
-    font-size: 0.92rem;   
-  }
+.button {
+    text-decoration: none;
+    // border: 1px solid #fff;
+    &.is-primary {
+        background-color: #33cccc;
+        border-color: transparent;
+        color: #fff;
+        &:hover {
+            color: #fff;
+            background-color: #336699;
+            text-decoration: none;
+            border: 1px solid #fff;
+        }
+    };
+}
 
-  .columns{margin: 0;}
+.header-image {
+    background-image: url("./../site/img/Main-banner-homepage-xl.jpg");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    min-height: 562px;
+}
+.align-items-center {
+    -webkit-box-align: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+.h-100 {
+    height: 100% !important;
+}
+
+
+
+
+
+
+html,
+body {
+    font-family: "Open Sans", sans-serif;
+    // font-size: 0.92rem;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+}
+
+.columns {
+    margin: 0;
+}
 
 /*footer {*/
 /*    !*position: absolute;*!*/
@@ -89,7 +135,7 @@ svg,
     height: 100%;
     width: 100%;
     margin: auto;
-    overflow: hidden;  
+    overflow: hidden;
 }
 
 .rabbit-grid {
@@ -191,12 +237,50 @@ svg,
 @media screen and (min-width: 769px) {
     .autocomplete-column.is-offset-one-quarter,
     .autocomplete-column.is-offset-one-quarter-tablet {
-        margin-left: 25%; 
+        margin-left: 25%;
     }
 
     .autocomplete-column.is-half,
     .autocomplete-column.is-half-tablet {
         flex: none;
-        width: 50%; 
+        width: 50%;
     }
 }
+
+
+
+.navbar {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    // display:flex;
+    // justify-content:center;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #dee2e6 !important;
+}
+
+.navbar .navbar-item {
+    // padding-right: 2.2em;
+    padding-left: 2.2em;
+}
+.navbar-light .navbar-link:focus,
+.navbar-light .navbar-link:hover {
+    color: rgba(0, 0, 0, 0.7);
+}
+.navbar-link.active,
+.navbar-link:hover {
+    border-bottom: 2px solid #33cccc;
+    background-color: #fff;
+}
+
+.navbar-light .navbar-menu .navbar-item {
+    font-family: Verdana, sans-serif;
+    color: #212529;
+    font-size: 0.9em;
+    font-weight: 700;
+}
+.navbar-item img {
+    max-height: 6rem;
+}
+

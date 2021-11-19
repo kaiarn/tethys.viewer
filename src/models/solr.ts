@@ -5,8 +5,8 @@ export interface SolrSettings {
 
 export class ActiveFilterCategories {
     // count: number;
-    language!: Array<string>;
-    subject!: Array<string>;
+    // language!: Array<string>;
+    // subject!: Array<string>;
     [key: string]: Array<string>;
 }
 

@@ -15,7 +15,7 @@ export default class VsResult extends Vue {
         return this.datasets;
     }
 
-    public getDomainWithoutSubdomain() {
+    public getDomainWithoutSubdomain(): string {
         const urlParts = new URL(window.location.href).hostname.split(".");
 
         return urlParts
@@ -24,7 +24,7 @@ export default class VsResult extends Vue {
             .join(".");
     }
 
-    private convert(unixtimestamp: number) {
+    private convert(unixtimestamp: number): string {
         // Unixtimestamp
         // var unixtimestamp = document.getElementById('timestamp').value;
         // Months array

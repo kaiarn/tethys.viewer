@@ -1,7 +1,7 @@
 <template>
     <div class="column" v-for="document in results" :key="document.id">
         <div class="card result-list-container">
-            <div class="card-content row record-elem">
+            <div class="card-content record-elem">
                 <span class="label label-info" data-container="div" data-title="Publication date">
                     {{ convert(document.server_date_published) }}
                 </span>
