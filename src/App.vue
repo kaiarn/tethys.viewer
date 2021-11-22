@@ -1,6 +1,12 @@
 <template>
     <!-- <HelloWorld msg="Welcome to Your Vue.js plus TypeScript App" /> -->
 
+    <!-- <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous"
+    /> -->
     <nav class="navbar navbar-light border-bottom" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="#">
@@ -39,10 +45,11 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button is-primary">
-                            <span class="icon is-small">
-                                <i class="fas fa-align-left"></i>
-                            </span>
+                        <a class="button is-primary custom-button">
+                            <!-- <span class="icon is-small"> -->
+                            <!-- <i class="fas fa-sign-in-alt"></i> -->
+                            <fa :icon="['fas', 'phone']" class="fas fa-sign-in-alt" />
+                            <!-- </span> -->
                             <strong>Sign in</strong>
                         </a>
                         <!-- <a class="button is-light"> Log in </a> -->
@@ -78,16 +85,59 @@
                 <hr class="center-line" />
             </div>
         </div> -->
-        <div class="column header-image align-items-center h-100">
-            <!-- <div class="col mt-3 mx-auto">
+        <div class="column">
+            <div class="col text-center py-3">
+                <h1>Tethys Research Data Repository</h1>
+                <p class="lead">Data Publisher for Geoscience Austria</p>
+                <hr class="center-line" />
+            </div>
+        </div>
+
+        <!-- <div class="column header-image align-items-center h-100">
+            <div class="col mt-3 mx-auto">
                 <div class="search-box mx-auto">
                     <form class="my-2 my-lg-0 main-search-from-bg d-flex d-row">
                         <input class="form-control mr-sm-2 border-0" type="text" placeholder="Search" aria-label="Search" />
                         <button class="btn btn-secondary m-0" type="submit"><i class="fas fa-search text-white"></i></button>
                     </form>
                 </div>
-            </div> -->
-        </div>
+            </div>
+        </div> -->
+        <!-- <figure class="image is-128x128">
+            <img src="https://bulma.io/images/placeholders/256x256.png" />
+        </figure> -->
+        <section data-sr id="help" class="help u-full-width featured-bg-image"></section>
+
+        <!-- <div class="columns">
+            <div class="column text-center">
+                <h1>ÜBER TETHYS</h1>
+                <p class="lead">Was sind unsere Schwerpunkte</p>
+                <hr class="center-line" />
+            </div>
+        </div> -->
+        <section class="section">
+            <div class="column is-full text-center">
+                <h1>ÜBER TETHYS</h1>
+                <p class="lead">Was sind unsere Schwerpunkte</p>
+                <hr class="center-line" />
+            </div>
+            <div class="column is-full text-left">
+                <p>
+                    TETHYS RDR ist ein publizierendes Forschungsdatenrepositorium der Geologischen Bundesanstalt (GBA), das an der GBA generierte geowisse nschaftliche
+                    Forschungsdaten veröffentlicht.
+                </p>
+                <p>
+                    Zum derzeitigen Stand wird TETHYS RDR in deutscher Sprache bereitgestellt. Die englische Version befindet sich in Vorbereitung und wird sukzessive ebenfalls zur
+                    Verfügung gestellt. Die Forschungsdatenpublikationen und die dazugehörigen Metadaten können in Deutsch und in Englisch veröffentlicht werden. Tethys RDR hat den
+                    Anspruch, publizierte Datensätze unverändert, langfristig und nachhaltig bereitzustellen. Dadurch ist Tethys ein Forschungsdatenrepositorium, das ein
+                    permanentes Referenzieren ermöglicht und somit die darin publizierten Datensätze zitierfähig macht.
+                </p>
+                <p>
+                    Der Name Tethys kommt ursprünglich aus der griechischen Mythologie und benennt eine Titanin und Meeresgöttin. Ende des 19. Jahrhunderts entdeckte Eduard Suess
+                    (1831–1914), ein bedeutender österreichischer Geologe, den mesozoischen Ozean und benannte ihn nach dieser Tethys.
+                </p>
+            </div>
+        </section>
 
         <vs-input v-on:search-change="onSearch" v-bind:placeholder="'Enter your search term...'"></vs-input>
 
@@ -253,7 +303,7 @@ export default App;
     h4,
     h5,
     h6 {
-        margin-top: 5px;
+        margin-top: 1.5rem;
     }
 }
 </style>

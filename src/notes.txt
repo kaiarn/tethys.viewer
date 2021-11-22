@@ -43,3 +43,8 @@ vue inspect > out.js
 npm install --save qs
 
 npm install --save class-transformer
+
+
+npm install --save @fortawesome/vue-fontawesome@prerelease
+npm install --save @fortawesome/fontawesome-svg-core
+npm install --save @fortawesome/free-solid-svg-icons

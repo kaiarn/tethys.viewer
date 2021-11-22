@@ -16,8 +16,29 @@
             text-decoration: none;
             border: 1px solid #fff;
         }
-    };
+    }
+    &.custom-button {
+        // display: block;
+      
+        width: 125px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 0.9em;       
+        text-decoration: none;
+        border: 1px solid transparent;
+        .fas {
+            margin-right: 0.6em;
+            // border-right: 1px solid #fff;
+           width: 2em;
+        };
+        strong {
+            border-left: 1px solid #fff;
+            padding-left: 0.6em;
+        }
+    }
 }
+
+
 
 .header-image {
     background-image: url("./../site/img/Main-banner-homepage-xl.jpg");
@@ -35,7 +56,98 @@
     height: 100% !important;
 }
 
+/* =Section general styling
+-------- */
+// section {
+//     text-align: center;
+//     padding: 60px 0 0 0;
+// }
+// section.normal {
+//     text-align: left;
+// }
 
+// .content-container {
+//     margin-top: 25px;
+// }
+// /*
+  
+
+.help:before {
+    background: url("./../site/img/Main-banner-homepage-xl.jpg");
+}
+
+.featured-bg-image {
+    position: relative;
+    /* background-color: #222222; */
+    background-color: gray;
+    color: white;
+    min-height: 500px;
+}
+.featured-bg-image:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    // opacity: .35;
+
+    // background-size: cover;
+    // background-position: top center;
+    // background-repeat: no-repeat;
+    min-height: 562px;
+}
+/* Utilities
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.u-full-width {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.text-center {
+    text-align: center !important;
+}
+.py-3 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+hr.center-line {
+    background: #33cccc;
+}
+
+hr.center-line {
+    border: 0;
+    height: 3px;
+    width: 185px;
+    position: relative;
+    margin: 1.65em auto;
+    opacity: 1;
+}
+body H1 {
+    font-family: Verdana;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.6em;
+    line-height: 1.75em;
+}
+.lead {
+    font-size: 1em;
+    font-weight: bold;
+    // font-family: Verdana;
+    color: #495057;
+    margin: 0;
+}
+
+.mt-4 {
+    margin-top: 1.5rem !important;
+}
+.text-left {
+    text-align: left!important;
+}
 
 
 
@@ -247,8 +359,6 @@ svg,
     }
 }
 
-
-
 .navbar {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -283,4 +393,3 @@ svg,
 .navbar-item img {
     max-height: 6rem;
 }
-

@@ -1,5 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import "./assets/scss/main-styles.scss";
+import FontAwesomeIcon from "@/utilities/fontawesome";
 
-createApp(App).mount("#app");
+createApp(App).component("fa", FontAwesomeIcon).mount("#app");
