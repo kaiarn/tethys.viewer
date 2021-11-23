@@ -48,3 +48,9 @@ npm install --save class-transformer
 npm install --save @fortawesome/vue-fontawesome@prerelease
 npm install --save @fortawesome/fontawesome-svg-core
 npm install --save @fortawesome/free-solid-svg-icons
+
+
+
+======================= router ================================
+https://www.vuemastery.com/blog/vue-router-a-tutorial-for-vue-3/
+npm install --save vue-router@next

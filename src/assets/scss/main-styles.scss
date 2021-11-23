@@ -378,7 +378,7 @@ svg,
 .navbar-light .navbar-link:hover {
     color: rgba(0, 0, 0, 0.7);
 }
-.navbar-link.active,
+.navbar-link.router-link-active,
 .navbar-link:hover {
     border-bottom: 2px solid #33cccc;
     background-color: #fff;
