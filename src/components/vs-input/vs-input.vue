@@ -55,7 +55,7 @@ import VsInput from "./vs-input";
 export default VsInput;
 </script>
 
-<style>
+<style lang="scss" scoped>
 .autocomplete-column {
     display: block;
     flex-basis: 0;

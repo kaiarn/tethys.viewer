@@ -1,5 +1,5 @@
 <template>
-    <div id="page_style" class="rows site-content page__style page__description" autocomplete="off">
+    <div id="page_style" class="site-content page__style page__description" autocomplete="off">
         <!-- <div class="col-6 offset-6 content column is-half is-offset-6" style="text-align: right">
             <a class="button" href="/test" target="_self">
                 <img class="icon-spacing" src="./assets/fa/firefox.svg" style="width: 16px; height: 16px" />
@@ -55,149 +55,184 @@
                 <hr class="center-line" />
             </div>
         </div> -->
-        <section class="section">
-            <div class="column is-full text-center">
-                <h1>ÜBER TETHYS</h1>
-                <p class="lead">Was sind unsere Schwerpunkte</p>
-                <hr class="center-line" />
-            </div>
-            <div class="column is-full text-left">
-                <p>
-                    TETHYS RDR ist ein publizierendes Forschungsdatenrepositorium der Geologischen Bundesanstalt (GBA), das an der GBA generierte geowisse nschaftliche
-                    Forschungsdaten veröffentlicht.
-                </p>
-                <p>
-                    Zum derzeitigen Stand wird TETHYS RDR in deutscher Sprache bereitgestellt. Die englische Version befindet sich in Vorbereitung und wird sukzessive ebenfalls zur
-                    Verfügung gestellt. Die Forschungsdatenpublikationen und die dazugehörigen Metadaten können in Deutsch und in Englisch veröffentlicht werden. Tethys RDR hat den
-                    Anspruch, publizierte Datensätze unverändert, langfristig und nachhaltig bereitzustellen. Dadurch ist Tethys ein Forschungsdatenrepositorium, das ein
-                    permanentes Referenzieren ermöglicht und somit die darin publizierten Datensätze zitierfähig macht.
-                </p>
-                <p>
-                    Der Name Tethys kommt ursprünglich aus der griechischen Mythologie und benennt eine Titanin und Meeresgöttin. Ende des 19. Jahrhunderts entdeckte Eduard Suess
-                    (1831–1914), ein bedeutender österreichischer Geologe, den mesozoischen Ozean und benannte ihn nach dieser Tethys.
-                </p>
-            </div>
-        </section>
 
-        <vs-input v-on:search-change="onSearch" v-bind:placeholder="'Enter your search term...'"></vs-input>
-
-        <div class="column is-half is-offset-one-quarter" style="padding-top: 0; margin-top: 0">
-            <!-- <div class="tabs is-centered">
-                <ul id="id-results-tabs">
-                    <li class="search_tab is-active">
-                        <a target="_self">Web</a>
-                    </li>
-                    <li class="search_tab">
-                        <a target="_self">Images</a>
-                    </li>
-                    <li class="search_tab">
-                        <a target="_self">Videos</a>
-                    </li>
-                    <li class="search_tab">
-                        <a target="_self">Homepages</a>
-                    </li>
-                    <li class="search_tab">
-                        <a target="_self">Food</a>
-                    </li>
-                    <li class="search_tab">
-                        <a target="_self">Books</a>
-                    </li>
-                </ul>
-            </div> -->
-            <div v-if="results.length > 0" class="result-list-info">
-                <div class="resultheader">
-                    Your search yielded
-                    <strong>{{ numFound }}</strong> results:
+        <div class="container">
+            <section class="section">
+                <div class="column is-full text-center">
+                    <h1>ÜBER TETHYS</h1>
+                    <p class="lead">Was sind unsere Schwerpunkte</p>
+                    <hr class="center-line" />
                 </div>
-            </div>
-            <div v-else-if="results.length == 0">
-                <div class="resultheader">
-                    Your search yielded
-                    <strong> 0</strong> results:
+                <div class="column is-full text-left">
+                    <p>
+                        TETHYS RDR ist ein publizierendes Forschungsdatenrepositorium der Geologischen Bundesanstalt (GBA), das an der GBA generierte geowissenschaftliche
+                        Forschungsdaten veröffentlicht.
+                    </p>
+                    <p>
+                        Zum derzeitigen Stand wird TETHYS RDR in deutscher Sprache bereitgestellt. Die englische Version befindet sich in Vorbereitung und wird sukzessive ebenfalls
+                        zur Verfügung gestellt. Die Forschungsdatenpublikationen und die dazugehörigen Metadaten können in Deutsch und in Englisch veröffentlicht werden. Tethys RDR
+                        hat den Anspruch, publizierte Datensätze unverändert, langfristig und nachhaltig bereitzustellen. Dadurch ist Tethys ein Forschungsdatenrepositorium, das
+                        ein permanentes Referenzieren ermöglicht und somit die darin publizierten Datensätze zitierfähig macht.
+                    </p>
+                    <p>
+                        Der Name Tethys kommt ursprünglich aus der griechischen Mythologie und benennt eine Titanin und Meeresgöttin. Ende des 19. Jahrhunderts entdeckte Eduard
+                        Suess (1831–1914), ein bedeutender österreichischer Geologe, den mesozoischen Ozean und benannte ihn nach dieser Tethys.
+                    </p>
                 </div>
-            </div>
+            </section>
 
-            <!-- <div id="id-pro-sign-in" class="notification" style="">
-                    <button
-                        class="delete"
-                        onclick="dismissProNotification();"
-                    ></button>
-                    It appears that you're not signed in. You'll need to
-                    <a href="/pro" target="_self">signup for Pro</a> or become a
-                    <a
-                        href="https://coil.com/?ref=InfinitySearch2229"
-                        target="_self"
-                        >Coil member</a
-                    >
-                    to access our results.
-                </div> -->
+            <section class="section">
+                <div class="column is-full text-center">
+                    <h1>TETHYS SERVICES</h1>
+                    <p class="lead">Eine Übersicht unserer Dienstleistungen</p>
+                    <hr class="center-line" />
+                </div>
+                <div class="columns is-desktop work-items">
+                    <div class="column col-sm overlay-boxes">
+                        <div class="card overlay work-back">
+                            <img src="@/assets/site/img/box-1-hover.jpg" alt="Datenarchivierung" />
+                            <div class="card-body box-1-hover">
+                                <p class="text-white">
+                                    Tethys RDR publiziert und archiviert nach den FAIR Prinzipien* nachhaltig so wie sicher geowissenschaftliche Datensätze in offenen, frei
+                                    lesbaren Formaten. * FAIR data
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card green work-front">
+                            <img src="@/assets/site/img/box-1.jpg" alt="Datenarchivierung" />
+                            <div class="card-body box-1">
+                                <div class="custom-heading">DATENARCHIVIERUNG</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column col-sm overlay-boxes">
+                        <div class="card overlay work-back">
+                            <img src="@/assets/site/img/box-2-hover.jpg" alt="DATENPUBLIKATION" />
+                            <div class="card-body box-1-hover">
+                                <p class="text-white">
+                                    Die Datensätze werden mit standardisierten Metadatenschemen publiziert und sind somit nicht nur auffindbar, wiederverwendbar und auch
+                                    maschinenlesbar, sondern können dadurch auch einfach zitiert werden.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card green work-front">
+                            <img src="@/assets/site/img/box-2.jpg" alt="Datenpublikation" />
+                            <div class="card-body box-2">
+                                <div class="custom-heading">DATENPUBLIKATION</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column col-sm overlay-boxes">
+                        <div class="card overlay work-back">
+                            <img src="@/assets/site/img/box-3-hover.jpg" alt="BEGUTACHTUNG" />
+                            <div class="card-body box-1-hover">
+                                <p class="text-white">
+                                    Alle im Tethys RDR publizierten Datensätze werden auf technische sowie inhaltliche Vollständigkeit geprüft und werden bei Bedarf auch einer
+                                    fachlichen Begutachtung unterworfen. Ein klassischer Peer Review-Prozess ist in Vorbereitung.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card green work-front">
+                            <img src="@/assets/site/img/box-3.jpg" alt="BEGUTACHTUNG" />
+                            <div class="card-body box-3">
+                                <div class="custom-heading">BEGUTACHTUNG</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
 
-        <div class="columns">
-            <div id="id-side-bar" class="column is-4 sidebar_column" style="padding-top: 1.2rem; padding-right: 1.5rem">
-                <div id="externals" class="">
-                    <div class="card" v-for="(facetItems, key, index) in facets" :key="index" name="external_card" style="margin-bottom: 0px">
-                        <facet-category v-bind:facetItems="facetItems" v-bind:filterName="key" @filter="onFilter"></facet-category>
-                    </div>
-                    <!-- <div class="card" name="external_card" style="margin-bottom: 0px">
-                        <header class="card-header">
-                            <p class="card-header-title" style="font-weight: normal; padding-right: 5px">
-                                <a
-                                    id="https://en.wikipedia.org/w/index.php?search="
-                                    href="https://en.wikipedia.org/w/index.php?search=test"
-                                    name="external_link_0"
-                                    style="display: block"
-                                    rel="noreferrer noopener"
-                                    target="_self"
-                                >
-                                    <img src="/static/images/favicons/wikipedia.ico" name="external_icon_0'" class="external-icon" />
-                                    <span hidden="" class="external-text" name="external_text_0" style="font-size: 0.95rem; display: inline"> Wikipedia Results </span>
-                                </a>
-                            </p>
-                        </header>
-                    </div>
-                    <div class="card" name="external_card" style="margin-bottom: 0px">
-                        <header class="card-header">
-                            <p class="card-header-title" style="font-weight: normal; padding-right: 5px">
-                                <a
-                                    id="https://duckduckgo.com/?q="
-                                    href="https://duckduckgo.com/?q=test"
-                                    name="external_link_1"
-                                    style="display: block"
-                                    rel="noreferrer noopener"
-                                    target="_self"
-                                >
-                                    <img src="/static/images/favicons/duckduckgo.ico" name="external_icon_1'" class="external-icon" />
-                                    <span hidden="" class="external-text" name="external_text_1" style="font-size: 0.95rem; display: inline"> DuckDuckGo Results </span>
-                                </a>
-                            </p>
-                            <span
-                                class="clickableIcon"
-                                onclick="removeExternalClickable(this)"
-                                style="cursor: pointer; display: block; margin: auto; margin-right: 6px; min-width: 0.5em"
-                            >
-                                <img
-                                    class="handle fa-ellipsis-v"
-                                    src="/static/images/fa/ellipsis-v.svg"
-                                    style="cursor: pointer; display: block; margin: auto; margin-right: 12px; min-width: 0.5em; width: 16px; height: 16px"
-                                />
-                            </span>
-                        </header>
-                    </div> -->
-                </div>
-            </div>
+        <div class="clearfix mt-3"></div>
 
-            <div class="col col-8 column is-8 results_column" style="padding-top: 1.2rem; padding-right: 0.5rem">
-                <div class="column" v-if="activeFilterCategories && Object.keys(activeFilterCategories).length > 0">
-                    <span class="active-filter-items" v-for="(values, key, index) in activeFilterCategories" :key="index">
-                        <active-facet-category v-bind:filterItems="values" :categoryName="key" @clearFacetCategory="onClearFacetCategory"></active-facet-category>
-                    </span>
-                </div>
-                <div class="results">
-                    <!-- Results section -->
-                    <vs-result v-bind:datasets="results"></vs-result>
+        <div class="container-fluid page-breaker my-5">
+            <div class="container">
+                <div class="column col-sm text-center my-5">
+                    <h1 class="text-white">HABEN SIE FRAGEN?</h1>
+
+                    <p class="text-white text center p-5">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+                        gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                    </p>
+
+                    <div class="mx-auto my-5" style="width: 170px">
+                        <a class="button is-primary custom-button">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <strong>KONTAKT</strong>
+                        </a>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="columns is-mobile partner-logos">
+                <div class="column col-sm text-center">
+                    <img src="@/assets/site/img/re3-data-logo-mono.jpg" alt="re3 data logo" />
+                </div>
+                <div class="column col-sm text-center mobile-space">
+                    <img src="@/assets/site/img/geosphere-austria-logo.jpg" class="pb-3" alt="logo geosphere austria" />
+                </div>
+                <div class="column col-sm text-center">
+                    <img src="@/assets/site/img/placeholder-logo.jpg" alt="logo placeholder" />
+                </div>
+            </div>
+        </div>
+
+        <footer class="container-fluid">
+            <div class="columns">
+                <div class="column col-sm">
+                    <div class="card mx-auto" style="width: 18rem">
+                        <div class="card-body">
+                            <h5 class="card-title">About TETHYS</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><a href="#">OAI</a></li>
+                                <li class="list-group-item"><a href="#">About GBA</a></li>
+                                <li class="list-group-item"><a href="#">News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="column col-sm">
+                    <div class="card mx-auto" style="width: 18rem">
+                        <div class="card-body">
+                            <h5 class="card-title">Tools and Support</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><a href="#">Contact</a></li>
+                                <li class="list-group-item"><a href="#">Impressum</a></li>
+                                <li class="list-group-item"><a href="#">Sitelinks</a></li>
+                                <li class="list-group-item"><a href="#">Terms &amp; Conditions</a></li>
+                                <li class="list-group-item"><a href="#">rdr bei GitHub</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="column col-sm">
+                    <div class="card mx-auto" style="width: 18rem">
+                        <div class="card-body">
+                            <h5 class="card-title">Connect with us</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <a href="#"><i class="fas fa-home pr-2"></i>GBA</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#"><i class="fas fa-phone-alt pr-2"></i> +43-1-7125674</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="mailto:repository@geologie.ac.at"><i class="fas fa-envelope pr-2"></i> repository(at)geologie.ac.at </a>
+                                </li>
+                            </ul>
+                            <img class="img-fluid pt-4" src="@/assets/site/img/geologische-bundesanstalt-logo.jpg" alt="Geologische Bundesanstalt logo" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="container-fluid">
+            <div class="copyright-notice">Copyright 2021 TETHYS RDR</div>
         </div>
     </div>
 </template>
@@ -209,5 +244,5 @@ export default HomeViewComponent;
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-@import "./home-view-component.scss"; // $text-primary would be defined in that file
+@import "./home-view-component.scss";
 </style>

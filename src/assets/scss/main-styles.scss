@@ -26,15 +26,21 @@
         font-size: 0.9em;       
         text-decoration: none;
         border: 1px solid transparent;
+        // .fas {
+        //     margin-right: 0.6em;
+        //     // border-right: 1px solid #fff;
+        //    width: 2em;
+          
+        // };
         .fas {
             margin-right: 0.6em;
-            // border-right: 1px solid #fff;
-           width: 2em;
+            border-right: 1px solid #fff;
+            padding: 0.6em;
         };
-        strong {
-            border-left: 1px solid #fff;
-            padding-left: 0.6em;
-        }
+        // strong {
+        //     border-left: 1px solid #fff;
+        //     padding-left: 0.6em;
+        // }
     }
 }
 

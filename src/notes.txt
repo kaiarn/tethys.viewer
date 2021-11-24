@@ -44,10 +44,16 @@ npm install --save qs
 
 npm install --save class-transformer
 
+===== font-awsome =============================================
 
 npm install --save @fortawesome/vue-fontawesome@prerelease
 npm install --save @fortawesome/fontawesome-svg-core
 npm install --save @fortawesome/free-solid-svg-icons
+
+besser:
+npm install --save @fortawesome/fontawesome-free
+inside main.ts:
+import "@fortawesome/fontawesome-free/css/all.css";
 
 
 

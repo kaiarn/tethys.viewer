@@ -23,14 +23,15 @@
             <ul class="navbar-start" style="flex-grow: 1; justify-content: center">
                 <li class="navbar-item">
                     <!-- <a class="navbar-link is-arrowless active" href="#">STARTSEITE</a> -->
-                    <router-link class="navbar-link is-arrowless active" to="/test/">STARTSEITE</router-link>
+                    <router-link class="navbar-link is-arrowless" to="/test/">STARTSEITE</router-link>
                 </li>
                 <li class="navbar-item">
                     <!-- <a class="navbar-link is-arrowless" href="#">INTRO</a> -->
-                    <router-link class="navbar-link is-arrowless active" to="/test/map">INTRO</router-link>
+                    <router-link class="navbar-link is-arrowless" to="/test/map">INTRO</router-link>
                 </li>
                 <li class="navbar-item">
-                    <a class="navbar-link is-arrowless" href="#">SEARCH</a>
+                    <!-- <a class="navbar-link is-arrowless" href="#">SEARCH</a> -->
+                    <router-link class="navbar-link is-arrowless" to="/test/search">SEARCH</router-link>
                 </li>
                 <li class="navbar-item">
                     <a class="navbar-link is-arrowless" href="#">SERVICES</a>
@@ -48,9 +49,8 @@
                 <div class="navbar-item">
                     <div class="buttons">
                         <a class="button is-primary custom-button">
-                            <!-- <span class="icon is-small"> -->
-                            <!-- <i class="fas fa-sign-in-alt"></i> -->
-                            <fa :icon="['fas', 'phone']" class="fas fa-sign-in-alt" />
+                            <i class="fas fa-sign-in-alt"></i>
+                            <!-- <fa :icon="['fas', 'phone']" class="fas fa-sign-in-alt" /> -->
                             <!-- </span> -->
                             <strong>Sign in</strong>
                         </a>
@@ -82,7 +82,7 @@ import App from "./app";
 export default App;
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 // #app {
 //   font-family: Avenir, Helvetica, Arial, sans-serif;
 //   -webkit-font-smoothing: antialiased;

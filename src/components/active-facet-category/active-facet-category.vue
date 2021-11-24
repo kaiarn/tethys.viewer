@@ -13,7 +13,7 @@ import ActiveFacetCategory from "./ActiveFacetCategory";
 export default ActiveFacetCategory;
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 th,
 td {
     border-bottom: 0px solid #e1e1e1;

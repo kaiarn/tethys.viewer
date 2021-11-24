@@ -59,7 +59,7 @@ import VsResults from "./vs-result";
 export default VsResults;
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 /* overflow for abstracts */
 .clamped {
     line-height: 1.5;
