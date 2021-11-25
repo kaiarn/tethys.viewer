@@ -87,7 +87,7 @@
                     <p class="lead">Eine Übersicht unserer Dienstleistungen</p>
                     <hr class="center-line" />
                 </div>
-                <div class="columns is-desktop work-items">
+                <div class="columns is-tablet work-items">
                     <div class="column col-sm overlay-boxes">
                         <div class="card overlay work-back">
                             <img src="@/assets/site/img/box-1-hover.jpg" alt="Datenarchivierung" />

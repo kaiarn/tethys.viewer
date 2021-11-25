@@ -2,8 +2,8 @@ import { Options, Vue } from "vue-class-component";
 // import { Prop } from "vue-property-decorator";
 
 @Options({
-    name: "MapViewComponent",
+    name: "HelpViewComponent",
 })
-export default class MapViewComponent extends Vue {
+export default class HelpViewComponent extends Vue {
     results: Array<any> = [];
 }

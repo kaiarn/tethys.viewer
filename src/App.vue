@@ -26,21 +26,23 @@
                     <router-link class="navbar-link is-arrowless" to="/test/">STARTSEITE</router-link>
                 </li>
                 <li class="navbar-item">
-                    <!-- <a class="navbar-link is-arrowless" href="#">INTRO</a> -->
-                    <router-link class="navbar-link is-arrowless" to="/test/map">INTRO</router-link>
-                </li>
-                <li class="navbar-item">
                     <!-- <a class="navbar-link is-arrowless" href="#">SEARCH</a> -->
                     <router-link class="navbar-link is-arrowless" to="/test/search">SEARCH</router-link>
                 </li>
                 <li class="navbar-item">
-                    <a class="navbar-link is-arrowless" href="#">SERVICES</a>
+                    <!-- <a class="navbar-link is-arrowless" href="#">SERVICES</a> -->
+                    <router-link class="navbar-link is-arrowless" to="/test/services">SERVICES</router-link>
                 </li>
                 <li class="navbar-item">
+                    <!-- <a class="navbar-link is-arrowless" href="#">INTRO</a> -->
+                    <router-link class="navbar-link is-arrowless" to="/test/help">HELP</router-link>
+                </li>
+                <!-- <li class="navbar-item">
                     <a class="navbar-link is-arrowless" href="#">HELP</a>
-                </li>
+                </li> -->
                 <li class="navbar-item">
-                    <a class="navbar-link is-arrowless" href="#">OAI</a>
+                    <!-- <a class="navbar-link is-arrowless" href="#">OAI</a> -->
+                    <router-link class="navbar-link is-arrowless" to="/test/oai">OAI</router-link>
                 </li>
                 <!-- 
                 <a href="#" class="custom-btn"><i class="fas fa-sign-in-alt"></i>SIGN IN</a> -->
@@ -97,7 +99,7 @@ export default App;
     p,
     ol,
     ul,
-    li,
+    // li,
     dl,
     textarea,
     h1,
