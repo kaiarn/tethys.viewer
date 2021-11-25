@@ -9,11 +9,11 @@
     /> -->
     <nav class="navbar navbar-light border-bottom" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="#">
+            <a class="navbar-item" href="http://geomon.geologie.ac.at/" target="_blank">
                 <!-- <img src="./assets/images/TETHYS-Logo.svg" width="240px" height="86" alt="TETHYS Logo" /> -->
                 <img src="./assets/images/TETHYS-Logo.svg" width="240" height="86" />
             </a>
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <a id="menu-icon" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -64,7 +64,7 @@
     </nav>
 
     <!-- <home-view-component></home-view-component> -->
-    <router-view />
+    <router-view></router-view>
 
     <!-- <vs-input
         @search="onSearch"
