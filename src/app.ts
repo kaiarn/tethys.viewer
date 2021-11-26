@@ -1,4 +1,6 @@
 import { Options, Vue } from "vue-class-component";
+import { Watch } from "vue-property-decorator";
+import { RouteLocation } from "vue-router";
 import HelloWorld from "./components/HelloWorld/HelloWorld.vue";
 import HomeViewComponent from "./views/home-view/home-view-component.vue";
 import HelpViewComponent from "./views/map-view/help-view-component.vue";
@@ -16,6 +18,7 @@ import OaiViewComponent from "./views/oai-view/oai-view-component.vue";
 // import { SolrResponse, FacetFields, FacetItem, FacetResults, FacetInstance } from "./models/headers";
 // import { ActiveFilterCategories } from "@/models/solr";
 
+// https://devsoniq.com/how-to-toggle-bulma-css-navbar-in-your-vue-js-project/
 @Options({
     components: {
         HelloWorld,
@@ -31,22 +34,35 @@ import OaiViewComponent from "./views/oai-view/oai-view-component.vue";
     },
 })
 export default class App extends Vue {
-    mounted(): void {
-        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll(".navbar-burger"), 0);
-        // Check if there are any navbar burgers
-        if ($navbarBurgers.length > 0) {
-            // Add a click event on each of them
-            $navbarBurgers.forEach((el) => {
-                el.addEventListener("click", () => {
-                    // Get the target from the "data-target" attribute
-                    const target = el.dataset.target;
-                    const $target = document.getElementById(target);
+    public active = false;
 
-                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-                    el.classList.toggle("is-active");
-                    $target?.classList.toggle("is-active");
-                });
-            });
-        }
+    mounted(): void {
+        // const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll(".navbar-burger"), 0);
+        // // Check if there are any navbar burgers
+        // if ($navbarBurgers.length > 0) {
+        //     // Add a click event on each of them
+        //     $navbarBurgers.forEach((elNavBurger) => {
+        //         elNavBurger.addEventListener("click", () => {
+        //             // Get the target from the "data-target" attribute
+        //             const targetNavbar = elNavBurger.dataset.target;
+        //             const $target = document.getElementById(targetNavbar);
+        //             // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        //             elNavBurger.classList.toggle("is-active");
+        //             $target?.classList.toggle("is-active");
+        //         });
+        //     });
+        // }
+    }
+
+    public showMobilemenu(event: PointerEvent): void {
+        // Don't follow the link
+        event.preventDefault();
+        this.active = !this.active;
+    }
+
+    @Watch("$route")
+    protected oRouteChangedChanged(to: RouteLocation, from: RouteLocation): any {
+        // console.log("setting " + from.path + " to " + to.path);
+        this.active = false;
     }
 }

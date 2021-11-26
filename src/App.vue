@@ -13,36 +13,36 @@
                 <!-- <img src="./assets/images/TETHYS-Logo.svg" width="240px" height="86" alt="TETHYS Logo" /> -->
                 <img src="./assets/images/TETHYS-Logo.svg" width="240" height="86" />
             </a>
-            <a id="menu-icon" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+            <a id="menu-icon" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" :class="active ? 'is-active' : ''" @click="showMobilemenu">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
         </div>
-        <div id="navMenu" class="navbar-menu">
+        <div id="navMenu" class="navbar-menu" :class="active ? 'is-active' : ''">
             <ul class="navbar-start" style="flex-grow: 1; justify-content: center">
                 <li class="navbar-item">
                     <!-- <a class="navbar-link is-arrowless active" href="#">STARTSEITE</a> -->
-                    <router-link class="navbar-link is-arrowless" to="/test/">STARTSEITE</router-link>
+                    <router-link class="navbar-link is-arrowless" to="/">STARTSEITE</router-link>
                 </li>
                 <li class="navbar-item">
                     <!-- <a class="navbar-link is-arrowless" href="#">SEARCH</a> -->
-                    <router-link class="navbar-link is-arrowless" to="/test/search">SEARCH</router-link>
+                    <router-link class="navbar-link is-arrowless" to="/search">SEARCH</router-link>
                 </li>
                 <li class="navbar-item">
                     <!-- <a class="navbar-link is-arrowless" href="#">SERVICES</a> -->
-                    <router-link class="navbar-link is-arrowless" to="/test/services">SERVICES</router-link>
+                    <router-link class="navbar-link is-arrowless" to="/services">SERVICES</router-link>
                 </li>
                 <li class="navbar-item">
                     <!-- <a class="navbar-link is-arrowless" href="#">INTRO</a> -->
-                    <router-link class="navbar-link is-arrowless" to="/test/help">HELP</router-link>
+                    <router-link class="navbar-link is-arrowless" to="/help">HELP</router-link>
                 </li>
                 <!-- <li class="navbar-item">
                     <a class="navbar-link is-arrowless" href="#">HELP</a>
                 </li> -->
                 <li class="navbar-item">
                     <!-- <a class="navbar-link is-arrowless" href="#">OAI</a> -->
-                    <router-link class="navbar-link is-arrowless" to="/test/oai">OAI</router-link>
+                    <router-link class="navbar-link is-arrowless" to="/oai">OAI</router-link>
                 </li>
                 <!-- 
                 <a href="#" class="custom-btn"><i class="fas fa-sign-in-alt"></i>SIGN IN</a> -->

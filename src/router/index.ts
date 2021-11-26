@@ -7,27 +7,27 @@ import OaiViewComponent from "@/views/oai-view/oai-view-component.vue";
 
 const routes = [
     {
-        path: "/test/",
+        path: "/",
         name: "Home",
         component: HomeViewComponent,
     },
     {
-        path: "/test/help",
+        path: "/help",
         name: "Help",
         component: HelpViewComponent,
     },
     {
-        path: "/test/search",
+        path: "/search",
         name: "Search",
         component: SearchViewComponent,
     },
     {
-        path: "/test/services",
+        path: "/services",
         name: "Services",
         component: ServiceViewComponent,
     },
     {
-        path: "/test/oai",
+        path: "/oai",
         name: "Oai",
         component: OaiViewComponent,
     },

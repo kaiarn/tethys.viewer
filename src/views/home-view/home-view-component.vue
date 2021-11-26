@@ -87,7 +87,7 @@
                     <p class="lead">Eine Übersicht unserer Dienstleistungen</p>
                     <hr class="center-line" />
                 </div>
-                <div class="columns is-tablet work-items">
+                <div class="columns is-desktop work-items">
                     <div class="column col-sm overlay-boxes">
                         <div class="card overlay work-back">
                             <img src="@/assets/site/img/box-1-hover.jpg" alt="Datenarchivierung" />
@@ -200,11 +200,21 @@
                         <div class="card-body">
                             <h5 class="card-title">Tools and Support</h5>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><a href="#">Contact</a></li>
-                                <li class="list-group-item"><a href="#">Impressum</a></li>
-                                <li class="list-group-item"><a href="#">Sitelinks</a></li>
-                                <li class="list-group-item"><a href="#">Terms &amp; Conditions</a></li>
-                                <li class="list-group-item"><a href="#">rdr bei GitHub</a></li>
+                                <li class="list-group-item">
+                                    <a href="#"><i class="far fa-id-card"></i> Contact</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#"><i class="fas fa-stamp"></i> Impressum</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#"><i class="fas fa-link"></i> Sitelinks</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#"><i class="far fa-file-alt"></i> Terms &amp; Conditions</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a target="_blank" href="https://github.com/geolba/tethys"><i class="fab fa-github"></i> rdr bei GitHub</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -215,7 +225,7 @@
                             <h5 class="card-title">Connect with us</h5>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <a href="#"><i class="fas fa-home pr-2"></i>GBA</a>
+                                    <a target="_blank" href="https://www.geologie.ac.at/"><i class="fas fa-home pr-2"></i>GBA</a>
                                 </li>
                                 <li class="list-group-item">
                                     <a href="#"><i class="fas fa-phone-alt pr-2"></i> +43-1-7125674</a>
