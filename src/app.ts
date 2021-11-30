@@ -7,6 +7,8 @@ import HelpViewComponent from "./views/map-view/help-view-component.vue";
 import SearchViewComponent from "./views/search-view/search-view-component.vue";
 import ServiceViewComponent from "./views/services-view/service-view-component.vue";
 import OaiViewComponent from "./views/oai-view/oai-view-component.vue";
+import ContactViewComponent from "./views/contact-view/contact-view-component.vue";
+import { VUE_APP_PORTAL } from "./constants";
 // import VsInput from "./components/vs-input/vs-input.vue";
 // import VsResult from "./components/vs-result/vs-result.vue";
 // import FacetCategory from "./components/face-category/facet-category.vue";
@@ -31,10 +33,12 @@ import OaiViewComponent from "./views/oai-view/oai-view-component.vue";
         SearchViewComponent,
         ServiceViewComponent,
         OaiViewComponent,
+        ContactViewComponent,
     },
 })
 export default class App extends Vue {
     public active = false;
+    public portal = VUE_APP_PORTAL;
 
     mounted(): void {
         // const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll(".navbar-burger"), 0);

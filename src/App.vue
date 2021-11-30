@@ -9,7 +9,7 @@
     /> -->
     <nav class="navbar navbar-light border-bottom" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="http://geomon.geologie.ac.at/" target="_blank">
+            <a class="navbar-item" href="http://www.geologie.ac.at/" target="_blank">
                 <!-- <img src="./assets/images/TETHYS-Logo.svg" width="240px" height="86" alt="TETHYS Logo" /> -->
                 <img src="./assets/images/TETHYS-Logo.svg" width="240" height="86" />
             </a>
@@ -50,7 +50,7 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button is-primary custom-button">
+                        <a v-bind:href="portal" class="button is-primary custom-button">
                             <i class="fas fa-sign-in-alt"></i>
                             <!-- <fa :icon="['fas', 'phone']" class="fas fa-sign-in-alt" /> -->
                             <!-- </span> -->

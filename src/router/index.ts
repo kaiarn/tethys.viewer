@@ -4,6 +4,7 @@ import HelpViewComponent from "@/views/map-view/help-view-component.vue";
 import SearchViewComponent from "@/views/search-view/search-view-component";
 import ServiceViewComponent from "@/views/services-view/service-view-component.vue";
 import OaiViewComponent from "@/views/oai-view/oai-view-component.vue";
+import ContactViewComponent from "@/views/contact-view/contact-view-component.vue";
 
 const routes = [
     {
@@ -30,6 +31,11 @@ const routes = [
         path: "/oai",
         name: "Oai",
         component: OaiViewComponent,
+    },
+    {
+        path: "/contact",
+        name: "Contact",
+        component: ContactViewComponent,
     },
 ];
 

@@ -188,9 +188,10 @@
                         <div class="card-body">
                             <h5 class="card-title">About TETHYS</h5>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><a href="#">OAI</a></li>
-                                <li class="list-group-item"><a href="#">About GBA</a></li>
-                                <li class="list-group-item"><a href="#">News</a></li>
+                                <!-- <li class="list-group-item"><a href="#">OAI</a></li> -->
+                                <li class="list-group-item"><router-link to="/oai">OAI</router-link></li>
+                                <li class="list-group-item"><a href="https://www.geologie.ac.at/" target="_blank">About GBA</a></li>
+                                <li class="list-group-item"><a href="https://www.geologie.ac.at/news/news" target="_blank">News</a></li>
                             </ul>
                         </div>
                     </div>
@@ -201,7 +202,8 @@
                             <h5 class="card-title">Tools and Support</h5>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <a href="#"><i class="far fa-id-card"></i> Contact</a>
+                                    <!-- <a href="#"><i class="far fa-id-card"></i> Contact</a> -->
+                                    <router-link to="/contact"><i class="far fa-id-card"></i> Contact</router-link>
                                 </li>
                                 <li class="list-group-item">
                                     <a href="#"><i class="fas fa-stamp"></i> Impressum</a>
