@@ -5,6 +5,7 @@ import SearchViewComponent from "@/views/search-view/search-view-component";
 import ServiceViewComponent from "@/views/services-view/service-view-component.vue";
 import OaiViewComponent from "@/views/oai-view/oai-view-component.vue";
 import ContactViewComponent from "@/views/contact-view/contact-view-component.vue";
+import SitelinkViewComponent from "@/views/sitelink-view/sitelink-view-component.vue";
 
 const routes = [
     {
@@ -36,6 +37,11 @@ const routes = [
         path: "/contact",
         name: "Contact",
         component: ContactViewComponent,
+    },
+    {
+        path: "/sitelinks",
+        name: "Sitelinks",
+        component: SitelinkViewComponent,
     },
 ];
 

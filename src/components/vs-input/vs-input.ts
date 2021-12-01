@@ -1,7 +1,8 @@
 // import Vue from "vue";
 // import { Component, Prop } from 'vue-property-decorator';
 // import debounce from 'lodash/debounce';
-import { DatasetService } from "../../services/dataset.service";
+// import { DatasetService } from "../../services/dataset.service";
+import DatasetService from "../../services/dataset.service";
 import { SolrSettings } from "@/models/solr";
 // import { ref } from "vue";
 import { Options, Vue } from "vue-class-component";
@@ -29,7 +30,7 @@ export default class VsInput extends Vue {
         core: "rdr_data", // SOLR.core;
         host: "tethys.at",
     };
-    private rdrAPI!: DatasetService;
+    // private rdrAPI!: DatasetService;
     itemRefs!: Array<any>;
     emits = ["filter"];
 
@@ -42,7 +43,7 @@ export default class VsInput extends Vue {
     }
 
     mounted() {
-        this.rdrAPI = new DatasetService();
+        // this.rdrAPI = new DatasetService();
     }
 
     get showResults(): boolean {
@@ -146,7 +147,7 @@ export default class VsInput extends Vue {
     }
 
     private request(): void {
-        this.rdrAPI.searchTerm(this.display, this.solr.core, this.solr.host).subscribe(
+        DatasetService.searchTerm(this.display, this.solr.core, this.solr.host).subscribe(
             (res: Dataset[]) => this.dataHandler(res),
             (error: any) => this.errorHandler(error),
             () => (this.loading = false),

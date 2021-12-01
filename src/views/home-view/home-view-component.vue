@@ -209,7 +209,8 @@
                                     <a href="#"><i class="fas fa-stamp"></i> Impressum</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="#"><i class="fas fa-link"></i> Sitelinks</a>
+                                    <!-- <a href="#"><i class="fas fa-link"></i> Sitelinks</a> -->
+                                    <router-link to="/sitelinks"><i class="fas fa-link"></i> Sitelinks</router-link>
                                 </li>
                                 <li class="list-group-item">
                                     <a href="#"><i class="far fa-file-alt"></i> Terms &amp; Conditions</a>

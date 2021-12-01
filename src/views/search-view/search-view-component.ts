@@ -4,7 +4,8 @@ import VsResult from "@/components/vs-result/vs-result.vue";
 import FacetCategory from "@/components/face-category/facet-category.vue";
 import ActiveFacetCategory from "@/components/active-facet-category/active-facet-category.vue";
 import { SolrSettings } from "@/models/solr";
-import { DatasetService } from "@/services/dataset.service";
+// import { DatasetService } from "@/services/dataset.service";
+import DatasetService from "../../services/dataset.service";
 import { Suggestion, Dataset } from "@/models/dataset";
 import { SolrResponse, FacetFields, FacetItem, FacetResults, FacetInstance } from "@/models/headers";
 import { ActiveFilterCategories } from "@/models/solr";
@@ -39,11 +40,11 @@ export default class SearchViewComponent extends Vue {
         core: "rdr_data", // SOLR.core;
         host: "tethys.at",
     };
-    private rdrAPI!: DatasetService;
+    // private rdrAPI!: DatasetService;
     private error = "";
 
     mounted(): void {
-        this.rdrAPI = new DatasetService();
+        // this.rdrAPI = new DatasetService();
     }
 
     // onSearch(term: string): void {
@@ -68,7 +69,7 @@ export default class SearchViewComponent extends Vue {
 
         // this.facets = {};
         this.searchTerm = suggestion;
-        this.rdrAPI.facetedSearch(suggestion, this.activeFilterCategories, this.solr.core, this.solr.host, undefined).subscribe(
+        DatasetService.facetedSearch(suggestion, this.activeFilterCategories, this.solr.core, this.solr.host, undefined).subscribe(
             (res: SolrResponse) => this.dataHandler(res),
             (error: any) => this.errorHandler(error),
         );
@@ -152,7 +153,7 @@ export default class SearchViewComponent extends Vue {
         if (!this.activeFilterCategories[facetItem.category].some((e) => e === facetItem.val)) {
             this.activeFilterCategories[facetItem.category].push(facetItem.val);
 
-            this.rdrAPI.facetedSearch(this.searchTerm, this.activeFilterCategories, this.solr.core, this.solr.host, undefined).subscribe(
+            DatasetService.facetedSearch(this.searchTerm, this.activeFilterCategories, this.solr.core, this.solr.host, undefined).subscribe(
                 (res: SolrResponse) => this.dataHandler(res, facetItem),
                 (error: any) => this.errorHandler(error),
             );
@@ -198,7 +199,7 @@ export default class SearchViewComponent extends Vue {
         // alert(categoryName);
         delete this.activeFilterCategories[categoryName];
 
-        this.rdrAPI.facetedSearch(this.searchTerm, this.activeFilterCategories, this.solr.core, this.solr.host, undefined).subscribe(
+        DatasetService.facetedSearch(this.searchTerm, this.activeFilterCategories, this.solr.core, this.solr.host, undefined).subscribe(
             (res: SolrResponse) => {
                 this.results = res.response.docs;
                 this.numFound = res.response.numFound;

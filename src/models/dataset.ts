@@ -30,3 +30,28 @@ export enum SearchType {
     Author = "author",
     Subject = "subject",
 }
+
+export interface DbDataset {
+    id: number;
+    contributing_corporation: string;
+    creating_corporation: string;
+    publisher_name: string;
+    embargo_date: string;
+    publish_id: number;
+    project_id: number;
+    type: string;
+    language: string;
+    server_state: string;
+    belongs_to_bibliography: boolean;
+    created_at: string;
+    server_date_modified: string;
+    server_date_published: string;
+    account_id: number;
+    editor_id: number;
+    reviewer_id: number;
+    preferred_reviewer: number;
+    preferred_reviewer_email: string;
+    reject_editor_note: string;
+    reject_reviewer_note: string;
+    reviewer_note_visible: string;
+}

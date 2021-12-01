@@ -2,11 +2,12 @@
 import api from "../api/api";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
-import { Dataset, Suggestion } from "@/models/dataset";
+import { Dataset, DbDataset, Suggestion } from "@/models/dataset";
 import { SolrResponse } from "@/models/headers";
 import { ActiveFilterCategories } from "@/models/solr";
+import { VUE_APP_PORTAL } from "@/constants";
 
-export class DatasetService {
+class DatasetService {
     // for the autocomplete search
     public searchTerm(term: string, solrCore: string, solrHost: string): Observable<Dataset[]> {
         // solr endpoint
@@ -138,4 +139,27 @@ export class DatasetService {
 
         return stations;
     }
+
+    getYears(): Observable<string[]> {
+        // const heroes = of(HEROES);
+        const host = "https:" + VUE_APP_PORTAL;
+        const path = "/api/years";
+        const base = host + path;
+
+        const years = api.get<string[]>(base);
+        // this.messageService.add('HeroService: fetched heroes');
+        return years;
+    }
+
+    getDocuments(year: string): Observable<Array<DbDataset>> {
+        const host = "https:" + VUE_APP_PORTAL;
+        const path = "/api/sitelinks/" + year;
+        const base = host + path;
+
+        const documents = api.get<Array<DbDataset>>(base);
+        // this.messageService.add('HeroService: fetched heroes');
+        return documents;
+    }
 }
+
+export default new DatasetService();
