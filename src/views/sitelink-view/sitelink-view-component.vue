@@ -13,8 +13,8 @@
                     </a>
                 </span>
             </div> -->
-            <div class="columns is-mobile is-centered">
-                <div class="column is-6">
+            <div class="columns is-centered">
+                <div class="column is-6-desktop">
                     <div class="list" v-if="years.length > 0">
                         <ul class="block-list has-radius is-primary">
                             <li v-for="(year, index) in years" :key="index" :class="{ highlight: year == selected }" @click="select(year)">
@@ -24,8 +24,8 @@
                     </div>
                 </div>
             </div>
-            <div class="columns is-mobile is-centered">
-                <div class="column is-6">
+            <div class="columns is-centered">
+                <div class="column is-6-desktop">
                     <ol v-if="datasets.length > 0">
                         <li v-for="(dataset, index) in datasets" :key="index">
                             <div class="post">

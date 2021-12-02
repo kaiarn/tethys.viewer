@@ -206,7 +206,8 @@
                                     <router-link to="/contact"><i class="far fa-id-card"></i> Contact</router-link>
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="#"><i class="fas fa-stamp"></i> Impressum</a>
+                                    <!-- <a href="#"><i class="fas fa-stamp"></i> Impressum</a> -->
+                                    <router-link to="/imprint"><i class="fas fa-stamp"></i> Imprint</router-link>
                                 </li>
                                 <li class="list-group-item">
                                     <!-- <a href="#"><i class="fas fa-link"></i> Sitelinks</a> -->
