@@ -17,7 +17,7 @@
                     </div>
                     <div class="card-footer">
                         <p class="card-footer-item">
-                            <a class="button is-primary custom-button">
+                            <a href="/contact" class="button is-primary custom-button">
                                 <i class="fas fa-sign-in-alt"></i>
                                 <strong>KONTAKT</strong>
                             </a>
@@ -42,7 +42,7 @@
                     </div>
                     <div class="card-footer">
                         <p class="card-footer-item">
-                            <a class="button is-primary custom-button">
+                            <a href="/contact" class="button is-primary custom-button">
                                 <i class="fas fa-sign-in-alt"></i>
                                 <strong>KONTAKT</strong>
                             </a>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="card-footer">
                         <p class="card-footer-item">
-                            <a class="button is-primary custom-button">
+                            <a href="/contact" class="button is-primary custom-button">
                                 <i class="fas fa-sign-in-alt"></i>
                                 <strong>KONTAKT</strong>
                             </a>

@@ -153,7 +153,7 @@ import App from "./app";
 export default App;
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 // #app {
 //   font-family: Avenir, Helvetica, Arial, sans-serif;
 //   -webkit-font-smoothing: antialiased;

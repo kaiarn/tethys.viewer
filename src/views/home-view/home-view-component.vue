@@ -158,7 +158,8 @@
                     </p>
 
                     <div class="mx-auto my-5" style="width: 170px">
-                        <a class="button is-primary custom-button">
+                        <!-- <router-link to="/contact"><i class="far fa-id-card"></i> Contact</router-link> -->
+                        <a href="/contact" class="button is-primary custom-button">
                             <i class="fas fa-sign-in-alt"></i>
                             <strong>KONTAKT</strong>
                         </a>
