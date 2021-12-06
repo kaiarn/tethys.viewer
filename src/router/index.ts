@@ -7,6 +7,7 @@ import OaiViewComponent from "@/views/oai-view/oai-view-component.vue";
 import ContactViewComponent from "@/views/contact-view/contact-view-component.vue";
 import SitelinkViewComponent from "@/views/sitelink-view/sitelink-view-component.vue";
 import ImprintViewComponent from "@/views/imprint-view/imprint-view-component.vue";
+import TermsViewComponent from "@/views/terms-view/terms-view-component.vue";
 
 const routes = [
     {
@@ -48,6 +49,11 @@ const routes = [
         path: "/imprint",
         name: "Imprint",
         component: ImprintViewComponent,
+    },
+    {
+        path: "/terms-and-conditions",
+        name: "Terms",
+        component: TermsViewComponent,
     },
 ];
 
