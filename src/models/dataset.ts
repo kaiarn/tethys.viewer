@@ -54,4 +54,23 @@ export interface DbDataset {
     reject_editor_note: string;
     reject_reviewer_note: string;
     reviewer_note_visible: string;
+    titles: Array<Title>;
+    authors: Array<Author>;
+}
+
+export interface Title {
+    id: number;
+    type: string;
+    value: string;
+    language: string;
+}
+
+export interface Author {
+    id: number;
+    academic_title: string;
+    date_of_birth: string;
+    email: string;
+    first_name: string;
+    last_name: string;
+    name_type: string;
 }

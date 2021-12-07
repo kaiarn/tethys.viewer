@@ -55,9 +55,9 @@
         </div>
 
         <div class="columns">
-            <div id="id-side-bar" class="column is-4 sidebar_column" style="padding-top: 1.2rem; padding-right: 1.5rem">
+            <div id="id-side-bar" class="column is-4 sidebar_column" style="padding-top: 1.2rem; padding-right: 1.5rem; padding-left: 1.5rem">
                 <div id="externals" class="">
-                    <div class="card" v-for="(facetItems, key, index) in facets" :key="index" name="external_card" style="margin-bottom: 0px">
+                    <div v-for="(facetItems, key, index) in facets" :key="index" name="external_card" style="margin-bottom: 0px">
                         <facet-category v-bind:facetItems="facetItems" v-bind:filterName="key" @filter="onFilter"></facet-category>
                     </div>
                     <!-- <div class="card" name="external_card" style="margin-bottom: 0px">
@@ -108,7 +108,7 @@
                 </div>
             </div>
 
-            <div class="col col-8 column is-8 results_column" style="padding-top: 1.2rem; padding-right: 0.5rem">
+            <div class="col col-8 column is-8 results_column" style="padding-top: 1.2rem; padding-right: 1rem; padding-left: 1rem">
                 <div class="column" v-if="activeFilterCategories && Object.keys(activeFilterCategories).length > 0">
                     <span class="active-filter-items" v-for="(values, key, index) in activeFilterCategories" :key="index">
                         <active-facet-category v-bind:filterItems="values" :categoryName="key" @clearFacetCategory="onClearFacetCategory"></active-facet-category>

@@ -34,10 +34,10 @@ export default class FacetCategory extends Vue {
     get uncollapseLabelText(): string {
         if (this.collapsed == true) {
             // return myLabels.viewer.sidePanel.more; //"More results";
-            return "More results";
+            return "more";
         } else {
             // return myLabels.viewer.sidePanel.collapse; //"Collapse";
-            return "Collapse";
+            return "collapse";
         }
     }
 

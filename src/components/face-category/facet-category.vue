@@ -1,5 +1,5 @@
 <template>
-    <div class="panel panel-default">
+    <div class="card panel-default">
         <!-- <h3 class="panel-title filterViewModelName">{{ filterName }}</h3> -->
         <div class="panel-heading">
             <h3 class="panel-title titlecase filterViewModelName">{{ filterName }}</h3>
@@ -12,11 +12,24 @@
                     <span :class="item.active ? 'disabled' : ''" @click.prevent="activateItem(item)">{{ item.val }} ({{ item.count }}) </span>
                 </li>
             </ul>
-            <ul class="overflowing" v-if="overflowing == true">
+            <!-- <ul class="overflowing" v-if="overflowing == true">
                 <li>
                     <span @click="toggle()">{{ uncollapseLabelText }}</span>
                 </li>
-            </ul>
+            </ul> -->
+        </div>
+        <div class="card-footer" data-v-4fe33de2="">
+            <p class="card-footer-item" data-v-4fe33de2="">
+                <!-- <span @click="toggle()">{{ uncollapseLabelText }}</span> -->
+                <span v-if="collapsed" @click="toggle()">
+                    {{ uncollapseLabelText }}&nbsp;
+                    <i class="fa fa-angle-down"></i>
+                </span>
+                <span v-else @click="toggle()">
+                    {{ uncollapseLabelText }}&nbsp;
+                    <i class="fa fa-angle-up"></i>
+                </span>
+            </p>
         </div>
     </div>
 </template>
@@ -27,7 +40,50 @@ export default FacetCategory;
 </script>
 
 <style scoped>
+.card {
+    /* position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125); */
+    border-radius: 0;
+}
+
+/* .card-footer:last-child,
+.card-content:last-child,
+.card-header:last-child {
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+} */
+.card-footer {
+    background-color: transparent;
+    color: #33cccc;
+    /* border-top: 1px solid #ededed; */
+    /* align-items: stretch; */
+    /* display: flex; */
+}
+.card-footer-item {
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding: 0.75rem;
+    justify-content: left;
+}
+
 /* local styles */
+.panel-heading {
+    background-color: transparent;
+    color: #336699;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    text-transform: capitalize;
+}
+.panel-body {
+    padding: 0.75em 1em;
+}
 .disabled {
     /* color: #EBEBE4; */
     color: lightgray;

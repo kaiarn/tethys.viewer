@@ -79,7 +79,7 @@
     </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" scoped>
 import HelpViewComponent from "./help-view-component";
 export default HelpViewComponent;
 </script>

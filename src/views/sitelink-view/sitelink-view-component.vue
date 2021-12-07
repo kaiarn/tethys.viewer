@@ -34,6 +34,20 @@
                                         <a>{{ dataset.type }}; {{ dataset.publish_id }}</a>
                                     </h2>
                                 </header>
+                                <div class="blog-meta">
+                                    {{ dataset.server_date_published }}
+                                </div>
+                                <div class="post-description">
+                                    <!-- @foreach ($document->authors as $author) -->
+                                    <div v-for="(author, index) in dataset.authors" :key="index">
+                                        <em>Author: {{ author.full_name }}</em>
+                                        <br />
+                                    </div>
+                                    <div v-for="(title, index) in dataset.titles" :key="index">
+                                        <em>{{ title.type }}: {{ title.value }}</em>
+                                        <br />
+                                    </div>
+                                </div>
                             </div>
                         </li>
                     </ol>
