@@ -18,8 +18,8 @@
                 </li>
             </ul> -->
         </div>
-        <div class="card-footer" data-v-4fe33de2="">
-            <p class="card-footer-item" data-v-4fe33de2="">
+        <div class="card-footer" v-if="facetItems.length > 2">
+            <p class="card-footer-item">
                 <!-- <span @click="toggle()">{{ uncollapseLabelText }}</span> -->
                 <span v-if="collapsed" @click="toggle()">
                     {{ uncollapseLabelText }}&nbsp;
@@ -64,13 +64,15 @@ export default FacetCategory;
     /* border-top: 1px solid #ededed; */
     /* align-items: stretch; */
     /* display: flex; */
+    border: 0;
 }
 .card-footer-item {
     display: flex;
     flex-basis: 0;
     flex-grow: 1;
     flex-shrink: 0;
-    padding: 0.75rem;
+    /* padding: 0.75rem; */
+    padding: 0.75em 2em;
     justify-content: left;
 }
 
@@ -78,12 +80,13 @@ export default FacetCategory;
 .panel-heading {
     background-color: transparent;
     color: #336699;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.125); */
     text-transform: capitalize;
 }
 .panel-body {
-    padding: 0.75em 1em;
+    padding: 0 2em;
 }
+
 .disabled {
     /* color: #EBEBE4; */
     color: lightgray;
@@ -110,9 +113,5 @@ export default FacetCategory;
 
 ul.filter-items li span {
     cursor: pointer;
-    /* color:#ffffff;
-text-decoration: none;
-font-weight: bold;
-font-size: 16px; */
 }
 </style>
