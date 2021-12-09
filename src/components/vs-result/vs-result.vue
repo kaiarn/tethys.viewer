@@ -1,21 +1,20 @@
 <template>
-    <div class="column" v-for="document in results" :key="document.id">
+    <div v-for="document in results" :key="document.id">
         <div class="card result-list-container">
             <div class="card-content record-elem">
+                <p v-if="document.identifier && document.identifier.length > 0">
+                    <!-- <span>Author: {{ document.identifier.join(', ') }}</span> -->
+                    <!-- <span v-for="(author,index) in document.author" :key="index">{{ author }}; </span> -->
+                    <!-- <span>'https://doi.org/' + {{ document.identifier[0] }}</span> -->
+                    <a target="_blank" v-bind:href="'https://doi.org/' + document.identifier[0]"> {{ "https://doi.org/" + document.identifier[0] }} </a>&nbsp;
+                    <span v-if="document.author && document.author.length > 0">{{ document.author[0] }}</span>
+                </p>
+
                 <span class="label label-info" data-container="div" data-title="Publication date">
                     {{ convert(document.server_date_published) }}
                 </span>
                 <span class="label label-default ng-binding">{{ document.doctype }}</span>
                 <span v-if="openAccessLicences.includes(document.licence)" class="label label-success titlecase">Open Access</span>
-
-                <p v-if="document.identifier && document.identifier.length > 0">
-                    <!-- <span>Author: {{ document.identifier.join(', ') }}</span> -->
-                    <!-- <span v-for="(author,index) in document.author" :key="index">{{ author }}; </span> -->
-                    <!-- <span>'https://doi.org/' + {{ document.identifier[0] }}</span> -->
-                    <a target="_blank" v-bind:href="'https://doi.org/' + document.identifier[0]">
-                        {{ "https://doi.org/" + document.identifier[0] }}
-                    </a>
-                </p>
 
                 <h4>
                     <a
@@ -31,10 +30,10 @@
                     </a>
                 </h4>
 
-                <p v-if="document.author && document.author.length > 0">
-                    <!-- <span>Author: {{ document.author.join(', ') }}</span> -->
+                <!-- <p v-if="document.author && document.author.length > 0">
+                    <span>Author: {{ document.author.join(', ') }}</span>
                     <span v-for="(author, index) in document.author" :key="index">{{ author }}; </span>
-                </p>
+                </p> -->
 
                 <p class="clamped clamped-2">
                     <span class="text">
@@ -60,6 +59,12 @@ export default VsResults;
 </script>
 
 <style lang="scss" scoped>
+.card {
+    border-radius: 0;
+    /* rempve box-shadow */
+    box-shadow: none;
+}
+
 /* overflow for abstracts */
 .clamped {
     line-height: 1.5;
@@ -108,8 +113,9 @@ export default VsResults;
 /* .record-elem .h4, record-elem h4 {
     font-size: 18px;
 } */
+
 .record-elem p a {
-    color: #3ad29f;
+    color: #33cccc;
     font-size: 14px;
 }
 /* .record-elem h4 a {
@@ -122,7 +128,7 @@ export default VsResults;
     text-decoration: none;
     font-weight: bold;
     /* margin-left: 10px; */
-    font-size: 16px;
+    // font-size: 16px;
 }
 .record-elem h4 a:hover {
     color: #777;
@@ -133,9 +139,9 @@ export default VsResults;
 } */
 .record-elem .h4,
 .record-elem h4 {
-    font-size: 16px;
+    // font-size: 16px;
     letter-spacing: 0.05em;
-    margin-top: 8px;
+    // margin-top: 8px;
 }
 .record-detail h1,
 .record-detail p,

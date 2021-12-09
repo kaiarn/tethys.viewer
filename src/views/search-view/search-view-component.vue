@@ -120,6 +120,20 @@
                 </div>
             </div>
         </div>
+
+        <div class="container-fluid" style="padding-top: 3.8em">
+            <div class="columns is-mobile partner-logos">
+                <div class="column col-sm text-center">
+                    <img src="@/assets/site/img/re3-data-logo-mono.jpg" alt="re3 data logo" />
+                </div>
+                <div class="column col-sm text-center mobile-space">
+                    <img src="@/assets/site/img/geosphere-austria-logo.jpg" class="pb-3" alt="logo geosphere austria" />
+                </div>
+                <div class="column col-sm text-center">
+                    <img src="@/assets/site/img/placeholder-logo.jpg" alt="logo placeholder" />
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 

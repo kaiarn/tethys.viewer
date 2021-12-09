@@ -50,6 +50,8 @@ export default FacetCategory;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125); */
     border-radius: 0;
+    /* rempve box-shadow */
+    box-shadow: none;
 }
 
 /* .card-footer:last-child,
