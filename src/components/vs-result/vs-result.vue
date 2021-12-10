@@ -17,17 +17,18 @@
                 <span v-if="openAccessLicences.includes(document.licence)" class="label label-success titlecase">Open Access</span> -->
 
                 <h4>
-                    <a
+                    <!-- <a
                         v-if="document.identifier && document.identifier.length > 0"
                         target="_self"
                         v-bind:href="'https://doi.' + getDomainWithoutSubdomain() + '/' + document.identifier[0]"
                         class="ng-binding"
                     >
                         {{ document.title_output }}
-                    </a>
-                    <a v-else target="_self" v-bind:href="'dataset/' + document.id" class="ng-binding">
+                    </a> -->
+                    <!-- <a target="_self" v-bind:href="'dataset/' + document.id" class="ng-binding">
                         {{ document.title_output }}
-                    </a>
+                    </a> -->
+                    <router-link class="ng-binding" :to="{ name: 'dataset', params: { datasetId: document.id } }">{{ document.title_output }}</router-link>
                 </h4>
 
                 <!-- <p v-if="document.author && document.author.length > 0">

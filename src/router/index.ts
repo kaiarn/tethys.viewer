@@ -8,6 +8,7 @@ import ContactViewComponent from "@/views/contact-view/contact-view-component.vu
 import SitelinkViewComponent from "@/views/sitelink-view/sitelink-view-component.vue";
 import ImprintViewComponent from "@/views/imprint-view/imprint-view-component.vue";
 import TermsViewComponent from "@/views/terms-view/terms-view-component.vue";
+import DatasetDetailComponent from "@/views/dataset-detail.component.ts/dataset-detail.component.vue";
 
 const routes = [
     {
@@ -24,6 +25,12 @@ const routes = [
         path: "/search",
         name: "Search",
         component: SearchViewComponent,
+    },
+    {
+        path: "/dataset/:datasetId",
+        name: "dataset",
+        component: DatasetDetailComponent,
+        props: true,
     },
     {
         path: "/services",

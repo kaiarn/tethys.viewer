@@ -159,6 +159,16 @@ class DatasetService {
         // this.messageService.add('HeroService: fetched heroes');
         return documents;
     }
+
+    public getDataset(id: number): Observable<DbDataset> {
+        const host = "https:" + VUE_APP_PORTAL;
+        const path = "/api/dataset/" + id;
+        const base = host + path;
+
+        const dataset = api.get<DbDataset>(base);
+        // this.messageService.add('HeroService: fetched heroes');
+        return dataset;
+    }
 }
 
 export default new DatasetService();

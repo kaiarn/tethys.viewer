@@ -37,8 +37,10 @@ export default class SearchViewComponent extends Vue {
     loaded = false;
     numFound!: number;
     private solr: SolrSettings = {
-        core: "rdr_data", // SOLR.core;
-        host: "tethys.at",
+        // core: "rdr_data", // SOLR.core;
+        // host: "tethys.at",
+        core: "test_data", // SOLR.core;
+        host: "repository.geologie.ac.at",
     };
     // private rdrAPI!: DatasetService;
     private error = "";
