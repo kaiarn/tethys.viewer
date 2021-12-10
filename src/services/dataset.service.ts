@@ -1,4 +1,3 @@
-// import http from "@/http-common";
 import api from "../api/api";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
@@ -23,14 +22,14 @@ class DatasetService {
 
         //var dismaxFields = "title^3 abstract^2 subject^1";
         const qfFields = "title^3 author^2 subject^1";
-        let params = "fl=" + fields;
-        // if (term == "*%3A*") { // *:
-        //   params += "&defType=edismax&wt=json&indent=on"; //edismax
-        // } else {
-        params += "&defType=edismax&qf=" + qfFields + "&wt=json&indent=on"; //dismax
-        // }
+        // let params = "fl=" + fields;
+        // // if (term == "*%3A*") { // *:
+        // //   params += "&defType=edismax&wt=json&indent=on"; //edismax
+        // // } else {
+        // params += "&defType=edismax&qf=" + qfFields + "&wt=json&indent=on"; //dismax
+        // // }
 
-        const query = "&q=" + term + "*";
+        // const query = "&q=" + term + "*";
         // const apiU = base + params + query;
 
         const q_params = {
@@ -109,7 +108,7 @@ class DatasetService {
             }
             // filterFields += '"]';
         }
-        const query = "&sort=server_date_published desc" + "&q=" + term;
+        // const query = "&sort=server_date_published desc" + "&q=" + term;
 
         // const api =
         //     base + params + limit + start + query + filterFields + facetFields;
@@ -140,7 +139,7 @@ class DatasetService {
         return stations;
     }
 
-    getYears(): Observable<string[]> {
+    public getYears(): Observable<string[]> {
         // const heroes = of(HEROES);
         const host = "https:" + VUE_APP_PORTAL;
         const path = "/api/years";
@@ -151,7 +150,7 @@ class DatasetService {
         return years;
     }
 
-    getDocuments(year: string): Observable<Array<DbDataset>> {
+    public getDocuments(year: string): Observable<Array<DbDataset>> {
         const host = "https:" + VUE_APP_PORTAL;
         const path = "/api/sitelinks/" + year;
         const base = host + path;

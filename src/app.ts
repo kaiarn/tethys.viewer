@@ -1,6 +1,6 @@
 import { Options, Vue } from "vue-class-component";
 import { Watch } from "vue-property-decorator";
-import { RouteLocation } from "vue-router";
+// import { RouteLocation } from "vue-router";
 import HelloWorld from "./components/HelloWorld/HelloWorld.vue";
 import HomeViewComponent from "./views/home-view/home-view-component.vue";
 import HelpViewComponent from "./views/map-view/help-view-component.vue";
@@ -71,7 +71,8 @@ export default class App extends Vue {
     }
 
     @Watch("$route")
-    protected oRouteChangedChanged(to: RouteLocation, from: RouteLocation): any {
+    protected oRouteChangedChanged(): void {
+        //(to: RouteLocation, from: RouteLocation): void {
         // console.log("setting " + from.path + " to " + to.path);
         this.active = false;
     }

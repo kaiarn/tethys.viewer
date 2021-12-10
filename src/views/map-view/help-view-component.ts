@@ -5,5 +5,5 @@ import { Options, Vue } from "vue-class-component";
     name: "HelpViewComponent",
 })
 export default class HelpViewComponent extends Vue {
-    results: Array<any> = [];
+    // results: Array<any> = [];
 }

@@ -71,7 +71,7 @@ export default class VsInput extends Vue {
         const suggestions = new Array<Suggestion>();
 
         this.results.forEach((dataset) => {
-            const del = dataset.title_output?.toLowerCase();
+            // const del = dataset.title_output?.toLowerCase();
             if (dataset.title_output.toLowerCase().includes(this.display.toLowerCase())) {
                 const title = dataset.title_output;
                 // if (!suggestion["titles"].find((value) => value === title)) {

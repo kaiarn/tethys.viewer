@@ -12,7 +12,7 @@
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@openfonts/open-sans_all": "^1.44.2",
     "axios": "^0.24.0",
-    "class-transformer": "^0.4.0",
+    "class-transformer": "^0.5.1",
     "core-js": "^3.6.5",
     "qs": "^6.10.1",
     "rxjs": "^6.6.0",

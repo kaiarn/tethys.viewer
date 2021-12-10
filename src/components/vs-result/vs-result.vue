@@ -6,15 +6,15 @@
                     <!-- <span>Author: {{ document.identifier.join(', ') }}</span> -->
                     <!-- <span v-for="(author,index) in document.author" :key="index">{{ author }}; </span> -->
                     <!-- <span>'https://doi.org/' + {{ document.identifier[0] }}</span> -->
-                    <a target="_blank" v-bind:href="'https://doi.org/' + document.identifier[0]"> {{ "https://doi.org/" + document.identifier[0] }} </a>&nbsp;
-                    <span v-if="document.author && document.author.length > 0">{{ document.author[0] }}</span>
+                    <a target="_blank" v-bind:href="'https://doi.org/' + document.identifier[0]"> {{ "https://doi.org/" + document.identifier[0] + " &#10148;" }} </a>&nbsp;
+                    <span class="disabled" v-if="document.author && document.author.length > 0">{{ document.author[0] }}</span>
                 </p>
 
-                <span class="label label-info" data-container="div" data-title="Publication date">
+                <!-- <span class="label label-info" data-container="div" data-title="Publication date">
                     {{ convert(document.server_date_published) }}
                 </span>
                 <span class="label label-default ng-binding">{{ document.doctype }}</span>
-                <span v-if="openAccessLicences.includes(document.licence)" class="label label-success titlecase">Open Access</span>
+                <span v-if="openAccessLicences.includes(document.licence)" class="label label-success titlecase">Open Access</span> -->
 
                 <h4>
                     <a
@@ -36,18 +36,23 @@
                 </p> -->
 
                 <p class="clamped clamped-2">
+                    <span class="disabled" data-container="div" data-title="Publication date">
+                        {{ convert(document.server_date_published) + ":&nbsp;" }}
+                    </span>
                     <span class="text">
-                        Abstract: {{ document.abstract_output }}
+                        {{ document.abstract_output }}
                         <span class="ellipsis">...</span>
                         <span class="fill"></span>
                     </span>
                 </p>
 
                 <p>
-                    <span>Licence: {{ document.licence }}</span>
+                    <span class="label"><i class="fas fa-file"></i> {{ document.doctype }}</span>
+                    <!-- <span>Licence: {{ document.licence }}</span> -->
+                    <span v-if="openAccessLicences.includes(document.licence)" class="label titlecase"><i class="fas fa-lock-open"></i> Open Access</span>
                 </p>
 
-                <span class="label label-keyword titlecase" v-for="(item, index) in document.subject" :key="index"> #{{ item }} </span>
+                <!-- <span class="label label-keyword titlecase" v-for="(item, index) in document.subject" :key="index"> #{{ item }} </span> -->
             </div>
         </div>
     </div>
@@ -108,7 +113,8 @@ export default VsResults;
     color: #fff;
     border-radius: 0.25em;
     margin-right: 1.25em;
-    /* margin-left: 10px; */
+    text-transform: uppercase;
+    font-weight: normal;
 }
 /* .record-elem .h4, record-elem h4 {
     font-size: 18px;
@@ -153,6 +159,14 @@ export default VsResults;
 .record-elem p span {
     color: #000;
     font-size: 14px;
+}
+.record-elem p span.disabled {
+    color: #7e7e7e;
+    // color: lightgray;
+    pointer-events: none;
+}
+.record-elem p span i {
+    color: #336699;
 }
 
 .post {

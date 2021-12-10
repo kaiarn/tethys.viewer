@@ -1,4 +1,4 @@
-import { Observable, Subscription } from "rxjs";
+import { Subscription } from "rxjs";
 import { Options, Vue } from "vue-class-component";
 import DatasetService from "../../services/dataset.service";
 import { DbDataset } from "@/models/dataset";
@@ -19,21 +19,21 @@ export default class SitelinkViewComponent extends Vue {
     //     // this.rdrAPI = new DatasetService();
     // }
 
-    beforeMount() {
+    beforeMount(): void {
         // this.rdrAPI = new DatasetService();
         this.getYears();
     }
 
-    getYears() {
+    getYears(): void {
         const newSubs: Subscription = DatasetService.getYears().subscribe(
             (res: string[]) => this.dataHandler(res),
-            (error: any) => this.errorHandler(error),
+            (error: string) => this.errorHandler(error),
             () => newSubs.unsubscribe(),
         );
         // this.subscriptions.push(newSubs);
     }
 
-    beforeUnmount() {
+    beforeUnmount(): void {
         //unsunscribe to ensure no memory leaks
         // this.subscription.unsubscribe();
         for (const subs of this.subscriptions) {
@@ -41,13 +41,13 @@ export default class SitelinkViewComponent extends Vue {
         }
     }
 
-    select(year: string) {
+    select(year: string): void {
         this.selected = year;
         const newSubs = DatasetService.getDocuments(year).subscribe(
             (res: Array<DbDataset>) => {
                 this.datasets = res;
             },
-            (error: any) => this.errorHandler(error),
+            (error: string) => this.errorHandler(error),
         );
         this.subscriptions.push(newSubs);
     }
@@ -57,7 +57,7 @@ export default class SitelinkViewComponent extends Vue {
         this.years = res;
     }
 
-    private errorHandler(err: any): void {
+    private errorHandler(err: string): void {
         this.error = err;
         // this.loading = false;
     }
