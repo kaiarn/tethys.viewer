@@ -67,7 +67,8 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes,
-    scrollBehavior(to, from, savedPosition) {
+    // scrollBehavior(to, from, savedPosition) {
+    scrollBehavior() {
         // return desired position
         document.getElementById("app")?.scrollIntoView();
     },

@@ -1,9 +1,9 @@
 import { Options, Vue } from "vue-class-component";
-// import DatasetService from "../../services/dataset.service";
 import { DbDataset } from "@/models/dataset";
 import { Prop } from "vue-property-decorator";
 import DatasetService from "../../services/dataset.service";
 import { Subscription } from "rxjs";
+import moment from "moment";
 
 @Options({
     name: "DatasetDetailComponent",
@@ -14,7 +14,7 @@ export default class DatasetDetailComponent extends Vue {
     datasetId!: number;
 
     private subscriptions: Array<Subscription> = [];
-    private dataset = {};
+    private dataset = {} as DbDataset;
     private error = "";
 
     beforeMount(): void {
@@ -30,7 +30,7 @@ export default class DatasetDetailComponent extends Vue {
     }
 
     private getDataset(id: number): void {
-        const newSub = DatasetService.getDataset(this.datasetId).subscribe(
+        const newSub = DatasetService.getDataset(id).subscribe(
             (res: DbDataset) => {
                 this.dataset = res;
             },
@@ -48,5 +48,10 @@ export default class DatasetDetailComponent extends Vue {
         // go back by one record, the same as history.back()
         // router.go(-1);
         this.$router.go(-1);
+    }
+
+    public getHumanDate(date: string): string {
+        return moment(date).format("DD.MM.YYYY HH:mm");
+        // return moment(date).format("MMM Do YYYY");
     }
 }

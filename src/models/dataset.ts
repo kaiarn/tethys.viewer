@@ -31,34 +31,95 @@ export enum SearchType {
     Subject = "subject",
 }
 
-export interface DbDataset {
-    id: number;
-    contributing_corporation: string;
-    creating_corporation: string;
-    publisher_name: string;
-    embargo_date: string;
-    publish_id: number;
-    project_id: number;
-    type: string;
-    language: string;
-    server_state: string;
-    belongs_to_bibliography: boolean;
-    created_at: string;
-    server_date_modified: string;
-    server_date_published: string;
-    account_id: number;
-    editor_id: number;
-    reviewer_id: number;
-    preferred_reviewer: number;
-    preferred_reviewer_email: string;
-    reject_editor_note: string;
-    reject_reviewer_note: string;
-    reviewer_note_visible: string;
-    titles: Array<Title>;
-    authors: Array<Author>;
+export class DbDataset {
+    public id!: number;
+    public url!: string;
+    public contributing_corporation!: string;
+    public creating_corporation!: string;
+    public publisher_name!: string;
+    public embargo_date!: string;
+    public publish_id!: number;
+    public project_id!: number;
+    public type!: string;
+    public language!: string;
+    public server_state!: string;
+    public belongs_to_bibliography!: boolean;
+    public created_at!: string;
+    public server_date_modified!: string;
+    public server_date_published!: string;
+    public account_id!: number;
+    public editor_id!: number;
+    public reviewer_id!: number;
+    public preferred_reviewer!: number;
+    public preferred_reviewer_email!: string;
+    public reject_editor_note!: string;
+    public reject_reviewer_note!: string;
+    public reviewer_note_visible!: string;
+    public titles!: Array<Title>;
+    public abstracts!: Array<Abstract>;
+    public authors!: Array<Author>;
+    public contributors!: Array<Author>;
+    public user!: Person;
+
+    public hasTranslatedAbstract(): boolean {
+        if (this.abstracts.some((e) => e.type === "Translated")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public hasSeriesInformationAbstract(): boolean {
+        if (this.abstracts.some((e) => e.type === AbstractType.Series_information)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public hasMethodsAbtract(): boolean {
+        if (this.abstracts.some((e) => e.type === AbstractType.Methods)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public get MainAbstract(): Nullable<Abstract> {
+        return this.abstracts.find((e) => e.type === AbstractType.Abstract);
+    }
+
+    public get TranslatedAbtract(): Nullable<Abstract> {
+        return this.abstracts.find((e) => e.type === AbstractType.Translated);
+    }
+
+    public get SeriesInformationAbtract(): Nullable<Abstract> {
+        return this.abstracts.find((e) => e.type === AbstractType.Series_information);
+    }
+
+    public get MethodsAbtract(): Nullable<Abstract> {
+        return this.abstracts.find((e) => e.type === AbstractType.Methods);
+    }
+}
+type Nullable<T> = T | undefined;
+
+export enum AbstractType {
+    Abstract = "Abstract",
+    Methods = "Methods",
+    Series_information = "Series_information",
+    Technical_info = "Technical_info",
+    Translated = "Translated",
+    Other = " Other",
 }
 
 export interface Title {
+    id: number;
+    type: string;
+    value: string;
+    language: string;
+}
+
+export interface Abstract {
     id: number;
     type: string;
     value: string;
@@ -73,4 +134,13 @@ export interface Author {
     first_name: string;
     last_name: string;
     name_type: string;
+}
+
+export interface Person {
+    id: number;
+    login: string;
+    email: string;
+    first_name: string;
+    last_name: string;
+    created_at: string;
 }

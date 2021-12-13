@@ -60,3 +60,7 @@ import "@fortawesome/fontawesome-free/css/all.css";
 ======================= router ================================
 https://www.vuemastery.com/blog/vue-router-a-tutorial-for-vue-3/
 npm install --save vue-router@next
+
+========================== moment,js ================================
+npm install --save moment@latest
+
