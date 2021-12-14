@@ -8,7 +8,7 @@
             <button v-on:click="goBack">Back</button>
         </section>
     </div> -->
-    <section class="section" v-if="dataset">
+    <section class="section" v-if="loaded">
         <div class="container">
             <!-- <span class="is-size-5"> Basic Table </span>
             <br /> -->
@@ -51,6 +51,42 @@
                             </div>
                             <div class="column is-9-desktop is-8-tablet" v-else>-</div>
                         </div>
+
+                        <div class="columns">
+                            <div class="column is-3-desktop is-4-tablet">Downloads/<br />downloads:</div>
+                            <div class="column is-9-desktop is-8-tablet" v-if="dataset.files.length > 0">
+                                <table id="items" v-if="dataset.hasEmbargoPassed()" class="pure-table pure-table-horizontal">
+                                    <thead>
+                                        <tr>
+                                            <th>Path Name</th>
+                                            <th>File Extension</th>
+                                            <th>File Size</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr v-for="file in dataset.files" :key="file.id">
+                                            <td>
+                                                {{ file.path_name }}
+                                                <!-- @if($file->exists() === true)
+                            <a target="_blank" href="{{ route('file.download', ['id' => $file->id]) }}"> {{ $file->label }} </a>
+                            @else
+                            <span class="alert">missing file: {{ $file->path_name }}</span>
+                            @endif -->
+                                            </td>
+                                            <td>
+                                                <!-- <span>{{  pathinfo($file->path_name, PATHINFO_EXTENSION) }}</span> -->
+                                            </td>
+                                            <td>
+                                                <!-- <span>{{ $file->formatSize(2) }}</span> -->
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <span v-else>Datensatz hat noch ein gültiges Embargo-Datum.</span>
+                            </div>
+                        </div>
+
                         <div class="columns">
                             <div class="column is-3-desktop is-4-tablet">Technische Metadaten/<br />technical metadata:</div>
                             <div class="column is-9-desktop is-8-tablet">
@@ -64,7 +100,7 @@
                     </div>
                 </div>
 
-                <div id="id-side-bar" class="column is-4 sidebar_column" style="padding-top: 1.2rem; padding-right: 1.5rem; padding-left: 1.5rem">
+                <div id="id-side-bar" class="column is-4 sidebar_column" style="padding-top: 1.2rem; padding-right: 1rem; padding-left: 1rem">
                     <div class="card">
                         <div class="column">
                             <h2>Details</h2>
@@ -72,7 +108,83 @@
                     </div>
                     <div class="card">
                         <div class="column">
-                            <h2 v-if="dataset.hasOwnProperty('contributors')">{{ dataset.contributors.map((u) => u.full_name).join(", ") }}</h2>
+                            <h3>Beitragende/Contributor</h3>
+                            <p v-if="dataset.hasContributors()">
+                                {{ dataset.contributors.map((u) => u.full_name).join(", ") }}
+                            </p>
+                            <p v-else>-</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="column">
+                            <h3>Schlüsselwörter/Keywords</h3>
+                            <p v-if="dataset.hasOwnProperty('subjects')">
+                                {{ dataset.subjects.map((u) => u.value).join(", ") }}
+                            </p>
+                            <p v-else>-</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="column">
+                            <h3>Erstellungsjahr/Year</h3>
+                            <p>
+                                {{ getYear(dataset.server_date_published) }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="column">
+                            <h3>Abdeckung/Coverage</h3>
+                            <p>
+                                {{ dataset.Coverage }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="column">
+                            <h3>Sprache/Language</h3>
+                            <p>
+                                {{ dataset.language }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="column">
+                            <h3>Objekttyp/Object Type</h3>
+                            <p>
+                                <span><i class="fas fa-file"></i> {{ dataset.type }}</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="column">
+                            <h3>Lizenz/License</h3>
+                            <p v-if="dataset.hasLicenses()">
+                                <label v-for="license in dataset.licenses" :key="license.id">
+                                    <span class="label">
+                                        {{ license.name }}
+                                    </span>
+                                    <span v-if="openAccessLicences.includes(license.name)" class="label titlecase"><i class="fas fa-lock-open"></i> Open Access</span>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="column">
+                            <h3>Projekt/Project</h3>
+                            <p v-if="dataset.project != null">
+                                <span>{{ dataset.project.name }}</span>
+                            </p>
+                            <p v-else>-</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="column">
+                            <h3>Embargo</h3>
+                            <p v-if="dataset.embargo_date">
+                                <span>{{ getHumanDate(dataset.embargo_date) }}</span>
+                            </p>
+                            <p v-else>-</p>
                         </div>
                     </div>
                 </div>
@@ -127,7 +239,7 @@ export default DatasetDetailComponent;
 }
 label {
     display: inline-block;
-    width: 3em;
+    // width: 3em;
     margin: 0.5em 0;
     color: #607d8b;
     font-weight: bold;

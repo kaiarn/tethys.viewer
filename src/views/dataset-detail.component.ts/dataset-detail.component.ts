@@ -14,10 +14,12 @@ export default class DatasetDetailComponent extends Vue {
     datasetId!: number;
 
     private subscriptions: Array<Subscription> = [];
-    private dataset = {} as DbDataset;
+    public dataset = {} as DbDataset;
     private error = "";
+    public loaded = false;
+    public openAccessLicences: Array<string> = ["CC-BY-4.0", "CC-BY-SA-4.0"];
 
-    beforeMount(): void {
+    created(): void {
         this.getDataset(this.datasetId);
     }
 
@@ -33,6 +35,7 @@ export default class DatasetDetailComponent extends Vue {
         const newSub = DatasetService.getDataset(id).subscribe(
             (res: DbDataset) => {
                 this.dataset = res;
+                this.loaded = true;
             },
             (error: string) => this.errorHandler(error),
         );
@@ -53,5 +56,9 @@ export default class DatasetDetailComponent extends Vue {
     public getHumanDate(date: string): string {
         return moment(date).format("DD.MM.YYYY HH:mm");
         // return moment(date).format("MMM Do YYYY");
+    }
+
+    public getYear(date: string) {
+        return moment(date).format("YYYY");
     }
 }
