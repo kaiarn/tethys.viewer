@@ -55,7 +55,7 @@
                         <div class="columns">
                             <div class="column is-3-desktop is-4-tablet">Downloads/<br />downloads:</div>
                             <div class="column is-9-desktop is-8-tablet" v-if="dataset.files.length > 0">
-                                <table id="items" v-if="dataset.hasEmbargoPassed()" class="pure-table pure-table-horizontal">
+                                <table id="items" v-if="dataset.hasEmbargoPassed()" class="table is-bordered is-striped">
                                     <thead>
                                         <tr>
                                             <th>Path Name</th>
@@ -66,18 +66,13 @@
                                     <tbody>
                                         <tr v-for="file in dataset.files" :key="file.id">
                                             <td>
-                                                {{ file.path_name }}
-                                                <!-- @if($file->exists() === true)
-                            <a target="_blank" href="{{ route('file.download', ['id' => $file->id]) }}"> {{ $file->label }} </a>
-                            @else
-                            <span class="alert">missing file: {{ $file->path_name }}</span>
-                            @endif -->
+                                                <a target="_blank" v-bind:href="'portal/file/download/' + file.id"> {{ file.label }} </a>
                                             </td>
                                             <td>
-                                                <!-- <span>{{  pathinfo($file->path_name, PATHINFO_EXTENSION) }}</span> -->
+                                                <span>{{ getExtension(file.path_name) }}</span>
                                             </td>
                                             <td>
-                                                <!-- <span>{{ $file->formatSize(2) }}</span> -->
+                                                <span>{{ formatSize(file.file_size, 2) }}</span>
                                             </td>
                                         </tr>
                                     </tbody>

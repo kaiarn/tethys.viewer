@@ -141,13 +141,13 @@ export class DbDataset {
     }
 
     public hasEmbargoPassed(): boolean {
-        const embargoDate = moment(this.embargo_date);
-        if (embargoDate == null) {
+        if (this.embargo_date === null) {
             return true;
         }
+        const embargoDate = moment(this.embargo_date);
         const todayDate = moment.now();
-        // Embargo has passed on the day after the specified date
 
+        // Embargo has passed on the day after the specified date
         if (embargoDate.isBefore(todayDate)) {
             return true;
         } else {

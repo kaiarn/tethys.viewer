@@ -53,6 +53,21 @@ export default class DatasetDetailComponent extends Vue {
         this.$router.go(-1);
     }
 
+    public getExtension(filename: string): string {
+        return filename.substring(filename.lastIndexOf(".") + 1, filename.length) || filename;
+    }
+
+    public formatSize(file_size: number, precision = 1) {
+        let size = file_size;
+        const unit = ["Byte", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB"];
+        let i;
+        for (i = 0; size >= 1024 && i < unit.length - 1; i++) {
+            size = size / 1024;
+        }
+        // return Math.round((size * precision) / precision) + " " + unit[i];
+        return Math.round((size + Number.EPSILON) * 100) / 100 + " " + unit[i];
+    }
+
     public getHumanDate(date: string): string {
         return moment(date).format("DD.MM.YYYY HH:mm");
         // return moment(date).format("MMM Do YYYY");
