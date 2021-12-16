@@ -156,6 +156,10 @@ export class DbDataset {
         // return ($embargoDate->lessThan($now));
     }
 
+    public get MainTitle(): Nullable<Title> {
+        return this.titles.find((e) => e.type === TitleType.Main);
+    }
+
     public get MainAbstract(): Nullable<Abstract> {
         return this.abstracts.find((e) => e.type === AbstractType.Abstract);
     }
@@ -198,6 +202,10 @@ export enum AbstractType {
     Other = " Other",
 }
 
+export enum TitleType {
+    Main = "Main",
+    Translated = "Translated",
+}
 export interface Title {
     id: number;
     type: string;
@@ -220,6 +228,7 @@ export interface Author {
     first_name: string;
     last_name: string;
     name_type: string;
+    full_name: string;
 }
 
 export interface Person {

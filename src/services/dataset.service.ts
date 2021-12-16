@@ -165,14 +165,14 @@ class DatasetService {
         const host = "https:" + VUE_APP_PORTAL;
         const path = "/api/dataset/" + id;
         const apiUrl = host + path;
-
         const dataset = api.get<DbDataset>(apiUrl).pipe(map((res) => this.prepareDataset(res, apiUrl)));
+        // const dataset = api.get<DbDataset>(apiUrl).pipe(map((res) => this.prepareDataset(res, apiUrl)));
 
         // this.messageService.add('HeroService: fetched heroes');
         return dataset;
     }
 
-    private prepareDataset(datasetObj: DbDataset, apiUrl: string) {
+    private prepareDataset(datasetObj: DbDataset, apiUrl: string): DbDataset {
         const dataset = deserialize<DbDataset>(DbDataset, JSON.stringify(datasetObj));
         dataset.url = document.documentURI;
         // this.internalDatasetId.generateInternalId(dataset);

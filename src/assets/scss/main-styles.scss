@@ -1,7 +1,60 @@
 @charset "utf-8";
-@import "~bulma";
+// @import "~bulma";
 // @import "@fontsource/open-sans"; // Defaults to weight 400.
 @import "~@openfonts/open-sans_all/index.css";
+
+// 1. Import the initial variables
+@import "~bulma/sass/utilities/_all.sass";
+
+
+// 2. Set your own initial (brand) variables
+// Update the blue shade, used for links
+$blue: #06bcef;
+// Add pink and its invert
+$pink: #FA7C91;
+$pink-invert: #fff;
+$purple: #8A4D76;
+$brown: #757763;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+$mouse-grey: #6c6e6b;
+$select-green: #03a678;
+
+// 3. Set the derived variables
+$grey-dark: $brown;
+$is-dark: $mouse-grey;
+// $grey-light: $beige-light;
+// $primary: $purple;
+// $link: $mouse-grey;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+// $tabs-link-active-border-bottom-color: $select-green;
+// $tabs-link-active-color: $select-green;
+$table-striped-row-even-background-color: #ecf2fa;
+$table-striped-row-even-hover-background-color: #ecf2fa;
+
+// 4. Import the rest of bulma, only what you need from Bulma
+// @import "../../node_modules/bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/grid/_all.sass";
+@import "~bulma/sass/base/_all.sass";
+@import "~bulma/sass/elements/box.sass";
+@import "~bulma/sass/elements/button.sass";
+@import "~bulma/sass/elements/container.sass";
+@import "~bulma/sass/elements/content.sass";
+@import "~bulma/sass/elements/title.sass";
+@import "~bulma/sass/elements/icon.sass";
+@import "~bulma/sass/elements/table.sass";
+@import "~bulma/sass/form/_all.sass";
+@import "~bulma/sass/helpers/_all.sass";
+@import "~bulma/sass/components/navbar.sass";
+// @import "~bulma/sass/components/tabs.sass";
+@import "~bulma/sass/components/media.sass";
+@import "~bulma/sass/components/modal.sass";
+@import "~bulma/sass/components/card.sass";
+
+@import "~bulma/sass/components/panel.sass";
+
+@import "~bulma/sass/layout/_all.sass";
 
 .button {
     text-decoration: none;
@@ -19,32 +72,30 @@
     }
     &.custom-button {
         // display: block;
-      
+
         width: 125px;
         color: #fff;
         font-weight: bold;
-        font-size: 0.9em;       
+        font-size: 0.9em;
         text-decoration: none;
         border: 1px solid transparent;
         // .fas {
         //     margin-right: 0.6em;
         //     // border-right: 1px solid #fff;
         //    width: 2em;
-          
+
         // };
         .fas {
             margin-right: 0.6em;
             border-right: 1px solid #fff;
             padding: 0.6em;
-        };
+        }
         // strong {
         //     border-left: 1px solid #fff;
         //     padding-left: 0.6em;
         // }
     }
 }
-
-
 
 .header-image {
     background-image: url("./../site/img/Main-banner-homepage-xl.jpg");
@@ -76,7 +127,6 @@
 //     margin-top: 25px;
 // }
 // /*
-  
 
 .help:before {
     background: url("./../site/img/Main-banner-homepage-xl.jpg");
@@ -112,7 +162,6 @@
     width: 100%;
     box-sizing: border-box;
 }
-
 
 .text-center {
     text-align: center !important;
@@ -152,11 +201,8 @@ body H1 {
     margin-top: 1.5rem !important;
 }
 .text-left {
-    text-align: left!important;
+    text-align: left !important;
 }
-
-
-
 
 html,
 body {
@@ -197,7 +243,6 @@ body {
 .search-button-icon:hover {
     color: rgb(74, 74, 74);
 }
-
 
 .hide {
     display: none;
@@ -244,8 +289,6 @@ body {
     margin: auto;
     overflow: hidden;
 }
-
-
 
 #home_padding {
     margin-top: 7%;
@@ -318,12 +361,9 @@ body {
     max-height: 6rem;
 }
 
-
-
-
 .card {
-    position: relative;  
-    display: flex;  
+    position: relative;
+    display: flex;
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;

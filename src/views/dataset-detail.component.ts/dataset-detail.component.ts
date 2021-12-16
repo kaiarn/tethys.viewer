@@ -68,6 +68,11 @@ export default class DatasetDetailComponent extends Vue {
         return Math.round((size + Number.EPSILON) * 100) / 100 + " " + unit[i];
     }
 
+    public getPublishedDate(date: string): string {
+        return moment(date).format("ddd, MMMM Do, YYYY h:mm a");
+        // return moment(date).format("MMM Do YYYY");
+    }
+
     public getHumanDate(date: string): string {
         return moment(date).format("DD.MM.YYYY HH:mm");
         // return moment(date).format("MMM Do YYYY");
@@ -75,5 +80,15 @@ export default class DatasetDetailComponent extends Vue {
 
     public getYear(date: string) {
         return moment(date).format("YYYY");
+    }
+
+    public getCitation(): string {
+        let citation = this.dataset.contributors.map((u) => u.last_name + ", " + u.first_name.substring(0, 1).toUpperCase() + ".").join(", ");
+        citation += " " + moment(this.dataset.server_date_published).format("YYYY") + ": ";
+        citation += this.dataset.MainTitle?.value;
+        citation += "." + this.dataset.creating_corporation + ", ";
+        citation += this.dataset.publisher_name;
+        citation += ", Wien";
+        return citation;
     }
 }

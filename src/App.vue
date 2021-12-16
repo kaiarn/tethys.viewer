@@ -201,7 +201,7 @@ footer .card {
 }
 
 footer .card-title {
-    font-family: Verdana;
+    // font-family: Verdana;
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
