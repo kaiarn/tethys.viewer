@@ -220,6 +220,7 @@ export default DatasetDetailComponent;
 <style scoped lang="scss">
 .section {
     font-size: 0.8rem;
+    padding: 0;
 }
 .card {
     border-radius: 0;

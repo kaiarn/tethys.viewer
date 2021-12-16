@@ -17,14 +17,18 @@ h6 {
     background-image: url(./../../assets/site/img/white-pixel.png);
     background-repeat: repeat;
     padding: 1.8em;
-    width: 28em;
+    // width: 28em;
 }
 .mx-auto {
     margin-right: auto !important;
     margin-left: auto !important;
 }
-.mt-3 {
-    margin-top: 1rem !important;
+// .mt-3 {
+//     margin-top: 1rem !important;
+// }
+.columns:not(:last-child) {
+    margin-bottom: calc(1.5rem - 0.75rem);
+    display: flex;
 }
 .button {
   background-color: #33cccc;    

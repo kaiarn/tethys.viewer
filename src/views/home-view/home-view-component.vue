@@ -48,10 +48,10 @@
         </figure> -->
         <!-- class="columns help u-full-width featured-bg-image"> -->
         <section data-sr id="help" class="columns header-image align-items-center h-100">
-            <div class="column is-one-third mx-auto">
+            <div class="column is-two-thirds-tablet is-half-desktop is-one-third-widescreen mx-auto">
                 <!-- <img src="site/img/Main-banner-homepage-1280.jpg" class="img-fluid""> -->
 
-                <div class="search-box mt-3 mx-auto">
+                <div class="search-box mx-auto">
                     <!-- <form class="my-2 my-lg-0 main-search-from-bg d-flex d-row">
                         <input class="form-control mr-sm-2 border-0" type="text" placeholder="Search" aria-label="Search" />
                         <button class="btn btn-secondary m-0" type="submit"><i class="fas fa-search text-white"></i></button>
@@ -63,7 +63,7 @@
                         </div>
                         <div class="control">
                             <button class="button input is-medium search-button-icon" @click="search()">
-                                <img src="../../assets/fa/search.svg" style="height: 22px; width: 22px" />
+                                <i class="fas fa-search text-white"></i>
                             </button>
                         </div>
                     </div>
