@@ -1,6 +1,6 @@
 <template>
     <div id="page_style" class="rows site-content page__style page__description" autocomplete="off">
-        <vs-input v-on:search-change="onSearch" v-bind:placeholder="'Enter your search term...'"></vs-input>
+        <vs-input v-on:search-change="onSearch" v-bind:propDisplay="searchTerm" v-bind:placeholder="'Enter your search term...'"></vs-input>
 
         <div class="column is-half is-offset-one-quarter" style="padding-top: 0; margin-top: 0">
             <!-- <div class="tabs is-centered">

@@ -97,6 +97,7 @@ $table-striped-row-even-hover-background-color: #ecf2fa;
     }
 }
 
+// search image
 .header-image {
     background-image: url("./../site/img/Main-banner-homepage-xl.jpg");
     background-size: cover;
@@ -290,9 +291,9 @@ body {
     overflow: hidden;
 }
 
-#home_padding {
-    margin-top: 7%;
-}
+// #home_padding {
+//     margin-top: 7%;
+// }
 
 @media screen and (max-width: 768px) {
     #featured_area {

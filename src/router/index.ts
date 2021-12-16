@@ -22,9 +22,10 @@ const routes = [
         component: HelpViewComponent,
     },
     {
-        path: "/search",
+        path: "/search/:display?",
         name: "Search",
         component: SearchViewComponent,
+        props: true,
     },
     {
         path: "/dataset/:datasetId",

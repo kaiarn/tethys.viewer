@@ -1,4 +1,5 @@
 import { Options, Vue } from "vue-class-component";
+import { Prop } from "vue-property-decorator";
 import VsInput from "@/components/vs-input/vs-input.vue";
 import VsResult from "@/components/vs-result/vs-result.vue";
 import FacetCategory from "@/components/face-category/facet-category.vue";
@@ -20,11 +21,14 @@ import { ActiveFilterCategories } from "@/models/solr";
     },
 })
 export default class SearchViewComponent extends Vue {
+    @Prop()
+    display?: string;
+
     results: Array<Dataset> = [];
 
     // facets: FacetFields = new FacetFields();
     facets: FacetResults = new FacetResults();
-    searchTerm!: string | Suggestion;
+    searchTerm: string | Suggestion = "";
     // activeFilterCategories: Object = {};
     activeFilterCategories: ActiveFilterCategories = new ActiveFilterCategories(); // = new Array<ActiveFilterCategory>();
     pagination: any = {
@@ -45,8 +49,11 @@ export default class SearchViewComponent extends Vue {
     // private rdrAPI!: DatasetService;
     private error = "";
 
-    mounted(): void {
+    beforeMount(): void {
         // this.rdrAPI = new DatasetService();
+        if (this.display != undefined && this.display != "") {
+            this.onSearch(this.display);
+        }
     }
 
     // onSearch(term: string): void {

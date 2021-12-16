@@ -46,15 +46,30 @@
         <!-- <figure class="image is-128x128">
             <img src="https://bulma.io/images/placeholders/256x256.png" />
         </figure> -->
-        <section data-sr id="help" class="help u-full-width featured-bg-image"></section>
+        <!-- class="columns help u-full-width featured-bg-image"> -->
+        <section data-sr id="help" class="columns header-image align-items-center h-100">
+            <div class="column is-one-third mx-auto">
+                <!-- <img src="site/img/Main-banner-homepage-1280.jpg" class="img-fluid""> -->
 
-        <!-- <div class="columns">
-            <div class="column text-center">
-                <h1>ÜBER TETHYS</h1>
-                <p class="lead">Was sind unsere Schwerpunkte</p>
-                <hr class="center-line" />
+                <div class="search-box mt-3 mx-auto">
+                    <!-- <form class="my-2 my-lg-0 main-search-from-bg d-flex d-row">
+                        <input class="form-control mr-sm-2 border-0" type="text" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-secondary m-0" type="submit"><i class="fas fa-search text-white"></i></button>
+                    </form> -->
+                    <div class="field has-addons">
+                        <div class="control is-expanded">
+                            <input id="search_query" class="input is-medium" type="text" name="q" autocomplete="off" v-model="display" />
+                            <!-- <p>Message is: {{ display }}</p>  v-on:input="searchChanged"-->
+                        </div>
+                        <div class="control">
+                            <button class="button input is-medium search-button-icon" @click="search()">
+                                <img src="../../assets/fa/search.svg" style="height: 22px; width: 22px" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div> -->
+        </section>
 
         <div class="container">
             <section class="section">

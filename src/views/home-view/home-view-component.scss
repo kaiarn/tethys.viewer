@@ -13,7 +13,39 @@ h6 {
     margin-top: 1.5rem;
 }
 
-
+.search-box {
+    background-image: url(./../../assets/site/img/white-pixel.png);
+    background-repeat: repeat;
+    padding: 1.8em;
+    width: 28em;
+}
+.mx-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+.mt-3 {
+    margin-top: 1rem !important;
+}
+.button {
+  background-color: #33cccc;    
+    // border-color: #dbdbdb;
+    border-width:0;
+    color: #363636;
+    cursor: pointer;
+    justify-content: center;
+    padding-bottom: 0; 
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0;
+    text-align: center;
+    white-space: nowrap;
+}
+input{
+    border-width:0;
+}
+.search-button-icon {
+    color: white;
+}
 
 //contact apge
 .page-breaker {

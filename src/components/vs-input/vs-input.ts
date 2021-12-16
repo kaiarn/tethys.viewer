@@ -20,6 +20,10 @@ export default class VsInput extends Vue {
     readonly placeholder!: string;
 
     private display = "";
+
+    @Prop()
+    private propDisplay = "";
+
     private value!: Suggestion | string;
     private error = "";
     private results: Array<Dataset> = [];
