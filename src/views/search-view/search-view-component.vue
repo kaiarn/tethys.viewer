@@ -26,9 +26,8 @@
                 </ul>
             </div> -->
             <div v-if="results.length > 0" class="result-list-info">
-                <div class="resultheader">
-                    Your search yielded
-                    <strong>{{ numFound }}</strong> results:
+                <div class="resultheader" v-if="hasSearchTerm()">
+                    Your search term {{ "'" + stringSearchTerm + "'" }} yielded <strong>{{ numFound }}</strong> results:
                 </div>
             </div>
             <div v-else-if="results.length == 0">

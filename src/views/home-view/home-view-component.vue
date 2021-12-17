@@ -56,7 +56,7 @@
                         <input class="form-control mr-sm-2 border-0" type="text" placeholder="Search" aria-label="Search" />
                         <button class="btn btn-secondary m-0" type="submit"><i class="fas fa-search text-white"></i></button>
                     </form> -->
-                    <div class="field has-addons">
+                    <div class="field has-addons main-search-from-bg">
                         <div class="control is-expanded">
                             <input id="search_query" class="input is-medium" type="text" name="q" autocomplete="off" v-model="display" />
                             <!-- <p>Message is: {{ display }}</p>  v-on:input="searchChanged"-->

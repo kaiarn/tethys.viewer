@@ -22,7 +22,7 @@ import { ActiveFilterCategories } from "@/models/solr";
 })
 export default class SearchViewComponent extends Vue {
     @Prop()
-    display?: string;
+    display!: string;
 
     results: Array<Dataset> = [];
 
@@ -49,10 +49,32 @@ export default class SearchViewComponent extends Vue {
     // private rdrAPI!: DatasetService;
     private error = "";
 
+    get stringSearchTerm(): string {
+        if (typeof this.searchTerm === "string") {
+            return this.searchTerm;
+        } else if (this.searchTerm instanceof Suggestion) {
+            return this.searchTerm.value + " (" + this.searchTerm.type + ")";
+        } else {
+            return "";
+        }
+    }
+
+    hasSearchTerm(): boolean {
+        if (typeof this.searchTerm === "string" && this.searchTerm !== "") {
+            return true;
+        } else if (this.searchTerm instanceof Suggestion && this.searchTerm.value !== "") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     beforeMount(): void {
         // this.rdrAPI = new DatasetService();
         if (this.display != undefined && this.display != "") {
             this.onSearch(this.display);
+        } else {
+            this.onSearch("");
         }
     }
 

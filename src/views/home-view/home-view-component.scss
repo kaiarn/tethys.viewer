@@ -44,11 +44,23 @@ h6 {
     text-align: center;
     white-space: nowrap;
 }
+.field.has-addons .control:last-child:not(:only-child) .button,
+.field.has-addons .control:last-child:not(:only-child) .input,
+.field.has-addons .control:last-child:not(:only-child) .select select {
+    // border-bottom-left-radius: 0;
+    // border-top-left-radius: 0;
+    border-radius: 4px;
+}
 input{
     border-width:0;
+    box-shadow: none;
 }
 .search-button-icon {
     color: white;
+}
+.main-search-from-bg {
+    background-color: #fff;
+    padding: 0.2em;  
 }
 
 //contact apge
@@ -68,4 +80,3 @@ input{
 .partner-logos {
     padding: 3em 0;
 }
-
