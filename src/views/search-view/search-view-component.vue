@@ -1,7 +1,8 @@
 <template>
     <div id="page_style" class="rows site-content page__style page__description" autocomplete="off">
-        <vs-input v-on:search-change="onSearch" v-bind:propDisplay="searchTerm" v-bind:placeholder="'Enter your search term...'"></vs-input>
-
+        <div class="container-fluid page-breaker mz-5">
+            <vs-input v-on:search-change="onSearch" v-bind:propDisplay="searchTerm" v-bind:placeholder="'Enter your search term...'"></vs-input>
+        </div>
         <div class="column is-half is-offset-one-quarter" style="padding-top: 0; margin-top: 0">
             <!-- <div class="tabs is-centered">
                 <ul id="id-results-tabs">
@@ -140,3 +141,19 @@
 import SearchViewComponent from "./search-view-component";
 export default SearchViewComponent;
 </script>
+
+<style scoped>
+.page-breaker {
+    background-image: url(./../../assets/site/img/main-search-banner.jpg);
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: 25%;
+    background-repeat: no-repeat;
+    padding: 6.2em;
+    min-height: 400px;
+}
+
+.mz-5 {
+    margin-bottom: 1.5 rem;
+}
+</style>
