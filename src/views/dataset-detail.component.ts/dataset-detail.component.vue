@@ -202,11 +202,11 @@
                 <div class="column col-sm text-center">
                     <img src="@/assets/site/img/re3-data-logo-mono.jpg" alt="re3 data logo" />
                 </div>
-                <div class="column col-sm text-center mobile-space">
+                <!-- <div class="column col-sm text-center mobile-space">
                     <img src="@/assets/site/img/geosphere-austria-logo.jpg" class="pb-3" alt="logo geosphere austria" />
-                </div>
+                </div> -->
                 <div class="column col-sm text-center">
-                    <img src="@/assets/site/img/placeholder-logo.jpg" alt="logo placeholder" />
+                    <img src="@/assets/site/img/base-logo.gif" alt="logo base" />
                 </div>
             </div>
         </div>
