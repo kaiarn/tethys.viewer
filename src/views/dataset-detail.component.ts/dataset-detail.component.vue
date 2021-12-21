@@ -8,6 +8,7 @@
             <button v-on:click="goBack">Back</button>
         </section>
     </div> -->
+    <div class="container-fluid banner mz-5"></div>
     <section class="section" v-if="loaded">
         <div class="container">
             <!-- <span class="is-size-5"> Basic Table </span>

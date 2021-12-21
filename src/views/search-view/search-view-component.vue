@@ -142,30 +142,4 @@ import SearchViewComponent from "./search-view-component";
 export default SearchViewComponent;
 </script>
 
-<style scoped>
-.banner {
-    background-image: url(./../../assets/site/img/main-search-banner.jpg);
-    background-size: cover;
-    background-position-x: center;
-    background-position-y: 25%;
-    background-repeat: no-repeat;
-    padding: 6.2em;
-    min-height: 400px;
-    width: 100%;
-    /* display: flex;
-    flex-direction: column; */
-    justify-content: center;
-    align-items: center;
-}
-
-.mz-5 {
-    margin-bottom: 1.5 rem;
-}
-
-@media (max-width: 576px) {
-    .banner {
-        align-items: flex-start;
-        height: 400px;
-    }
-}
-</style>
+<style scoped></style>
