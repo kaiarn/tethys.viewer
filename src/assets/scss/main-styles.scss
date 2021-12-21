@@ -114,6 +114,13 @@ $table-striped-row-even-hover-background-color: #ecf2fa;
     height: 100% !important;
 }
 
+@media only screen and (min-width: 1408px) {
+    .header-image {
+      background-image: url("../site/img/Main-banner-homepage-2560x.jpg");
+      min-height: 700px;
+    }
+  }
+
 /* =Section general styling
 -------- */
 // section {
@@ -249,30 +256,30 @@ body {
     display: none;
 }
 
-// .animate_content {
-//     animation: animate 3s ease;
-// }
+.animate_content {
+    animation: animate 3s ease;
+}
 
-// @keyframes animate {
-//     10% {
-//         transform: scale(1, 0.004);
-//     }
-//     35% {
-//         transform: scale(0.001, 0.004);
-//         opacity: 1;
-//     }
-//     50% {
-//         transform: scale(0.001, 0.004);
-//         opacity: 0;
-//     }
-//     85% {
-//         transform: scale(1, 0.004);
-//         opacity: 1;
-//     }
-//     100% {
-//         transform: scale(1, 1);
-//     }
-// }
+@keyframes animate {
+    10% {
+        transform: scale(1, 0.004);
+    }
+    35% {
+        transform: scale(0.001, 0.004);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.001, 0.004);
+        opacity: 0;
+    }
+    85% {
+        transform: scale(1, 0.004);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
 
 .page_description {
     font-weight: 300;
@@ -434,3 +441,29 @@ body {
 .work-items div:hover .work-front {
     display: none;
 }
+
+
+
+@media only screen and (max-width: 580px) {
+    .mobile-space {
+      margin-top: 2em;
+    }
+    .page-breaker {
+      padding: 0;
+    }
+    footer .card {
+      margin-bottom: 2em;
+    }
+    .overlay-boxes {
+      margin-bottom: 1em;
+    }
+    .super-card {
+      margin-bottom: 1em;
+    }
+    .partner-logos {
+      padding: 0;
+    }
+    .search-box {
+      width: auto;
+    }
+  }

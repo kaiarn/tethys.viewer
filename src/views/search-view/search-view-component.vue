@@ -1,6 +1,6 @@
 <template>
     <div id="page_style" class="rows site-content page__style page__description" autocomplete="off">
-        <div class="container-fluid page-breaker mz-5">
+        <div class="container-fluid banner mz-5">
             <vs-input v-on:search-change="onSearch" v-bind:propDisplay="searchTerm" v-bind:placeholder="'Enter your search term...'"></vs-input>
         </div>
         <div class="column is-half is-offset-one-quarter" style="padding-top: 0; margin-top: 0">
@@ -143,7 +143,7 @@ export default SearchViewComponent;
 </script>
 
 <style scoped>
-.page-breaker {
+.banner {
     background-image: url(./../../assets/site/img/main-search-banner.jpg);
     background-size: cover;
     background-position-x: center;
@@ -151,9 +151,21 @@ export default SearchViewComponent;
     background-repeat: no-repeat;
     padding: 6.2em;
     min-height: 400px;
+    width: 100%;
+    /* display: flex;
+    flex-direction: column; */
+    justify-content: center;
+    align-items: center;
 }
 
 .mz-5 {
     margin-bottom: 1.5 rem;
+}
+
+@media (max-width: 576px) {
+    .banner {
+        align-items: flex-start;
+        height: 400px;
+    }
 }
 </style>

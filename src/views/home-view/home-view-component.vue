@@ -96,7 +96,7 @@
                 </div>
             </section>
 
-            <section class="section">
+            <div>
                 <div class="column is-full text-center">
                     <h1>TETHYS SERVICES</h1>
                     <p class="lead">Eine Übersicht unserer Dienstleistungen</p>
@@ -157,7 +157,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
 
         <div class="clearfix mt-3"></div>
