@@ -113,6 +113,10 @@ export default VsInput;
     border-radius: 4px;
     color: #363636;
 }
+input {
+    border-width: 0;
+    box-shadow: none;
+}
 
 .autocomplete-results {
     padding: 0;

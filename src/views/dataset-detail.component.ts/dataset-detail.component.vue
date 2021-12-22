@@ -8,7 +8,37 @@
             <button v-on:click="goBack">Back</button>
         </section>
     </div> -->
-    <div class="container-fluid banner mz-5"></div>
+    <div class="container-fluid banner mz-5">
+        <!-- <div class="column is-two-thirds-tablet is-half-desktop is-one-third-widescreen mx-auto">
+            <div class="search-box mx-auto">
+                <div class="field has-addons main-search-from-bg">
+                    <div class="control is-expanded">
+                        <input
+                            v-on:input="searchChanged"
+                            id="search_query"
+                            class="input is-medium"
+                            type="text"
+                            name="q"
+                            autocomplete="off"
+                            v-model="display"
+                            v-bind:placeholder="placeholder"
+                            v-on:keydown.down="onArrowDown"
+                            v-on:keydown.up="onArrowUp"
+                            v-on:keydown.enter="onEnter"
+                            @keydown.tab="close"
+                            v-on:focus="focus"
+                        />                      
+                    </div>
+                    <div class="control">
+                        <button class="button input is-medium search-button-icon" @click="search()">
+                            <i class="fas fa-search text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <simple-search-component></simple-search-component>
+    </div>
     <section class="section" v-if="loaded">
         <div class="container">
             <!-- <span class="is-size-5"> Basic Table </span>
@@ -253,27 +283,27 @@ export default DatasetDetailComponent;
     font-weight: 700;
     background-color: #ccddf1;
 }
-input {
-    height: 2em;
-    font-size: 1em;
-    padding-left: 0.4em;
-}
-button {
-    margin-top: 20px;
-    font-family: Arial;
-    background-color: #eee;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    cursor: hand;
-}
-button:hover {
-    background-color: #cfd8dc;
-}
-button:disabled {
-    background-color: #eee;
-    color: #ccc;
-    cursor: auto;
-}
+// input {
+//     height: 2em;
+//     font-size: 1em;
+//     padding-left: 0.4em;
+// }
+// button {
+//     margin-top: 20px;
+//     font-family: Arial;
+//     background-color: #eee;
+//     border: none;
+//     padding: 5px 10px;
+//     border-radius: 4px;
+//     cursor: pointer;
+//     cursor: hand;
+// }
+// button:hover {
+//     background-color: #cfd8dc;
+// }
+// button:disabled {
+//     background-color: #eee;
+//     color: #ccc;
+//     cursor: auto;
+// }
 </style>

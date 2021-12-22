@@ -4,10 +4,13 @@ import { Prop } from "vue-property-decorator";
 import DatasetService from "../../services/dataset.service";
 import { Subscription } from "rxjs";
 import moment from "moment";
+import SimpleSearchComponent from "@/components/simple-search/simple-search-component.vue";
 
 @Options({
     name: "DatasetDetailComponent",
-    // selector: "dataset-detail",
+    components: {
+        SimpleSearchComponent,
+    },
 })
 export default class DatasetDetailComponent extends Vue {
     @Prop()
@@ -57,7 +60,7 @@ export default class DatasetDetailComponent extends Vue {
         return filename.substring(filename.lastIndexOf(".") + 1, filename.length) || filename;
     }
 
-    public formatSize(file_size: number, precision = 1) {
+    public formatSize(file_size: number): string {
         let size = file_size;
         const unit = ["Byte", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB"];
         let i;
@@ -78,7 +81,7 @@ export default class DatasetDetailComponent extends Vue {
         // return moment(date).format("MMM Do YYYY");
     }
 
-    public getYear(date: string) {
+    public getYear(date: string): string {
         return moment(date).format("YYYY");
     }
 
