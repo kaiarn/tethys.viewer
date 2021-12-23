@@ -1,4 +1,4 @@
-const webpack = require('webpack');
+const webpack = require("webpack");
 
 module.exports = {
     publicPath: "/",
@@ -14,11 +14,18 @@ module.exports = {
     //           return args
     //        })
     //   },
-      configureWebpack: {
+    pages: {
+        index: {
+            // entry for the page
+            entry: "src/main.ts",
+            title: "TETHYS - Research Data Repository",
+        },
+    },
+    configureWebpack: {
         plugins: [
-          new webpack.DefinePlugin({           
-            VUE_APP_PORTAL: JSON.stringify(process.env.VUE_APP_PORTAL),
-          }),
+            new webpack.DefinePlugin({
+                VUE_APP_PORTAL: JSON.stringify(process.env.VUE_APP_PORTAL),
+            }),
         ],
-      },
- }
+    },
+};
