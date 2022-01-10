@@ -5,6 +5,7 @@ import DatasetService from "../../services/dataset.service";
 import { Subscription } from "rxjs";
 import moment from "moment";
 import SimpleSearchComponent from "@/components/simple-search/simple-search-component.vue";
+import { VUE_APP_PORTAL } from "@/constants";
 
 @Options({
     name: "DatasetDetailComponent",
@@ -21,6 +22,7 @@ export default class DatasetDetailComponent extends Vue {
     private error = "";
     public loaded = false;
     public openAccessLicences: Array<string> = ["CC-BY-4.0", "CC-BY-SA-4.0"];
+    public portal = VUE_APP_PORTAL + "/file/download/";
 
     created(): void {
         this.getDataset(this.datasetId);

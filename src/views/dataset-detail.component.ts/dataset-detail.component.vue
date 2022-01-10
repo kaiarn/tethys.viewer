@@ -107,7 +107,7 @@
                                     <tbody>
                                         <tr v-for="file in dataset.files" :key="file.id">
                                             <td>
-                                                <a class="link-label" target="_blank" v-bind:href="'/portal/file/download/' + file.id"> {{ file.label }} </a>
+                                                <a class="link-label" target="_blank" v-bind:href="portal + file.id"> {{ file.label }} </a>
                                             </td>
                                             <td>
                                                 <span>{{ getExtension(file.path_name) }}</span>

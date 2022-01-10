@@ -132,7 +132,7 @@
     </footer>
 
     <div class="container-fluid">
-        <div class="copyright-notice">Copyright 2021 TETHYS RDR</div>
+        <div class="copyright-notice">Copyright 2022 TETHYS RDR</div>
     </div>
 
     <!-- <vs-input
