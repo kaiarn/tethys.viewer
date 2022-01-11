@@ -64,3 +64,8 @@ npm install --save vue-router@next
 ========================== moment,js ================================
 npm install --save moment@latest
 
+
+==================== matomo tracking ==========================
+npm install --save vue-matomo
+
+declare module 'vue-matomo'; inside shims-vue.d.ts
