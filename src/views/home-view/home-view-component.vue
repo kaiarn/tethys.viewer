@@ -186,13 +186,15 @@
         <div class="container-fluid">
             <div class="columns is-mobile partner-logos">
                 <div class="column col-sm text-center">
-                    <img src="@/assets/site/img/re3-data-logo-mono.jpg" alt="re3 data logo" />
+                    <a target="_blank" href="https://www.re3data.org/repository/r3d100013400"><img src="@/assets/site/img/re3-data-logo-mono.jpg" alt="re3 data logo" /></a>
                 </div>
                 <!-- <div class="column col-sm text-center mobile-space">
                     <img src="@/assets/site/img/geosphere-austria-logo.jpg" class="pb-3" alt="logo geosphere austria" />
                 </div> -->
                 <div class="column col-sm text-center">
-                    <img src="@/assets/site/img/base-logo.gif" alt="logo base" />
+                    <a target="_blank" href="https://www.base-search.net/Search/Results?q=coll:fttethysrdr&refid=dctablede">
+                        <img src="@/assets/site/img/base-logo.gif" alt="logo base" />
+                    </a>
                 </div>
             </div>
         </div>
