@@ -22,7 +22,7 @@ const routes = [
         component: HelpViewComponent,
     },
     {
-        path: "/search/:display?",
+        path: "/search/:display?/:type?",
         name: "Search",
         component: SearchViewComponent,
         props: true,

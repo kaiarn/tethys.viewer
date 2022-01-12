@@ -37,7 +37,8 @@
                 </div>
             </div>
         </div> -->
-        <simple-search-component></simple-search-component>
+        <!-- <simple-search-component></simple-search-component> -->
+        <vs-input v-on:search-change="onSearch" v-bind:placeholder="'Enter your search term...'"></vs-input>
     </div>
     <section class="section" v-if="loaded">
         <div class="container">
@@ -232,9 +233,10 @@
                 <div class="column col-sm text-center">
                     <a target="_blank" href="https://www.re3data.org/repository/r3d100013400"><img src="@/assets/site/img/re3-data-logo-mono.jpg" alt="re3 data logo" /></a>
                 </div>
-                <!-- <div class="column col-sm text-center mobile-space">
-                    <img src="@/assets/site/img/geosphere-austria-logo.jpg" class="pb-3" alt="logo geosphere austria" />
-                </div> -->
+                <a target="_blank" href="http://www.geologie.ac.at/">
+                    <!-- <img src="@/assets/site/img/geosphere-austria-logo.jpg" class="pb-3" alt="logo geosphere austria" /> -->
+                    <img src="@/assets/site/img/geologische-bundesanstalt-logo.jpg" alt="Geologische Bundesanstalt logo" />
+                </a>
                 <div class="column col-sm text-center">
                     <a target="_blank" href="https://www.base-search.net/Search/Results?q=coll:fttethysrdr&refid=dctablede">
                         <img src="@/assets/site/img/base-logo.gif" alt="logo base" />

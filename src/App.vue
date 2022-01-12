@@ -9,7 +9,7 @@
     /> -->
     <nav class="navbar navbar-light border-bottom" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="http://www.geologie.ac.at/" target="_blank">
+            <a class="navbar-item" href="/">
                 <!-- <img src="./assets/images/TETHYS-Logo.svg" width="240px" height="86" alt="TETHYS Logo" /> -->
                 <img src="./assets/images/TETHYS-Logo.svg" width="240" height="86" />
             </a>

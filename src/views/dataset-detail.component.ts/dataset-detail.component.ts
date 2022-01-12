@@ -4,18 +4,22 @@ import { Prop } from "vue-property-decorator";
 import DatasetService from "../../services/dataset.service";
 import { Subscription } from "rxjs";
 import moment from "moment";
-import SimpleSearchComponent from "@/components/simple-search/simple-search-component.vue";
+// import SimpleSearchComponent from "@/components/simple-search/simple-search-component.vue";
+import VsInput from "@/components/vs-input/vs-input.vue";
+import { Suggestion } from "@/models/dataset";
 import { VUE_APP_PORTAL } from "@/constants";
 
 @Options({
     name: "DatasetDetailComponent",
     components: {
-        SimpleSearchComponent,
+        VsInput,
     },
 })
 export default class DatasetDetailComponent extends Vue {
     @Prop()
     datasetId!: number;
+
+    searchTerm: string | Suggestion = "";
 
     private subscriptions: Array<Subscription> = [];
     public dataset = {} as DbDataset;
@@ -34,6 +38,20 @@ export default class DatasetDetailComponent extends Vue {
         for (const subs of this.subscriptions) {
             subs.unsubscribe();
         }
+    }
+
+    onSearch(suggestion: Suggestion | string): void {
+        let term;
+        if (typeof suggestion === "string") {
+            term = suggestion;
+            this.$router.push({ name: "Search", params: { display: term } });
+        } else if (suggestion instanceof Suggestion) {
+            term = suggestion.value;
+            this.$router.push({ name: "Search", params: { display: term, type: suggestion.type } });
+        }
+
+        // this.searchTerm = suggestion;
+        // this.$router.push({ name: "Search", params: { display: term, suggestion instanceof Suggestion ? ty} });
     }
 
     private getDataset(id: number): void {

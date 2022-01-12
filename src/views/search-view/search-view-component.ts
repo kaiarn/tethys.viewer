@@ -7,7 +7,7 @@ import ActiveFacetCategory from "@/components/active-facet-category/active-facet
 import { SolrSettings } from "@/models/solr";
 // import { DatasetService } from "@/services/dataset.service";
 import DatasetService from "../../services/dataset.service";
-import { Suggestion, Dataset } from "@/models/dataset";
+import { Suggestion, Dataset, SearchType } from "@/models/dataset";
 import { SolrResponse, FacetFields, FacetItem, FacetResults, FacetInstance } from "@/models/headers";
 import { ActiveFilterCategories } from "@/models/solr";
 
@@ -23,6 +23,9 @@ import { ActiveFilterCategories } from "@/models/solr";
 export default class SearchViewComponent extends Vue {
     @Prop()
     display!: string;
+
+    @Prop()
+    type!: string;
 
     results: Array<Dataset> = [];
 
@@ -68,10 +71,26 @@ export default class SearchViewComponent extends Vue {
             return false;
         }
     }
+    // getKeyName(value: string) {
+    //     return Object.entries(Suggestion).find(([key, val]) => val === value)?.[0];
+    // }
+    getEnumKeyByEnumValue<T extends { [index: string]: string }>(myEnum: T, enumValue: string): keyof T | null {
+        const keys = Object.keys(myEnum).filter((x) => myEnum[x] == enumValue);
+        return keys.length > 0 ? keys[0] : null;
+        // return keys[0];
+    }
 
     beforeMount(): void {
         // this.rdrAPI = new DatasetService();
-        if (this.display != undefined && this.display != "") {
+        if (this.display != "" && this.type != undefined) {
+            const enumKey = this.getEnumKeyByEnumValue(SearchType, this.type);
+            if (enumKey) {
+                const suggestion = new Suggestion(this.display, SearchType[enumKey]);
+                this.onSearch(suggestion);
+            } else {
+                this.onSearch(this.display);
+            }
+        } else if (this.display != "" && this.type == undefined) {
             this.onSearch(this.display);
         } else {
             this.onSearch("");

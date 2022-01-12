@@ -47,19 +47,12 @@
             <img src="https://bulma.io/images/placeholders/256x256.png" />
         </figure> -->
         <!-- class="columns help u-full-width featured-bg-image"> -->
-        <section data-sr id="help" class="columns header-image align-items-center h-100">
-            <div class="column is-two-thirds-tablet is-half-desktop is-one-third-widescreen mx-auto">
-                <!-- <img src="site/img/Main-banner-homepage-1280.jpg" class="img-fluid""> -->
-
+        <section data-sr id="help" class="header-image align-items-center h-100">
+            <!-- <div class="column is-two-thirds-tablet is-half-desktop is-one-third-widescreen mx-auto">
                 <div class="search-box mx-auto">
-                    <!-- <form class="my-2 my-lg-0 main-search-from-bg d-flex d-row">
-                        <input class="form-control mr-sm-2 border-0" type="text" placeholder="Search" aria-label="Search" />
-                        <button class="btn btn-secondary m-0" type="submit"><i class="fas fa-search text-white"></i></button>
-                    </form> -->
                     <div class="field has-addons main-search-from-bg">
                         <div class="control is-expanded">
                             <input id="search_query" class="input is-medium" type="text" name="q" autocomplete="off" v-model="display" />
-                            <!-- <p>Message is: {{ display }}</p>  v-on:input="searchChanged"-->
                         </div>
                         <div class="control">
                             <button class="button input is-medium search-button-icon" @click="search()">
@@ -68,7 +61,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
+            <vs-input v-on:search-change="onSearch" v-bind:placeholder="'Enter your search term...'"></vs-input>
         </section>
 
         <div class="container">
@@ -188,9 +182,12 @@
                 <div class="column col-sm text-center">
                     <a target="_blank" href="https://www.re3data.org/repository/r3d100013400"><img src="@/assets/site/img/re3-data-logo-mono.jpg" alt="re3 data logo" /></a>
                 </div>
-                <!-- <div class="column col-sm text-center mobile-space">
-                    <img src="@/assets/site/img/geosphere-austria-logo.jpg" class="pb-3" alt="logo geosphere austria" />
-                </div> -->
+                <div class="column col-sm text-center mobile-space">
+                    <a target="_blank" href="http://www.geologie.ac.at/">
+                        <!-- <img src="@/assets/site/img/geosphere-austria-logo.jpg" class="pb-3" alt="logo geosphere austria" /> -->
+                        <img src="@/assets/site/img/geologische-bundesanstalt-logo.jpg" alt="Geologische Bundesanstalt logo" />
+                    </a>
+                </div>
                 <div class="column col-sm text-center">
                     <a target="_blank" href="https://www.base-search.net/Search/Results?q=coll:fttethysrdr&refid=dctablede">
                         <img src="@/assets/site/img/base-logo.gif" alt="logo base" />

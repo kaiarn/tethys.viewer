@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="is-multiline">
         <!-- <div class="content column is-half is-offset-one-quarter" style="margin-top: 30px; padding-bottom: 0; margin-bottom: 0px"> -->
         <div class="column is-two-thirds-tablet is-half-desktop is-one-third-widescreen mx-auto">
             <div class="search-box mx-auto">
