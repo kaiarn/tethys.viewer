@@ -56,7 +56,9 @@
                         <div class="column">
                             <label class="label">
                                 {{ getCitation() }}
-                                <a class="link-label" v-bind:href="'https://doi.org/' + dataset.identifier.value">({{ "https://doi.org/" + dataset.identifier.value }})</a>
+                                <a v-if="dataset.identifier" class="link-label" v-bind:href="'https://doi.org/' + dataset.identifier.value"
+                                    >({{ "https://doi.org/" + dataset.identifier.value }})</a
+                                >
                             </label>
                         </div>
                     </div>
