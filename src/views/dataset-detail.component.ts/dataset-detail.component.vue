@@ -75,21 +75,21 @@
                                 <p>{{ dataset.MainAbstract.value }}</p>
                                 <br />
                                 <p v-if="dataset.hasTranslatedAbstract()">
-                                    {{ dataset.TranslatedAbtract.value }}
+                                    {{ dataset.TranslatedAbstract.value }}
                                 </p>
                             </div>
                         </div>
                         <div class="columns" v-if="dataset.hasOwnProperty('abstracts')">
                             <div class="column is-3-desktop is-4-tablet label">Serieninformation/<br />series information:</div>
                             <div class="column is-9-desktop is-8-tablet" v-if="dataset.hasSeriesInformationAbstract()">
-                                {{ dataset.SeriesInformationAbstract.value }}
+                                {{ dataset.SeriesInformationAbstract?.value }}
                             </div>
                             <div class="column is-9-desktop is-8-tablet" v-else>-</div>
                         </div>
                         <div class="columns" v-if="dataset.hasOwnProperty('abstracts')">
                             <div class="column is-3-desktop is-4-tablet label">Methodik/<br />method:</div>
-                            <div class="column is-9-desktop is-8-tablet" v-if="dataset.hasMethodsAbtract()">
-                                {{ dataset.MethodsAbtract.value }}
+                            <div class="column is-9-desktop is-8-tablet" v-if="dataset.hasMethodsAbstract()">
+                                {{ dataset.MethodsAbstract.value }}
                             </div>
                             <div class="column is-9-desktop is-8-tablet" v-else>-</div>
                         </div>

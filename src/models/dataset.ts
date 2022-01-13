@@ -116,7 +116,7 @@ export class DbDataset {
         }
     }
 
-    public hasMethodsAbtract(): boolean {
+    public hasMethodsAbstract(): boolean {
         if (this.abstracts.some((e) => e.type === AbstractType.Methods)) {
             return true;
         } else {
@@ -164,15 +164,15 @@ export class DbDataset {
         return this.abstracts.find((e) => e.type === AbstractType.Abstract);
     }
 
-    public get TranslatedAbtract(): Nullable<Abstract> {
+    public get TranslatedAbstract(): Nullable<Abstract> {
         return this.abstracts.find((e) => e.type === AbstractType.Translated);
     }
 
-    public get SeriesInformationAbtract(): Nullable<Abstract> {
+    public get SeriesInformationAbstract(): Nullable<Abstract> {
         return this.abstracts.find((e) => e.type === AbstractType.Series_information);
     }
 
-    public get MethodsAbtract(): Nullable<Abstract> {
+    public get MethodsAbstract(): Nullable<Abstract> {
         return this.abstracts.find((e) => e.type === AbstractType.Methods);
     }
 

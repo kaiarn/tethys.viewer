@@ -31,10 +31,10 @@ export default class VsInput extends Vue {
     private selectedIndex = 0;
     private selectedDisplay = "";
     private solr: SolrSettings = {
-        // core: "rdr_data", // SOLR.core;
-        // host: "tethys.at",
-        core: "test_data", // SOLR.core;
-        host: "repository.geologie.ac.at",
+        core: "rdr_data", // SOLR.core;
+        host: "tethys.at",
+        // core: "test_data", // SOLR.core;
+        // host: "repository.geologie.ac.at",
     };
     // private rdrAPI!: DatasetService;
     itemRefs!: Array<any>;
