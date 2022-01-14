@@ -47,11 +47,11 @@ export default class DatasetDetailComponent extends Vue {
             let term;
             if (typeof suggestion === "string") {
                 term = suggestion;
-                window.open("https://tethys.at/search/" + term);
+                window.open("https://tethys.at/search/" + term, "_self");
             } else if (suggestion instanceof Suggestion) {
                 term = suggestion.value;
                 const type = suggestion.type;
-                window.open("https://tethys.at/search/" + term + "/" + type);
+                window.open("https://tethys.at/search/" + term + "/" + type, "_self");
             }
         } else {
             let term;

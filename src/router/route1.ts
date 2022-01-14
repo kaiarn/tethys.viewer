@@ -1,7 +1,7 @@
 // import Vue from 'vue';
 // import Router from 'vue-router';
 import { createWebHistory, createRouter } from "vue-router";
-import DatasetDetailComponent from "@/views/dataset-detail.component.ts/dataset-detail.component";
+import DatasetDetailComponent from "@/views/dataset-detail.component/dataset-detail.component";
 
 // Vue.use(Router);
 
