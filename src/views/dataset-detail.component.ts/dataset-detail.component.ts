@@ -41,13 +41,27 @@ export default class DatasetDetailComponent extends Vue {
     }
 
     onSearch(suggestion: Suggestion | string): void {
-        let term;
-        if (typeof suggestion === "string") {
-            term = suggestion;
-            this.$router.push({ name: "Search", params: { display: term } });
-        } else if (suggestion instanceof Suggestion) {
-            term = suggestion.value;
-            this.$router.push({ name: "Search", params: { display: term, type: suggestion.type } });
+        const host = window.location.host;
+        const parts = host.split(".");
+        if (parts[0] === "doi") {
+            let term;
+            if (typeof suggestion === "string") {
+                term = suggestion;
+                window.open("https://tethys.at/search/" + term);
+            } else if (suggestion instanceof Suggestion) {
+                term = suggestion.value;
+                const type = suggestion.type;
+                window.open("https://tethys.at/search/" + term + "/" + type);
+            }
+        } else {
+            let term;
+            if (typeof suggestion === "string") {
+                term = suggestion;
+                this.$router.push({ name: "Search", params: { display: term } });
+            } else if (suggestion instanceof Suggestion) {
+                term = suggestion.value;
+                this.$router.push({ name: "Search", params: { display: term, type: suggestion.type } });
+            }
         }
 
         // this.searchTerm = suggestion;
@@ -116,7 +130,7 @@ export default class DatasetDetailComponent extends Vue {
                 // u.last_name + ", " + u.first_name?.substring(0, 1).toUpperCase() + "."
             })
             .join(", ");
-        citation += " " + moment(this.dataset.server_date_published).format("YYYY") + ": ";
+        citation += " (" + moment(this.dataset.server_date_published).format("YYYY") + "): ";
         citation += this.dataset.MainTitle?.value;
         citation += "." + this.dataset.creating_corporation + ", ";
         citation += this.dataset.publisher_name;

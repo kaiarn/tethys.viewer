@@ -71,7 +71,7 @@ const routes = [
     },
 ];
 
-const router = createRouter({
+const index = createRouter({
     history: createWebHistory(),
     routes,
     // scrollBehavior(to, from, savedPosition) {
@@ -81,4 +81,4 @@ const router = createRouter({
     },
 });
 
-export default router;
+export default index;

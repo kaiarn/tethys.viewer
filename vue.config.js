@@ -21,6 +21,9 @@ module.exports = {
             title: "TETHYS - Research Data Repository",
         },
     },
+    devServer: {
+        disableHostCheck: true,
+    },
     configureWebpack: {
         plugins: [
             new webpack.DefinePlugin({

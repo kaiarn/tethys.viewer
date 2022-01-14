@@ -1,12 +1,28 @@
 import { createApp } from "vue";
 import App from "./App.vue";
+import App2 from "./App2.vue";
 import "./assets/scss/main-styles.scss";
 // import FontAwesomeIcon from "@/utilities/fontawesome";
-import router from "./router/index";
+import index from "./router/index";
+import route1 from "./router/route1";
 import "@fortawesome/fontawesome-free/css/all.css";
 import VueMatomo from "vue-matomo";
 
-createApp(App)
+const host = window.location.host;
+const parts = host.split(".");
+// const domainLength = 2; // route1.example.com => domain length = 3
+let router, app;
+// let routes;
+if (parts[0] === "doi") {
+    router = route1;
+    app = App2;
+} else {
+    // If you want to do something else just comment the line below
+    router = index;
+    app = App;
+}
+
+createApp(app)
     .use(VueMatomo, {
         host: "https://webstat.geologie.ac.at/",
         siteId: 8,
