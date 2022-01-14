@@ -128,6 +128,7 @@ class DatasetService {
             // fq: ["subject:Steiermark", "language:de"],
             fq: filterFields,
             start: start,
+            sort: "server_date_published desc",
             facet: "on",
             // "facet.field": "language",
             "json.facet.language": '{ type: "terms", field: "language" }',

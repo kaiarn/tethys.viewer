@@ -106,7 +106,16 @@ export default class DatasetDetailComponent extends Vue {
     }
 
     public getCitation(): string {
-        let citation = this.dataset.contributors.map((u) => u.last_name + ", " + u.first_name.substring(0, 1).toUpperCase() + ".").join(", ");
+        let citation = this.dataset.authors
+            .map((u) => {
+                let name = u.last_name;
+                if (u.first_name) {
+                    name += ", " + u.first_name?.substring(0, 1).toUpperCase() + ".";
+                }
+                return name;
+                // u.last_name + ", " + u.first_name?.substring(0, 1).toUpperCase() + "."
+            })
+            .join(", ");
         citation += " " + moment(this.dataset.server_date_published).format("YYYY") + ": ";
         citation += this.dataset.MainTitle?.value;
         citation += "." + this.dataset.creating_corporation + ", ";

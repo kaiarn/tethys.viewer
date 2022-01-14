@@ -33,6 +33,12 @@ const routes = [
         component: DatasetDetailComponent,
         props: true,
     },
+    // {
+    //     path: "/10.24341/tethys.:datasetId",
+    //     name: "dataset2",
+    //     component: DatasetDetailComponent,
+    //     props: true,
+    // },
     {
         path: "/services",
         name: "Services",
