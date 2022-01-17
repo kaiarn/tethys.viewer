@@ -66,7 +66,14 @@
                     <div class="card record-elem">
                         <div class="columns" v-if="dataset.hasOwnProperty('titles')">
                             <div class="column is-3-desktop is-4-tablet label">Title/<br />title:</div>
-                            <div class="column is-9-desktop is-8-tablet">{{ dataset.titles[0].value }}</div>
+                            <!-- <div class="column is-9-desktop is-8-tablet">{{ dataset.titles[0].value }}</div> -->
+                            <div class="column is-9-desktop is-8-tablet">
+                                <p>{{ dataset.MainTitle.value }}</p>
+                                <br />
+                                <p v-if="dataset.hasTranslatedTitle()">
+                                    {{ dataset.TranslatedTitle.value }}
+                                </p>
+                            </div>
                         </div>
                         <div class="columns" v-if="dataset.hasOwnProperty('abstracts')">
                             <div class="column is-3-desktop is-4-tablet label">
@@ -84,7 +91,11 @@
                         <div class="columns" v-if="dataset.hasOwnProperty('abstracts')">
                             <div class="column is-3-desktop is-4-tablet label">Serieninformation/<br />series information:</div>
                             <div class="column is-9-desktop is-8-tablet" v-if="dataset.hasSeriesInformationAbstract()">
-                                {{ dataset.SeriesInformationAbstract?.value }}
+                                <p>{{ dataset.SeriesInformationAbstract?.value }}</p>
+                                <br />
+                                <p v-if="dataset.hasTranslatedSeriesInformationAbstract()">
+                                    {{ dataset.TranslatedSeriesInformationAbstract?.value }}
+                                </p>
                             </div>
                             <div class="column is-9-desktop is-8-tablet" v-else>-</div>
                         </div>

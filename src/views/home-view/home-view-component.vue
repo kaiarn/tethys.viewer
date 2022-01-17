@@ -162,8 +162,9 @@
                     <h1 class="text-white">HABEN SIE FRAGEN?</h1>
 
                     <p class="text-white text center p-5">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-                        gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                        Tethys RDR ist ein Datenverlag der Geologischen Bundesanstalt (GBA), der ausschließlich an der GBA generierte geowissenschaftliche Forschungsdaten
+                        publiziert. Die Datenpublikationen können sowohl in deutscher, als auch in englischer Sprache publiziert werden. Durch die Bereitstellung der
+                        Datenpublikation zusammen mit Metadaten nach standardisierten Schemata werden die Publikationen auffindbar und zitierbar.
                     </p>
 
                     <div class="mx-auto my-5" style="width: 170px">

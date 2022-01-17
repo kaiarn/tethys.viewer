@@ -100,6 +100,14 @@ export class DbDataset {
         public project?: Project,
     ) {}
 
+    public hasTranslatedTitle(): boolean {
+        if (this.titles.some((e) => e.type === TitleType.Translated)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public hasTranslatedAbstract(): boolean {
         if (this.abstracts.some((e) => e.type === "Translated")) {
             return true;
@@ -109,7 +117,15 @@ export class DbDataset {
     }
 
     public hasSeriesInformationAbstract(): boolean {
-        if (this.abstracts.some((e) => e.type === AbstractType.Series_information)) {
+        if (this.abstracts.some((e) => e.type === AbstractType.Series_information && this.language == e.language)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public hasTranslatedSeriesInformationAbstract(): boolean {
+        if (this.abstracts.some((e) => e.type === AbstractType.Series_information && this.language != e.language)) {
             return true;
         } else {
             return false;
@@ -160,6 +176,10 @@ export class DbDataset {
         return this.titles.find((e) => e.type === TitleType.Main);
     }
 
+    public get TranslatedTitle(): Nullable<Title> {
+        return this.titles.find((e) => e.type === TitleType.Translated);
+    }
+
     public get MainAbstract(): Nullable<Abstract> {
         return this.abstracts.find((e) => e.type === AbstractType.Abstract);
     }
@@ -169,7 +189,11 @@ export class DbDataset {
     }
 
     public get SeriesInformationAbstract(): Nullable<Abstract> {
-        return this.abstracts.find((e) => e.type === AbstractType.Series_information);
+        return this.abstracts.find((e) => e.type === AbstractType.Series_information && this.language == e.language);
+    }
+
+    public get TranslatedSeriesInformationAbstract(): Nullable<Abstract> {
+        return this.abstracts.find((e) => e.type === AbstractType.Series_information && this.language != e.language);
     }
 
     public get MethodsAbstract(): Nullable<Abstract> {

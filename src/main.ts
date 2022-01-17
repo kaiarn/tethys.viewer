@@ -60,7 +60,7 @@ createApp(app)
         cookieDomain: undefined,
         // Tell Matomo the website domain so that clicks on these domains are not tracked as 'Outlinks'
         // Default: undefined, example: '*.example.com'
-        domains: undefined,
+        domains: "*.tethys.at",
         preInitActions: [],
     })
     .use(router)
