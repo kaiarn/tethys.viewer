@@ -185,7 +185,7 @@
                     <div class="card">
                         <div class="column">
                             <h3 class="label uppercase">Abdeckung/Coverage</h3>
-                            <p>
+                            <p style="white-space: pre-wrap">
                                 {{ dataset.Coverage }}
                             </p>
                         </div>

@@ -206,35 +206,39 @@ export class DbDataset {
             const xMax = this.coverage.x_max;
             const yMin = this.coverage.y_min;
             const yMax = this.coverage.y_max;
-            let geoLocation = `SOUTH-BOUND LATITUDE:  ${xMin},
-            * WEST-BOUND LONGITUDE: ${yMin},
-            * NORTH-BOUND LATITUDE: ${xMax},
-            * EAST-BOUND LONGITUDE: ${yMax}`;
+            const elevationAbsolut = this.coverage.elevation_absolut;
+
+            let geoLocation =
+                "* SOUTH-BOUND LATITUDE: " + xMin + "\n" + "* WEST-BOUND LONGITUDE: " + yMin + "\n" + "* NORTH-BOUND LATITUDE: " + xMax + "\n" + "* EAST-BOUND LONGITUDE: " + yMax;
+
+            // geoLocation += elevationAbsolut != null ? ` * ELEVATION ABSOLUT: ${elevationAbsolut}\n` : "";
+
+            // ${elevationAbsolut ? ` * ELEVATION ABSOLUT: ${elevationAbsolut}\n` : ""} `;
 
             let elevation = "";
             if (this.coverage.elevation_max != null && this.coverage.elevation_min != null) {
-                elevation += " * ELEVATION MIN: " + this.coverage.elevation_min + " * ELEVATION MAX: " + this.coverage.elevation_max;
+                elevation += "\n* ELEVATION MIN: " + this.coverage.elevation_min + " *\nELEVATION MAX: " + this.coverage.elevation_max;
             }
             if (this.coverage.elevation_absolut != null) {
-                elevation += " * ELEVATION ABSOLUT: " + this.coverage.elevation_absolut;
+                elevation += "\n* ELEVATION ABSOLUT: " + this.coverage.elevation_absolut;
             }
             if (elevation != "") geoLocation += elevation;
 
             let depth = "";
             if (this.coverage.depth_max != null && this.coverage.depth_min != null) {
-                depth += " * DEPTH MIN: " + this.coverage.depth_min + " * DEPTH MAX: " + this.coverage.depth_max;
+                depth += "\n* DEPTH MIN: " + this.coverage.depth_min + "\n* DEPTH MAX: " + this.coverage.depth_max;
             }
             if (this.coverage.elevation_absolut != null) {
-                depth += " * DEPTH ABSOLUT: " + this.coverage.depth_absolut;
+                depth += "\n* DEPTH ABSOLUT: " + this.coverage.depth_absolut;
             }
             if (depth != "") geoLocation += depth;
 
             let time = "";
             if (this.coverage.time_max != null && this.coverage.time_min != null) {
-                time += " * TIME MIN: " + this.coverage.time_min + " * TIME MAX: " + this.coverage.time_max;
+                time += "\n* TIME MIN: " + this.coverage.time_min + "\n* TIME MAX: " + this.coverage.time_max;
             }
             if (this.coverage.time_absolut != null) {
-                time += " * TIME ABSOLUT: " + this.coverage.time_absolut;
+                time += "\n* TIME ABSOLUT: " + this.coverage.time_absolut;
             }
             if (time != "") geoLocation += time;
 
