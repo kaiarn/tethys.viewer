@@ -206,10 +206,39 @@ export class DbDataset {
             const xMax = this.coverage.x_max;
             const yMin = this.coverage.y_min;
             const yMax = this.coverage.y_max;
-            return `SOUTH-BOUND LATITUDE:  ${xMin},
+            let geoLocation = `SOUTH-BOUND LATITUDE:  ${xMin},
             * WEST-BOUND LONGITUDE: ${yMin},
             * NORTH-BOUND LATITUDE: ${xMax},
             * EAST-BOUND LONGITUDE: ${yMax}`;
+
+            let elevation = "";
+            if (this.coverage.elevation_max != null && this.coverage.elevation_min != null) {
+                elevation += " * ELEVATION MIN: " + this.coverage.elevation_min + " * ELEVATION MAX: " + this.coverage.elevation_max;
+            }
+            if (this.coverage.elevation_absolut != null) {
+                elevation += " * ELEVATION ABSOLUT: " + this.coverage.elevation_absolut;
+            }
+            if (elevation != "") geoLocation += elevation;
+
+            let depth = "";
+            if (this.coverage.depth_max != null && this.coverage.depth_min != null) {
+                depth += " * DEPTH MIN: " + this.coverage.depth_min + " * DEPTH MAX: " + this.coverage.depth_max;
+            }
+            if (this.coverage.elevation_absolut != null) {
+                depth += " * DEPTH ABSOLUT: " + this.coverage.depth_absolut;
+            }
+            if (depth != "") geoLocation += depth;
+
+            let time = "";
+            if (this.coverage.time_max != null && this.coverage.time_min != null) {
+                time += " * TIME MIN: " + this.coverage.time_min + " * TIME MAX: " + this.coverage.time_max;
+            }
+            if (this.coverage.time_absolut != null) {
+                time += " * TIME ABSOLUT: " + this.coverage.time_absolut;
+            }
+            if (time != "") geoLocation += time;
+
+            return geoLocation;
         } else {
             return "";
         }
@@ -279,6 +308,15 @@ export interface Coverage {
     x_max: string;
     y_min: string;
     y_max: string;
+    elevation_min?: number;
+    elevation_max?: number;
+    elevation_absolut?: number;
+    depth_min?: number;
+    depth_max?: number;
+    depth_absolut?: number;
+    time_min?: string;
+    time_max?: string;
+    time_absolut?: string;
 }
 
 export interface License {
