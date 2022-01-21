@@ -8,6 +8,7 @@ import { SolrSettings } from "@/models/solr";
 import { Options, Vue } from "vue-class-component";
 import { Prop, Emit } from "vue-property-decorator";
 import { Dataset, Suggestion, SearchType } from "@/models/dataset";
+import { SOLR_HOST, SOLR_CORE } from "@/constants";
 
 @Options({
     name: "VsInput",
@@ -31,8 +32,8 @@ export default class VsInput extends Vue {
     private selectedIndex = 0;
     private selectedDisplay = "";
     private solr: SolrSettings = {
-        core: "rdr_data", // SOLR.core;
-        host: "tethys.at",
+        core: SOLR_CORE, //"rdr_data", // SOLR.core;
+        host: SOLR_HOST, //"tethys.at",
         // core: "test_data", // SOLR.core;
         // host: "repository.geologie.ac.at",
     };

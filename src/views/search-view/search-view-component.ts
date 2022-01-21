@@ -10,6 +10,7 @@ import DatasetService from "../../services/dataset.service";
 import { Suggestion, Dataset, SearchType } from "@/models/dataset";
 import { SolrResponse, FacetFields, FacetItem, FacetResults, FacetInstance } from "@/models/headers";
 import { ActiveFilterCategories } from "@/models/solr";
+import { SOLR_HOST, SOLR_CORE } from "@/constants";
 
 @Options({
     name: "SearchViewComponent",
@@ -44,8 +45,8 @@ export default class SearchViewComponent extends Vue {
     loaded = false;
     numFound!: number;
     private solr: SolrSettings = {
-        core: "rdr_data", // SOLR.core;
-        host: "tethys.at",
+        core: SOLR_CORE, //"rdr_data", // SOLR.core;
+        host: SOLR_HOST, //"tethys.at",
         // core: "test_data", // SOLR.core;
         // host: "repository.geologie.ac.at",
     };

@@ -28,6 +28,8 @@ module.exports = {
         plugins: [
             new webpack.DefinePlugin({
                 VUE_APP_PORTAL: JSON.stringify(process.env.VUE_APP_PORTAL),
+                SOLR_HOST: JSON.stringify(process.env.SOLR_HOST),
+                SOLR_CORE: JSON.stringify(process.env.SOLR_CORE),
             }),
         ],
     },
