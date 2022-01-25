@@ -3,7 +3,7 @@ import { Watch } from "vue-property-decorator";
 // import { RouteLocation } from "vue-router";
 import HelloWorld from "./components/HelloWorld/HelloWorld.vue";
 import HomeViewComponent from "./views/home-view/home-view-component.vue";
-import HelpViewComponent from "./views/map-view/help-view-component.vue";
+import HelpViewComponent from "./views/help-view/help-view-component.vue";
 import SearchViewComponent from "./views/search-view/search-view-component.vue";
 import DatasetDetailComponent from "./views/dataset-detail.component/dataset-detail.component.vue";
 import ServiceViewComponent from "./views/services-view/service-view-component.vue";

@@ -69,3 +69,9 @@ npm install --save moment@latest
 npm install --save vue-matomo
 
 declare module 'vue-matomo'; inside shims-vue.d.ts
+
+======================== leaflet ==========================
+npm install --save leaflet@latest 
+npm install --save-dev @types/leaflet
+
+http://geolba.net/tethys/
