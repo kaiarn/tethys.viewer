@@ -1,4 +1,5 @@
-import moment from "moment";
+// import moment from "moment";
+import dayjs from "dayjs";
 
 export interface Dataset {
     abstract_additional: Array<string>;
@@ -160,8 +161,8 @@ export class DbDataset {
         if (this.embargo_date === null) {
             return true;
         }
-        const embargoDate = moment(this.embargo_date);
-        const todayDate = moment.now();
+        const embargoDate = dayjs(this.embargo_date); // moment(this.embargo_date);
+        const todayDate = dayjs(); //moment.now();
 
         // Embargo has passed on the day after the specified date
         if (embargoDate.isBefore(todayDate)) {

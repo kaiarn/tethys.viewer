@@ -3,7 +3,8 @@ import { DbDataset } from "@/models/dataset";
 import { Prop } from "vue-property-decorator";
 import DatasetService from "../../services/dataset.service";
 import { Subscription } from "rxjs";
-import moment from "moment";
+import dayjs from "dayjs";
+import advancedFormat from "dayjs/plugin/advancedFormat";
 // import SimpleSearchComponent from "@/components/simple-search/simple-search-component.vue";
 import VsInput from "@/components/vs-input/vs-input.vue";
 import { Suggestion } from "@/models/dataset";
@@ -29,6 +30,7 @@ export default class DatasetDetailComponent extends Vue {
     public portal = VUE_APP_PORTAL + "/file/download/";
 
     created(): void {
+        dayjs.extend(advancedFormat);
         this.getDataset(this.datasetId);
     }
 
@@ -106,17 +108,18 @@ export default class DatasetDetailComponent extends Vue {
     }
 
     public getPublishedDate(date: string): string {
-        return moment(date).format("ddd, MMMM Do, YYYY h:mm a");
-        // return moment(date).format("MMM Do YYYY");
+        // return moment(date).format("ddd, MMMM Do, YYYY h:mm a");
+        return dayjs(date).format("ddd, MMMM Do, YYYY h:mm a");
     }
 
     public getHumanDate(date: string): string {
-        return moment(date).format("DD.MM.YYYY HH:mm");
-        // return moment(date).format("MMM Do YYYY");
+        // return moment(date).format("DD.MM.YYYY HH:mm");
+        return dayjs(date).format("DD.MM.YYYY HH:mm");
     }
 
     public getYear(date: string): string {
-        return moment(date).format("YYYY");
+        return dayjs(date).format("YYYY");
+        // return moment(date).format("YYYY");
     }
 
     public getCitation(): string {
@@ -130,7 +133,7 @@ export default class DatasetDetailComponent extends Vue {
                 // u.last_name + ", " + u.first_name?.substring(0, 1).toUpperCase() + "."
             })
             .join(", ");
-        citation += " (" + moment(this.dataset.server_date_published).format("YYYY") + "): ";
+        citation += " (" + dayjs(this.dataset.server_date_published).format("YYYY") + "): ";
         citation += this.dataset.MainTitle?.value;
         citation += "." + this.dataset.creating_corporation + ", ";
         citation += this.dataset.publisher_name;

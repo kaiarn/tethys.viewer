@@ -75,3 +75,10 @@ npm install --save leaflet@latest
 npm install --save-dev @types/leaflet
 
 http://geolba.net/tethys/
+
+
+
+npm install --save dayjs
+https://day.js.org/docs/en/installation/typescript
+
+https://www.programmerall.com/article/19972027526/
