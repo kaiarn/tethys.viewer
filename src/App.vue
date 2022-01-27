@@ -37,9 +37,9 @@
                     <!-- <a class="navbar-link is-arrowless" href="#">INTRO</a> -->
                     <router-link class="navbar-link is-arrowless" to="/help">HELP</router-link>
                 </li>
-                <!-- <li class="navbar-item">
+                <li class="navbar-item">
                     <router-link class="navbar-link is-arrowless" to="/map">Map</router-link>
-                </li> -->
+                </li>
                 <!-- <li class="navbar-item">
                     <a class="navbar-link is-arrowless" href="#">HELP</a>
                 </li> -->

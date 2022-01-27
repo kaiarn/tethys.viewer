@@ -1,11 +1,13 @@
 import api from "../api/api";
-import { Observable } from "rxjs";
+import { Observable, of } from "rxjs";
 import { map } from "rxjs/operators";
 import { Dataset, DbDataset, Suggestion } from "@/models/dataset";
 import { SolrResponse } from "@/models/headers";
 import { ActiveFilterCategories } from "@/models/solr";
 import { VUE_APP_PORTAL } from "@/constants";
 import { deserialize, instanceToInstance } from "class-transformer";
+import { OAI_DATASETS } from "./mock-oai-datasets";
+import { OaiDataset } from "@/models/oai";
 
 class DatasetService {
     // for the autocomplete search
@@ -171,6 +173,17 @@ class DatasetService {
 
         // this.messageService.add('HeroService: fetched heroes');
         return dataset;
+    }
+
+    public getOAI(): Observable<OaiDataset[]> {
+        //const host = "https://resource.geolba.net/tethys/harvestOAI.php";
+        // const path = "/api/dataset/" + id;
+        // const apiUrl = host + path;
+        // const oaiDataset = api.get<any>(apiUrl);
+        const oaiDatasets = of(OAI_DATASETS);
+
+        // this.messageService.add('HeroService: fetched heroes');
+        return oaiDatasets;
     }
 
     private prepareDataset(datasetObj: DbDataset, apiUrl: string): DbDataset {
