@@ -77,8 +77,13 @@ npm install --save-dev @types/leaflet
 http://geolba.net/tethys/
 
 
-
+======================== dayjs ==========================================================
 npm install --save dayjs
 https://day.js.org/docs/en/installation/typescript
 
 https://www.programmerall.com/article/19972027526/
+
+
+======================== xml2js ==========================================================
+npm install --save xml2js
+npm i --save-dev @types/xml2js

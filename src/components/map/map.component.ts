@@ -58,9 +58,8 @@ export default class MapComponent extends Vue {
         this.initMap();
     }
 
-    beforeUnmount(): void {
+    public beforeUnmount(): void {
         //unsunscribe to ensure no memory leaks
-        // this.subscription.unsubscribe();
         for (const sub of this.subscriptions) {
             sub.unsubscribe();
         }
@@ -74,10 +73,10 @@ export default class MapComponent extends Vue {
         const newSubs = DatasetService.getOAI().subscribe(
             (res: Array<OaiDataset>) => {
                 this.tethys = res;
-                this.map.createPane("bottom");
-                // this.map.getPane('bottom').style.zIndex = "550";
-                this.map.createPane("top");
-                // this.map.getPane('top').style.zIndex = "650";
+                const bottomPane: HTMLElement = this.map.createPane("bottom");
+                bottomPane.style.zIndex = "550";
+                const topPane: HTMLElement = this.map.createPane("top");
+                topPane.style.zIndex = "650";
 
                 for (let index = 0; index < this.tethys.length; index++) {
                     this.addPolygon(index);
@@ -94,11 +93,9 @@ export default class MapComponent extends Vue {
     }
 
     private addPolygon(i: number) {
-        const southWest = new LatLng(this.tethys[i].south, this.tethys[i].west),
-            northEast = new LatLng(this.tethys[i].north, this.tethys[i].east);
-
+        const southWest = new LatLng(this.tethys[i].south, this.tethys[i].west);
+        const northEast = new LatLng(this.tethys[i].north, this.tethys[i].east);
         const bounds = new LatLngBounds(southWest, northEast);
-
         const bW = this.tethys[i].east - this.tethys[i].west;
 
         new Rectangle(bounds, {
