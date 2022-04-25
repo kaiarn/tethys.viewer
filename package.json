@@ -9,9 +9,9 @@
     "format": "prettier --write 'src/**/*.{ts,tsx}'"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-free": "^6.1.1",
     "@openfonts/open-sans_all": "^1.44.2",
-    "axios": "^0.24.0",
+    "axios": "^0.26.1",
     "class-transformer": "^0.5.1",
     "core-js": "^3.6.5",
     "dayjs": "^1.10.7",

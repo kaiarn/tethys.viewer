@@ -207,10 +207,10 @@ export class DbDataset {
             const xMax = this.coverage.x_max;
             const yMin = this.coverage.y_min;
             const yMax = this.coverage.y_max;
-            const elevationAbsolut = this.coverage.elevation_absolut;
+            // const elevationAbsolut = this.coverage.elevation_absolut;
 
             let geoLocation =
-                "* SOUTH-BOUND LATITUDE: " + xMin + "\n" + "* WEST-BOUND LONGITUDE: " + yMin + "\n" + "* NORTH-BOUND LATITUDE: " + xMax + "\n" + "* EAST-BOUND LONGITUDE: " + yMax;
+                "* SOUTH-BOUND LATITUDE: " + yMin + "\n" + "* WEST-BOUND LONGITUDE: " + xMin + "\n" + "* NORTH-BOUND LATITUDE: " + yMax + "\n" + "* EAST-BOUND LONGITUDE: " + xMax;
 
             // geoLocation += elevationAbsolut != null ? ` * ELEVATION ABSOLUT: ${elevationAbsolut}\n` : "";
 
