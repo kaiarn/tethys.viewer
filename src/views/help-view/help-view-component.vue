@@ -60,6 +60,7 @@
                     <div class="card-content">
                         <p class="card-text">
                             Wird eine Datenpublikation erwünscht, so kann der Verfasser der Publikation sich direkt bei Tethys RDR einloggen und den Publikationsablauf starten.
+                            <a href="docs/HandbuchTethys.pdf" target="_blank" class="text-secondary"> Datenpublikationsrichtlinien, Terms & Conditions, Anleitung </a>
                         </p>
                         <p class="card-text">
                             Wurde noch kein <a href="" class="text-secondary">account</a> angelegt, steht das Tethys RDR-Team bereit, um die weiteren Schritte zu klären (Kontakt).
