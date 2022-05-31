@@ -38,18 +38,18 @@ export default class VsInput extends Vue {
         // host: "repository.geologie.ac.at",
     };
     // private rdrAPI!: DatasetService;
-    itemRefs!: Array<any>;
+    itemRefs!: Array<Element>;
     emits = ["filter"];
 
-    setItemRef(el: any) {
+    setItemRef(el: Element): void {
         this.itemRefs.push(el);
     }
 
-    beforeUpdate() {
+    beforeUpdate(): void {
         this.itemRefs = [];
     }
 
-    mounted() {
+    mounted(): void {
         // this.rdrAPI = new DatasetService();
     }
 
@@ -156,7 +156,7 @@ export default class VsInput extends Vue {
     private request(): void {
         DatasetService.searchTerm(this.display, this.solr.core, this.solr.host).subscribe(
             (res: Dataset[]) => this.dataHandler(res),
-            (error: any) => this.errorHandler(error),
+            (error: string) => this.errorHandler(error),
             () => (this.loading = false),
         );
     }
@@ -167,7 +167,7 @@ export default class VsInput extends Vue {
         // this.loading = false;
     }
 
-    private errorHandler(err: any): void {
+    private errorHandler(err: string): void {
         this.error = err;
         // this.loading = false;
     }
@@ -181,7 +181,7 @@ export default class VsInput extends Vue {
         return key === this.selectedIndex;
     }
 
-    onArrowDown(ev: any): void {
+    onArrowDown(ev: Event): void {
         ev.preventDefault();
         if (this.selectedIndex === null) {
             this.selectedIndex = 0;
@@ -200,7 +200,7 @@ export default class VsInput extends Vue {
         });
     }
 
-    onArrowUp(ev: any): void {
+    onArrowUp(ev: Event): void {
         ev.preventDefault();
         if (this.selectedIndex === null) {
             this.selectedIndex = this.suggestions.length - 1;

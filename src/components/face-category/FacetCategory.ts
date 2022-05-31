@@ -1,8 +1,7 @@
 import { FacetItem } from "@/models/headers";
-import { FilterItem } from "@/models/solr";
+// import { FilterItem } from "@/models/solr";
 import { Options, Vue } from "vue-class-component";
 import { Prop, Emit } from "vue-property-decorator";
-// import FilterItem from '../models/filter-item';
 
 @Options({
     name: "FacetCategory",

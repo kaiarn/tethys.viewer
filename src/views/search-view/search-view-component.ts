@@ -122,7 +122,7 @@ export default class SearchViewComponent extends Vue {
         this.searchTerm = suggestion;
         DatasetService.facetedSearch(suggestion, this.activeFilterCategories, this.solr.core, this.solr.host, undefined).subscribe(
             (res: SolrResponse) => this.dataHandler(res),
-            (error: any) => this.errorHandler(error),
+            (error: string) => this.errorHandler(error),
         );
     }
 
@@ -163,7 +163,7 @@ export default class SearchViewComponent extends Vue {
             if (facetCategory.buckets) {
                 const facetItems: Array<FacetItem> = facetCategory.buckets;
 
-                let facetValues = facetItems.map((facetItem, index) => {
+                let facetValues = facetItems.map((facetItem) => {
                     let rObj: FacetItem;
                     if (filterItem?.val == facetItem.val) {
                         rObj = filterItem;
@@ -189,7 +189,7 @@ export default class SearchViewComponent extends Vue {
         }
     }
 
-    private errorHandler(err: any): void {
+    private errorHandler(err: string): void {
         this.error = err;
         // this.loading = false;
     }
@@ -206,7 +206,7 @@ export default class SearchViewComponent extends Vue {
 
             DatasetService.facetedSearch(this.searchTerm, this.activeFilterCategories, this.solr.core, this.solr.host, undefined).subscribe(
                 (res: SolrResponse) => this.dataHandler(res, facetItem),
-                (error: any) => this.errorHandler(error),
+                (error: string) => this.errorHandler(error),
             );
             // alert(this.activeFilterCategories[filter.Category]);
             // var res = await rdrApi.search(this.searchTerm, this.activeFilterCategories, this.solrCore, this.solrHost);
@@ -268,7 +268,7 @@ export default class SearchViewComponent extends Vue {
                     if (facetCategory.buckets) {
                         const facetItems: Array<FacetItem> = facetCategory.buckets;
 
-                        const facetValues = facetItems.map((facetItem, index) => {
+                        const facetValues = facetItems.map((facetItem) => {
                             let rObj: FacetItem;
                             if (this.facets[prop]?.some((e) => e.val === facetItem.val)) {
                                 // console.log(facetValue + " is included")
@@ -290,7 +290,7 @@ export default class SearchViewComponent extends Vue {
                     }
                 }
             },
-            (error: any) => this.errorHandler(error),
+            (error: string) => this.errorHandler(error),
         );
     }
 }

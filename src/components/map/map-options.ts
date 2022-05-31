@@ -10,5 +10,4 @@ export interface LayerOptions {
 
 // export type LayerMap = Map<string, LayerOptions>;
 
-export class LayerMap extends Map<string, LayerOptions> {
- }
+export class LayerMap extends Map<string, LayerOptions> {}

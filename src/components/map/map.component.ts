@@ -1,7 +1,8 @@
 import { Options, Vue } from "vue-class-component";
-import { Prop, Emit } from "vue-property-decorator";
+// import { Prop, Emit } from "vue-property-decorator";
+import { Prop } from "vue-property-decorator";
 import { LatLng, LatLngBounds, Map, MapOptions, Rectangle, tileLayer } from "leaflet";
-import { LayerOptions } from "./map-options";
+// import { LayerOptions } from "./map-options";
 import DatasetService from "../../services/dataset.service";
 import { Subscription } from "rxjs";
 import { OaiDataset } from "@/models/oai";
@@ -110,7 +111,8 @@ export default class MapComponent extends Vue {
                                 </p>`);
     }
 
-    private addBaseMap(layerOptions?: LayerOptions): void {
+    // private addBaseMap(layerOptions?: LayerOptions): void {
+    private addBaseMap(): void {
         if (this.map) {
             const map = this.map.setView([47.7, 13.5], 7);
             const southWest = new LatLng(46.5, 9.9),

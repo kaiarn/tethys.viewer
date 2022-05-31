@@ -1,11 +1,13 @@
 import api from "../api/api";
-import { Observable, of } from "rxjs";
+// import { Observable, of } from "rxjs";
+import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Dataset, DbDataset, Suggestion } from "@/models/dataset";
 import { SolrResponse } from "@/models/headers";
 import { ActiveFilterCategories } from "@/models/solr";
 import { VUE_APP_PORTAL } from "@/constants";
-import { deserialize, instanceToInstance } from "class-transformer";
+// import { deserialize, instanceToInstance } from "class-transformer";
+import { deserialize } from "class-transformer";
 // import { OAI_DATASETS } from "./mock-oai-datasets";
 import { OaiDataset } from "@/models/oai";
 import xml2js from "xml2js";
@@ -169,7 +171,7 @@ class DatasetService {
         const host = "https:" + VUE_APP_PORTAL;
         const path = "/api/dataset/" + id;
         const apiUrl = host + path;
-        const dataset = api.get<DbDataset>(apiUrl).pipe(map((res) => this.prepareDataset(res, apiUrl)));
+        const dataset = api.get<DbDataset>(apiUrl).pipe(map((res) => this.prepareDataset(res)));
         // const dataset = api.get<DbDataset>(apiUrl).pipe(map((res) => this.prepareDataset(res, apiUrl)));
 
         // this.messageService.add('HeroService: fetched heroes');
@@ -178,7 +180,7 @@ class DatasetService {
 
     public getOAI(): Observable<OaiDataset[]> {
         const apiUrl = "https://data.tethys.at/oai?verb=ListRecords&metadataPrefix=oai_datacite";
-        const oaiDatasets = api.get<any>(apiUrl).pipe(
+        const oaiDatasets = api.get<string>(apiUrl).pipe(
             map(
                 (response: string) => {
                     // const arrOai = new Array<OaiDataset>();
@@ -209,13 +211,13 @@ class DatasetService {
         //     console.log(records[i].getAttribute("name"));
         // }
 
-        const parser = new xml2js.Parser({
+        const parser: xml2js.Parser = new xml2js.Parser({
             trim: true,
             explicitArray: false,
             ignoreAttrs: false,
             // mergeAttrs: true,
         });
-        parser.parseString(records.outerHTML, function (err: any, result: any) {
+        parser.parseString(records.outerHTML, function (err: Error | null, result: any) {
             const xmlNode = result.ListRecords;
             // const rt = xmlNode.resumptionToken;
             for (const rNode in xmlNode.record) {
@@ -294,7 +296,8 @@ class DatasetService {
     //     //
     // }
 
-    private prepareDataset(datasetObj: DbDataset, apiUrl: string): DbDataset {
+    // private prepareDataset(datasetObj: DbDataset, apiUrl: string): DbDataset {
+    private prepareDataset(datasetObj: DbDataset): DbDataset {
         const dataset = deserialize<DbDataset>(DbDataset, JSON.stringify(datasetObj));
         dataset.url = document.documentURI;
         // this.internalDatasetId.generateInternalId(dataset);

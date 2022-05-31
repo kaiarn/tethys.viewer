@@ -1,6 +1,7 @@
 import { Options, Vue } from "vue-class-component";
 import MapComponent from "@/components/map/map.component.vue";
-import { Marker, MapOptions, Control, icon, LatLngBoundsExpression } from "leaflet";
+// import { Marker, MapOptions, Control, icon, LatLngBoundsExpression } from "leaflet";
+import { MapOptions } from "leaflet";
 
 // const DEFAULT_BASE_LAYER_NAME = "BaseLayer";
 // const DEFAULT_BASE_LAYER_URL = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";

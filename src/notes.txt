@@ -87,3 +87,45 @@ https://www.programmerall.com/article/19972027526/
 ======================== xml2js ==========================================================
 npm install --save xml2js
 npm i --save-dev @types/xml2js
+
+
+
+
+============================== upgrade cli-Service =========================================
+
+https://cli.vuejs.org/migrations/migrate-from-v4.html
+
+vue --version
+@vue/cli 5.0.4
+
+vue upgrade
+continue to upgrade these plugins?
+ Name                        Installed       Wanted          Latest          Command to upgrade
+  @vue/cli-service            4.5.17          4.5.17          5.0.4           vue upgrade @vue/cli-service
+  @vue/cli-plugin-babel       4.5.17          4.5.17          5.0.4           vue upgrade @vue/cli-plugin-babel
+  @vue/cli-plugin-eslint      4.5.17          4.5.17          5.0.4           vue upgrade @vue/cli-plugin-eslint
+  @vue/cli-plugin-typescript  4.5.17          4.5.17          5.0.4           vue upgrade @vue/cli-plugin-typescript
+
+   npm install --save-dev node-polyfill-webpack-plugin
+
+vue.config.js:
+1.
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
+2.
+  // devServer: {
+    //     disableHostCheck: true,
+    // },
+3.
+    configureWebpack: {
+        plugins: [
+            new webpack.DefinePlugin({
+                VUE_APP_PORTAL: JSON.stringify(process.env.VUE_APP_PORTAL),
+                SOLR_HOST: JSON.stringify(process.env.SOLR_HOST),
+                SOLR_CORE: JSON.stringify(process.env.SOLR_CORE),
+            }),
+            new NodePolyfillPlugin(),
+        ],
+
+============================ eslint ===========================================
+https://dev-yakuza.posstree.com/en/react-native/eslint-prettier-husky-lint-staged/
+https://prettier.io/docs/en/cli.html

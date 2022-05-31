@@ -1,4 +1,7 @@
+/* eslint @typescript-eslint/no-var-requires: "off" */
 const webpack = require("webpack");
+// const { defineConfig } = require("@vue/cli-service");
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 
 module.exports = {
     publicPath: "/",
@@ -21,9 +24,9 @@ module.exports = {
             title: "TETHYS - Research Data Repository",
         },
     },
-    devServer: {
-        disableHostCheck: true,
-    },
+    // devServer: {
+    //     disableHostCheck: true,
+    // },
     configureWebpack: {
         plugins: [
             new webpack.DefinePlugin({
@@ -31,6 +34,7 @@ module.exports = {
                 SOLR_HOST: JSON.stringify(process.env.SOLR_HOST),
                 SOLR_CORE: JSON.stringify(process.env.SOLR_CORE),
             }),
+            new NodePolyfillPlugin(),
         ],
     },
 };
