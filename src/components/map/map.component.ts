@@ -71,7 +71,7 @@ export default class MapComponent extends Vue {
         // this.onMapInitializedEvent.emit(this.mapId);
         this.addBaseMap();
 
-        const newSubs = DatasetService.getOAI().subscribe(
+        const newSubs = DatasetService.getOaiDatasets().subscribe(
             (res: Array<OaiDataset>) => {
                 this.tethys = res;
                 const bottomPane: HTMLElement = this.map.createPane("bottom");

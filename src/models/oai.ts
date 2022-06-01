@@ -9,3 +9,8 @@ export interface OaiDataset {
     east: number;
     west: number;
 }
+
+export interface OaiPerson {
+    contributorName: string;
+    creatorName: string;
+}

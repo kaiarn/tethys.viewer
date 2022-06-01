@@ -9,7 +9,7 @@ import { VUE_APP_PORTAL } from "@/constants";
 // import { deserialize, instanceToInstance } from "class-transformer";
 import { deserialize } from "class-transformer";
 // import { OAI_DATASETS } from "./mock-oai-datasets";
-import { OaiDataset } from "@/models/oai";
+import { OaiDataset, OaiPerson } from "@/models/oai";
 import xml2js from "xml2js";
 
 class DatasetService {
@@ -162,7 +162,7 @@ class DatasetService {
         const path = "/api/sitelinks/" + year;
         const base = host + path;
 
-        const documents = api.get<Array<DbDataset>>(base);
+        const documents: Observable<DbDataset[]> = api.get<Array<DbDataset>>(base);
         // this.messageService.add('HeroService: fetched heroes');
         return documents;
     }
@@ -178,7 +178,7 @@ class DatasetService {
         return dataset;
     }
 
-    public getOAI(): Observable<OaiDataset[]> {
+    public getOaiDatasets(): Observable<OaiDataset[]> {
         const apiUrl = "https://data.tethys.at/oai?verb=ListRecords&metadataPrefix=oai_datacite";
         const oaiDatasets = api.get<string>(apiUrl).pipe(
             map(
@@ -237,8 +237,8 @@ class DatasetService {
 
                 let creator = "";
                 if (dc.creators.creator instanceof Array) {
-                    dc.creators.creator.forEach((person: any) => {
-                        creator += person.creatorName._ + "; ";
+                    dc.creators.creator.forEach((person: OaiPerson) => {
+                        creator += person.creatorName + "; ";
                     });
                 } else {
                     creator += dc.creators.creator.creatorName._;
@@ -247,7 +247,7 @@ class DatasetService {
                 let contributor = "";
                 if (dc.contributors) {
                     if (dc.contributors.contributor instanceof Array) {
-                        dc.contributors.contributor.forEach((person: any) => {
+                        dc.contributors.contributor.forEach((person: OaiPerson) => {
                             contributor += person.contributorName + "; ";
                         });
                     } else {

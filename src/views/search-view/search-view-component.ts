@@ -11,6 +11,7 @@ import { Suggestion, Dataset, SearchType } from "@/models/dataset";
 import { SolrResponse, FacetFields, FacetItem, FacetResults, FacetInstance } from "@/models/headers";
 import { ActiveFilterCategories } from "@/models/solr";
 import { SOLR_HOST, SOLR_CORE } from "@/constants";
+import { Pagination } from "@/models/pagination";
 
 @Options({
     name: "SearchViewComponent",
@@ -35,7 +36,7 @@ export default class SearchViewComponent extends Vue {
     searchTerm: string | Suggestion = "";
     // activeFilterCategories: Object = {};
     activeFilterCategories: ActiveFilterCategories = new ActiveFilterCategories(); // = new Array<ActiveFilterCategory>();
-    pagination: any = {
+    pagination: Pagination = {
         total: 0,
         per_page: 2,
         current_page: 0,
