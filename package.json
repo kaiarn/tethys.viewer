@@ -23,7 +23,8 @@
     "vue-matomo": "^4.1.0",
     "vue-property-decorator": "^9.1.2",
     "vue-router": "^4.0.12",
-    "xml2js": "^0.4.23"
+    "xml2js": "^0.4.23",
+    "xslt3": "^2.4.0"
   },
   "devDependencies": {
     "@types/leaflet": "^1.7.9",

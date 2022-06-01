@@ -129,3 +129,13 @@ const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 ============================ eslint ===========================================
 https://dev-yakuza.posstree.com/en/react-native/eslint-prettier-husky-lint-staged/
 https://prettier.io/docs/en/cli.html
+
+
+
+
+
+
+
+
+=================================== xslt3
+npm install xslt3 --save
