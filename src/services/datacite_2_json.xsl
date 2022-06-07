@@ -32,33 +32,24 @@
                               </xsl:when>                        
                          </xsl:choose>
                     </xsl:for-each>
-               </xsl:variable>  
+               </xsl:variable> 
+               <xsl:variable name="datacite-subjects" select="*[name() = 'subjects']"/> 
+               <xsl:variable name="subjects">
+                    <xsl:for-each select="$datacite-subjects/*[name() = 'subject']">
+                         <xsl:value-of select="concat(normalize-space(.), ', ')"/>
+                    </xsl:for-each>
+               </xsl:variable>
+
                 <!-- <xsl:value-of select="*[name() = 'identifier']"/>    -->               
                {{                       
                "doi": "{$identifier}",
-               "title": "{$main_title}"
+               "title": "{$main_title}",
+               "subject":  "{$subjects}"
                }},       
-          </xsl:for-each>  
-          
-          <!-- <xsl:apply-templates select="//*[name() = 'resource']" /> -->
-          
-          <!-- <xsl:value-of select="$datacite-titles" separator="&#x20;"/> -->
-          
+          </xsl:for-each>
+          <!-- <xsl:value-of select="$datacite-titles" separator="&#x20;"/> -->          
      </xsl:template>
      
-     <!-- <xsl:template match="metadata/resource/identifier">
-          
-          <xsl:value-of select="."/>
-          
-          </xsl:template> -->
-     <xsl:template match="//*[name() = 'resource']">
-          <xsl:apply-templates select="identifier" />
-     </xsl:template>
      
-     <xsl:template match="identifier" >
-          <xsl:text>test</xsl:text>
-          <!-- <xsl:value-of select="@identifierType" /> 
-               <xsl:value-of select="string(.)"/>        -->
-     </xsl:template>
      
 </xsl:stylesheet>

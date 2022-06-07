@@ -183,6 +183,19 @@ class DatasetService {
         const oaiDatasets = api.get<string>(apiUrl).pipe(
             map(
                 (response: string) => {
+                    // const parser = new DOMParser();
+                    // const xmlDoc: XMLDocument = parser.parseFromString(response, "application/xml");
+
+                    // const xslDoc = parser.parseFromString(this.xsl, "application/xml");
+                    // const xsltProcessor = new XSLTProcessor();
+                    // xsltProcessor.importStylesheet(xslDoc);
+                    // console.log(xmlDoc);
+                    // const xmlDom = xsltProcessor.transformToDocument(xmlDoc);
+
+                    // const serializer = new XMLSerializer();
+                    // const html = serializer.serializeToString(xmlDom.documentElement);
+                    // console.log(html);
+
                     // const arrOai = new Array<OaiDataset>();
                     // return arrOai;
                     const arrOai = this.parseXML(response);
