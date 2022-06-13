@@ -1,7 +1,7 @@
 import { Options, Vue } from "vue-class-component";
 // import { Prop, Emit } from "vue-property-decorator";
 import { Prop } from "vue-property-decorator";
-import { LatLng, LatLngBounds, Map, MapOptions, Rectangle, tileLayer } from "leaflet";
+import { LatLng, LatLngBounds, Map, MapOptions, Rectangle, tileLayer, TileLayer, CRS } from "leaflet";
 // import { LayerOptions } from "./map-options";
 import DatasetService from "../../services/dataset.service";
 import { Subscription } from "rxjs";
@@ -71,21 +71,32 @@ export default class MapComponent extends Vue {
         // this.onMapInitializedEvent.emit(this.mapId);
         this.addBaseMap();
 
-        const newSubs = DatasetService.getOaiDatasets().subscribe(
-            (res: Array<OaiDataset>) => {
-                this.tethys = res;
-                const bottomPane: HTMLElement = this.map.createPane("bottom");
-                bottomPane.style.zIndex = "550";
-                const topPane: HTMLElement = this.map.createPane("top");
-                topPane.style.zIndex = "650";
+        // Create & add WMS-layer.
+        const tethys = new TileLayer.WMS("https://data.geologie.ac.at/mapserver/at_tethys", {
+            layers: "province",
+            format: "image/png",
+            transparent: true,
+            version: "1.3.0",
+            crs: CRS.EPSG3857,
+            opacity: 0.8,
+        });
+        this.map.addLayer(tethys);
 
-                for (let index = 0; index < this.tethys.length; index++) {
-                    this.addPolygon(index);
-                }
-            },
-            (error: string) => this.errorHandler(error),
-        );
-        this.subscriptions.push(newSubs);
+        // const newSubs = DatasetService.getOaiDatasets().subscribe(
+        //     (res: Array<OaiDataset>) => {
+        //         this.tethys = res;
+        //         const bottomPane: HTMLElement = this.map.createPane("bottom");
+        //         bottomPane.style.zIndex = "550";
+        //         const topPane: HTMLElement = this.map.createPane("top");
+        //         topPane.style.zIndex = "650";
+
+        //         for (let index = 0; index < this.tethys.length; index++) {
+        //             this.addPolygon(index);
+        //         }
+        //     },
+        //     (error: string) => this.errorHandler(error),
+        // );
+        // this.subscriptions.push(newSubs);
     }
 
     private errorHandler(err: string): void {
