@@ -73,7 +73,7 @@ export default class MapComponent extends Vue {
 
         // Create & add WMS-layer.
         const tethys = new TileLayer.WMS("https://data.geologie.ac.at/mapserver/at_tethys", {
-            layers: "province",
+            layers: "tethys, geofast",
             format: "image/png",
             transparent: true,
             version: "1.3.0",
