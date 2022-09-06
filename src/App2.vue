@@ -1,12 +1,64 @@
 <template>
     <!-- <HelloWorld msg="Welcome to Your Vue.js plus TypeScript App" /> -->
 
-    <!-- <link
-        rel="stylesheet"
-        href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-        crossorigin="anonymous"
-    /> -->
+    <nav class="navbar navbar-light border-bottom" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <!-- <img src="./assets/images/TETHYS-Logo.svg" width="240px" height="86" alt="TETHYS Logo" /> -->
+                <img src="./assets/images/TETHYS-Logo.svg" width="240" height="86" />
+            </a>
+            <a id="menu-icon" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" :class="active ? 'is-active' : ''" @click="showMobilemenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navMenu" class="navbar-menu" :class="active ? 'is-active' : ''">
+            <ul class="navbar-start" style="flex-grow: 1; justify-content: center">
+                <li class="navbar-item">
+                    <a class="navbar-link is-arrowless active" href="//tethys.at">STARTSEITE</a>
+                    <!-- <router-link class="navbar-link is-arrowless" to="/">STARTSEITE</router-link> -->
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link is-arrowless" href="//tethys.at/search">SEARCH</a>
+                    <!-- <router-link class="navbar-link is-arrowless" to="/search">SEARCH</router-link> -->
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link is-arrowless" href="//tethys.at/services">SERVICES</a>
+                    <!-- <router-link class="navbar-link is-arrowless" to="/services">SERVICES</router-link> -->
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link is-arrowless" href="//tethys.at/help">HELP</a>
+                    <!-- <router-link class="navbar-link is-arrowless" to="/help">HELP</router-link> -->
+                </li>
+                <!-- <li class="navbar-item">
+                    <router-link class="navbar-link is-arrowless" to="/map">MAP</router-link>
+                </li> -->
+                <!-- <li class="navbar-item">
+                    <a class="navbar-link is-arrowless" href="#">HELP</a>
+                </li> -->
+                <li class="navbar-item">
+                    <a class="navbar-link is-arrowless" href="//tethys.at/oai">OAI</a>
+                    <!-- <router-link target="_blank" class="navbar-link is-arrowless" to="/oai">OAI</router-link> -->
+                </li>
+                <!-- 
+                <a href="#" class="custom-btn"><i class="fas fa-sign-in-alt"></i>SIGN IN</a> -->
+            </ul>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a v-bind:href="portal" class="button is-primary custom-button">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <!-- <fa :icon="['fas', 'phone']" class="fas fa-sign-in-alt" /> -->
+                            <!-- </span> -->
+                            <strong>Sign in</strong>
+                        </a>
+                        <!-- <a class="button is-light"> Log in </a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <!-- <home-view-component></home-view-component> -->
     <router-view></router-view>
