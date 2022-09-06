@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import App2 from "./App2.vue";
+// import App2 from "./App2.vue";
 import "./assets/scss/main-styles.scss";
 // import FontAwesomeIcon from "@/utilities/fontawesome";
 import index from "./router/index";
@@ -11,16 +11,17 @@ import VueMatomo from "vue-matomo";
 const host = window.location.host;
 const parts = host.split(".");
 // const domainLength = 2; // route1.example.com => domain length = 3
-let router, app;
+let router;
 // let routes;
 if (parts[0] === "doi") {
     router = route1;
-    app = App2;
+    // app = App2;
 } else {
     // If you want to do something else just comment the line below
     router = index;
-    app = App;
+    // app = App;
 }
+const app = App;
 
 createApp(app)
     .use(VueMatomo, {

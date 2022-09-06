@@ -223,7 +223,7 @@
                         <div class="column">
                             <h3 class="label uppercase">Projekt/Project</h3>
                             <p v-if="dataset.project != null">
-                                <span>{{ dataset.project.name }}</span>
+                                <span>{{ dataset.project.label }}</span>
                             </p>
                             <p v-else>-</p>
                         </div>
