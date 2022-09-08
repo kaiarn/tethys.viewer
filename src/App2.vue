@@ -3,7 +3,7 @@
 
     <nav class="navbar navbar-light border-bottom" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="/">
+            <a class="navbar-item" v-bind:href="app_url">
                 <!-- <img src="./assets/images/TETHYS-Logo.svg" width="240px" height="86" alt="TETHYS Logo" /> -->
                 <img src="./assets/images/TETHYS-Logo.svg" width="240" height="86" />
             </a>
@@ -16,19 +16,19 @@
         <div id="navMenu" class="navbar-menu" :class="active ? 'is-active' : ''">
             <ul class="navbar-start" style="flex-grow: 1; justify-content: center">
                 <li class="navbar-item">
-                    <a class="navbar-link is-arrowless active" href="//tethys.at">STARTSEITE</a>
+                    <a class="navbar-link is-arrowless active" v-bind:href="app_url">STARTSEITE</a>
                     <!-- <router-link class="navbar-link is-arrowless" to="/">STARTSEITE</router-link> -->
                 </li>
                 <li class="navbar-item">
-                    <a class="navbar-link is-arrowless" href="//tethys.at/search">SEARCH</a>
+                    <a class="navbar-link is-arrowless" v-bind:href="search_url">SEARCH</a>
                     <!-- <router-link class="navbar-link is-arrowless" to="/search">SEARCH</router-link> -->
                 </li>
                 <li class="navbar-item">
-                    <a class="navbar-link is-arrowless" href="//tethys.at/services">SERVICES</a>
+                    <a class="navbar-link is-arrowless" v-bind:href="service_url">SERVICES</a>
                     <!-- <router-link class="navbar-link is-arrowless" to="/services">SERVICES</router-link> -->
                 </li>
                 <li class="navbar-item">
-                    <a class="navbar-link is-arrowless" href="//tethys.at/help">HELP</a>
+                    <a class="navbar-link is-arrowless" bind:href="help_url">HELP</a>
                     <!-- <router-link class="navbar-link is-arrowless" to="/help">HELP</router-link> -->
                 </li>
                 <!-- <li class="navbar-item">
@@ -38,7 +38,7 @@
                     <a class="navbar-link is-arrowless" href="#">HELP</a>
                 </li> -->
                 <li class="navbar-item">
-                    <a class="navbar-link is-arrowless" href="//tethys.at/oai">OAI</a>
+                    <a class="navbar-link is-arrowless" bind:href="oai_url">OAI</a>
                     <!-- <router-link target="_blank" class="navbar-link is-arrowless" to="/oai">OAI</router-link> -->
                 </li>
                 <!-- 

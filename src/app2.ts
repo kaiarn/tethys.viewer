@@ -12,7 +12,7 @@ import ContactViewComponent from "./views/contact-view/contact-view-component.vu
 import SitelinkViewComponent from "./views/sitelink-view/sitelink-view-component.vue";
 import ImprintViewComponent from "./views/imprint-view/imprint-view-component.vue";
 import TermsViewComponent from "./views/terms-view/terms-view-component";
-import { VUE_APP_PORTAL } from "./constants";
+import { APP_URL, VUE_APP_PORTAL } from "./constants";
 // import VsInput from "./components/vs-input/vs-input.vue";
 // import VsResult from "./components/vs-result/vs-result.vue";
 // import FacetCategory from "./components/face-category/facet-category.vue";
@@ -47,6 +47,11 @@ import { VUE_APP_PORTAL } from "./constants";
 export default class App2 extends Vue {
     public active = false;
     public portal = VUE_APP_PORTAL + "/login";
+    public app_url = APP_URL;
+    public search_url = APP_URL + "/search";
+    public service_url = APP_URL + "/services";
+    public help_url = APP_URL + "/help";
+    public oai_url = APP_URL + "/oai";
 
     mounted(): void {
         // const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll(".navbar-burger"), 0);
