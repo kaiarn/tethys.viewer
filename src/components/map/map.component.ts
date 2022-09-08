@@ -3,7 +3,7 @@ import { Options, Vue } from "vue-class-component";
 import { Prop } from "vue-property-decorator";
 import { LatLng, LatLngBounds, Map, MapOptions, Rectangle, tileLayer, TileLayer, CRS } from "leaflet";
 // import { LayerOptions } from "./map-options";
-import DatasetService from "../../services/dataset.service";
+// import DatasetService from "../../services/dataset.service";
 import { Subscription } from "rxjs";
 import { OaiDataset } from "@/models/oai";
 

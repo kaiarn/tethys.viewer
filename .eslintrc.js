@@ -1,9 +1,11 @@
+// https://npmmirror.com/package/@typescript-eslint/eslint-plugin/v/5.0.1-alpha.14
 module.exports = {
     root: true,
     env: {
         es6: true,
         node: true,
     },
+    // extends: ["plugin:vue/vue3-essential", "eslint:recommended", "@vue/typescript/recommended", "@vue/prettier", "@vue/prettier/@typescript-eslint"],
     extends: ["plugin:vue/vue3-essential", "eslint:recommended", "@vue/typescript/recommended", "@vue/prettier", "@vue/prettier/@typescript-eslint"],
     parserOptions: {
         ecmaVersion: 2020,

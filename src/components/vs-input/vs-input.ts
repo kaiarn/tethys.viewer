@@ -29,8 +29,8 @@ export default class VsInput extends Vue {
     private error = "";
     private results: Array<Dataset> = [];
     private loading = false;
-    private selectedIndex = 0;
-    private selectedDisplay = "";
+    private selectedIndex = -1;
+    // private selectedDisplay = "";
     private solr: SolrSettings = {
         core: SOLR_CORE, //"rdr_data", // SOLR.core;
         host: SOLR_HOST, //"tethys.at",
@@ -132,7 +132,7 @@ export default class VsInput extends Vue {
     }
 
     searchChanged(): void {
-        this.selectedIndex = 0;
+        this.selectedIndex = -1;
         // Let's warn the parent that a change was made
         // this.$emit("input", this.display);
         if (this.display.length >= 2) {
@@ -183,7 +183,7 @@ export default class VsInput extends Vue {
 
     onArrowDown(ev: Event): void {
         ev.preventDefault();
-        if (this.selectedIndex === null) {
+        if (this.selectedIndex === -1) {
             this.selectedIndex = 0;
             return;
         }
@@ -202,7 +202,7 @@ export default class VsInput extends Vue {
 
     onArrowUp(ev: Event): void {
         ev.preventDefault();
-        if (this.selectedIndex === null) {
+        if (this.selectedIndex === -1) {
             this.selectedIndex = this.suggestions.length - 1;
             return;
         }
@@ -211,11 +211,13 @@ export default class VsInput extends Vue {
     }
 
     onEnter(): void {
-        if (this.selectedIndex === null) {
+        if (this.selectedIndex === -1) {
             // this.$emit("nothingSelected", this.display);
-            return;
+            this.display && this.search();
+        } else {
+            this.select(this.suggestions[this.selectedIndex]);
         }
-        this.select(this.suggestions[this.selectedIndex]);
+
         // this.$emit("enter", this.display);
     }
 

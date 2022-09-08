@@ -20,7 +20,8 @@
                             @keydown.tab="close"
                             v-on:focus="focus"
                         />
-                        <!-- <p>Message is: {{ display }}</p>  v-on:input="searchChanged"-->
+                        <!-- <p>Display is: {{ display }}</p> -->
+                        <!-- v-on:input="searchChanged" -->
                     </div>
 
                     <div class="control">

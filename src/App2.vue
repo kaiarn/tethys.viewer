@@ -28,7 +28,7 @@
                     <!-- <router-link class="navbar-link is-arrowless" to="/services">SERVICES</router-link> -->
                 </li>
                 <li class="navbar-item">
-                    <a class="navbar-link is-arrowless" bind:href="help_url">HELP</a>
+                    <a class="navbar-link is-arrowless" v-bind:href="help_url">HELP</a>
                     <!-- <router-link class="navbar-link is-arrowless" to="/help">HELP</router-link> -->
                 </li>
                 <!-- <li class="navbar-item">
@@ -38,7 +38,7 @@
                     <a class="navbar-link is-arrowless" href="#">HELP</a>
                 </li> -->
                 <li class="navbar-item">
-                    <a class="navbar-link is-arrowless" bind:href="oai_url">OAI</a>
+                    <a class="navbar-link is-arrowless" v-bind:href="oai_url">OAI</a>
                     <!-- <router-link target="_blank" class="navbar-link is-arrowless" to="/oai">OAI</router-link> -->
                 </li>
                 <!-- 
