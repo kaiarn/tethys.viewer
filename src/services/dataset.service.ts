@@ -137,7 +137,9 @@ class DatasetService {
             facet: "on",
             // "facet.field": "language",
             "json.facet.language": '{ type: "terms", field: "language" }',
-            "json.facet.subject": '{ type: "terms", field: "subject" }',
+            "json.facet.subject": '{ type: "terms", field: "subject", limit: -1 }',
+            "json.facet.year": '{ type: "terms", field: "year" }',
+            "json.facet.author": '{ type: "terms", field: "author_facet", limit: -1 }',
         };
 
         const stations = api.get<SolrResponse>(base, q_params);
