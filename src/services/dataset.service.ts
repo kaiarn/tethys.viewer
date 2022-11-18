@@ -150,7 +150,8 @@ class DatasetService {
 
     public getYears(): Observable<string[]> {
         // const heroes = of(HEROES);
-        const host = "https:" + VUE_APP_PORTAL;
+        // const host = "https:" + VUE_APP_PORTAL;
+        const host = VUE_APP_PORTAL;
         const path = "/api/years";
         const base = host + path;
 
@@ -160,7 +161,8 @@ class DatasetService {
     }
 
     public getDocuments(year: string): Observable<Array<DbDataset>> {
-        const host = "https:" + VUE_APP_PORTAL;
+        // const host = "https:" + VUE_APP_PORTAL;
+        const host = VUE_APP_PORTAL;
         const path = "/api/sitelinks/" + year;
         const base = host + path;
 
@@ -170,7 +172,8 @@ class DatasetService {
     }
 
     public getDataset(id: number): Observable<DbDataset> {
-        const host = "https:" + VUE_APP_PORTAL;
+        // const host = "https:" + VUE_APP_PORTAL;
+        const host = VUE_APP_PORTAL;
         const path = "/api/dataset/" + id;
         const apiUrl = host + path;
         const dataset = api.get<DbDataset>(apiUrl).pipe(map((res) => this.prepareDataset(res)));
