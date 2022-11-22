@@ -27,7 +27,7 @@ export default class DatasetDetailComponent extends Vue {
     private error = "";
     public loaded = false;
     public openAccessLicences: Array<string> = ["CC-BY-4.0", "CC-BY-SA-4.0"];
-    public portal = VUE_APP_PORTAL + "/file/download/";
+    public portal = VUE_APP_PORTAL + "/api/file/download/";
 
     created(): void {
         dayjs.extend(advancedFormat);
