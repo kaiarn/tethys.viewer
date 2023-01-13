@@ -12,7 +12,7 @@
                 <p>
                     <span>GeoSphere Austria</span><br />
                     <span>Neulinggasse 38, 1030 Wien</span><br />
-                    <span>office@geologie.ac.at</span><br />
+                    <span>kontakt@geosphere.at</span><br />
                     <span>Telefon: +43-1-7125674</span><br />
                     <span>Fax: +43-1-7125674-56</span><br />
                 </p>
@@ -22,8 +22,8 @@
                     <span>GeoSphere Austria</span><br />
                     <span>Hauptabteilung Informationsdienste</span><br />
                     <span>Neulinggasse 38, 1030 Wien</span><br />
-                    <span>repository@geologie.ac.at</span><br />
-                    <span>Bei technischen Problemen steht Ihnen das RDR-Team, erreichbar unter repository@geologie.ac.at, gerne zur Seite.</span>
+                    <span>repository@geosphere.at</span><br />
+                    <span>Bei technischen Problemen steht Ihnen das RDR-Team, erreichbar unter repository@geosphere.at, gerne zur Seite.</span>
                 </p>
 
                 <p class="lead">Hinweise und Haftungsausschluss</p>

@@ -184,9 +184,9 @@
                     <a target="_blank" href="https://www.re3data.org/repository/r3d100013400"><img src="@/assets/site/img/re3-data-logo-mono.jpg" alt="re3 data logo" /></a>
                 </div>
                 <div class="column col-sm text-center">
-                    <a target="_blank" href="http://www.geologie.ac.at/">
-                        <!-- <img src="@/assets/site/img/geosphere-austria-logo.jpg" class="pb-3" alt="logo geosphere austria" /> -->
-                        <img src="@/assets/site/img/gbaLogoRGB_web.png" alt="Geologische Bundesanstalt logo" />
+                    <a target="_blank" href="http://www.geosphere.at/">
+                        <img src="@/assets/site/img/geosphere-austria-logo.jpg" alt="logo geosphere austria" />
+                        <!-- <img src="@/assets/site/img/gbaLogoRGB_web.png" alt="Geologische Bundesanstalt logo" /> -->
                     </a>
                 </div>
                 <div class="column col-sm text-center">

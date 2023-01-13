@@ -78,7 +78,7 @@
                         <ul class="list-group list-group-flush">
                             <!-- <li class="list-group-item"><a href="#">OAI</a></li> -->
                             <li class="list-group-item"><router-link to="/oai">OAI</router-link></li>
-                            <li class="list-group-item"><a href="https://www.geologie.ac.at/" target="_blank">About GBA</a></li>
+                            <li class="list-group-item"><a href="https://www.geosphere.at/" target="_blank">geosphere.at</a></li>
                             <li class="list-group-item"><a href="https://www.geologie.ac.at/news/news" target="_blank">News</a></li>
                         </ul>
                     </div>
@@ -118,16 +118,16 @@
                         <h5 class="card-title">Connect with us</h5>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                <a target="_blank" href="https://www.geologie.ac.at/"><i class="fas fa-home pr-2"></i>GBA</a>
+                                <a target="_blank" href="https://www.geosphere.at/"><i class="fas fa-home pr-2"></i>geosphere.at</a>
                             </li>
                             <li class="list-group-item">
                                 <a href="#"><i class="fas fa-phone-alt pr-2"></i> +43-1-7125674</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="mailto:repository@geologie.ac.at"><i class="fas fa-envelope pr-2"></i> repository(at)geologie.ac.at </a>
+                                <a href="mailto:repository@geologie.ac.at"><i class="fas fa-envelope pr-2"></i> repository(at)geosphere.at </a>
                             </li>
                         </ul>
-                        <img class="img-fluid pt-4" src="@/assets/site/img/geologische-bundesanstalt-logo.jpg" alt="Geologische Bundesanstalt logo" />
+                        <img class="img-fluid pt-4" src="@/assets/site/img/geosphere-austria-logo.jpg" alt="GeoSphere Austria Logo" />
                     </div>
                 </div>
             </div>
