@@ -1,16 +1,15 @@
 // import Vue from "vue";
-// import { Component, Prop } from 'vue-property-decorator';
 // import debounce from 'lodash/debounce';
 // import { DatasetService } from "../../services/dataset.service";
 import DatasetService from "../../services/dataset.service";
 import { SolrSettings } from "@/models/solr";
 // import { ref } from "vue";
-import { Options, Vue } from "vue-class-component";
-import { Prop, Emit } from "vue-property-decorator";
+import { Component, Vue, Prop, Emit } from "vue-facing-decorator";
+// import { Prop, Emit } from "vue-property-decorator";
 import { Dataset, Suggestion, SearchType } from "@/models/dataset";
 import { SOLR_HOST, SOLR_CORE } from "@/constants";
 
-@Options({
+@Component({
     name: "VsInput",
 })
 export default class VsInput extends Vue {

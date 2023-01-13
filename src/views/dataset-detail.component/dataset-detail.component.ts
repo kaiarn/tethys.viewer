@@ -1,6 +1,6 @@
-import { Options, Vue } from "vue-class-component";
+import { Component, Vue, Prop } from "vue-facing-decorator";
 import { DbDataset } from "@/models/dataset";
-import { Prop } from "vue-property-decorator";
+// import { Prop } from "vue-property-decorator";
 import DatasetService from "../../services/dataset.service";
 import { Subscription } from "rxjs";
 import dayjs from "dayjs";
@@ -10,7 +10,7 @@ import VsInput from "@/components/vs-input/vs-input.vue";
 import { Suggestion } from "@/models/dataset";
 import { VUE_APP_PORTAL } from "@/constants";
 
-@Options({
+@Component({
     name: "DatasetDetailComponent",
     components: {
         VsInput,

@@ -139,3 +139,18 @@ https://prettier.io/docs/en/cli.html
 
 =================================== xslt3
 npm install xslt3 --save
+
+
+
+=================================== vue-facing-decorator
+npm install --save vue-facing-decorator
+
+npm uninstall --save vue-class-component
+package.json:
+"vue-class-component": "^8.0.0-0",
+
+npm uninstall --save vue-property-decorator
+package.json:
+"vue-property-decorator": "^9.1.2",
+
+ npm uninstall --save xml2js

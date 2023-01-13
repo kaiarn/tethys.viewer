@@ -1,6 +1,6 @@
-import { Options, Vue } from "vue-class-component";
+import { Component, Vue, Prop } from "vue-facing-decorator";
 // import { Prop, Emit } from "vue-property-decorator";
-import { Prop } from "vue-property-decorator";
+// import { Prop } from "vue-property-decorator";
 import { LatLng, LatLngBounds, Map, MapOptions, Rectangle, tileLayer, TileLayer, CRS } from "leaflet";
 // import { LayerOptions } from "./map-options";
 // import DatasetService from "../../services/dataset.service";
@@ -11,7 +11,7 @@ const DEFAULT_BASE_LAYER_NAME = "BaseLayer";
 // const DEFAULT_BASE_LAYER_URL = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 const DEFAULT_BASE_LAYER_ATTRIBUTION = '&copy; <a href="http://basemap.at" target="_blank">Basemap.at</a>, <a href="http://www.geologie.ac.at" target="_blank">Geologie.ac.at</a>';
 
-@Options({
+@Component({
     // selector: "app-map",
     // templateUrl: "map.component.html",
     name: "MapComponent",

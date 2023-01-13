@@ -9,8 +9,8 @@ import { VUE_APP_PORTAL } from "@/constants";
 // import { deserialize, instanceToInstance } from "class-transformer";
 import { deserialize } from "class-transformer";
 // import { OAI_DATASETS } from "./mock-oai-datasets";
-import { OaiDataset, OaiPerson } from "@/models/oai";
-import xml2js from "xml2js";
+// import { OaiDataset, OaiPerson } from "@/models/oai";
+// import xml2js from "xml2js";
 
 class DatasetService {
     // for the autocomplete search
@@ -183,132 +183,132 @@ class DatasetService {
         return dataset;
     }
 
-    public getOaiDatasets(): Observable<OaiDataset[]> {
-        const apiUrl = "https://data.tethys.at/oai?verb=ListRecords&metadataPrefix=oai_datacite";
-        const oaiDatasets = api.get<string>(apiUrl).pipe(
-            map(
-                (response: string) => {
-                    // const parser = new DOMParser();
-                    // const xmlDoc: XMLDocument = parser.parseFromString(response, "application/xml");
+    // public getOaiDatasets(): Observable<OaiDataset[]> {
+    //     const apiUrl = "https://data.tethys.at/oai?verb=ListRecords&metadataPrefix=oai_datacite";
+    //     const oaiDatasets = api.get<string>(apiUrl).pipe(
+    //         map(
+    //             (response: string) => {
+    //                 // const parser = new DOMParser();
+    //                 // const xmlDoc: XMLDocument = parser.parseFromString(response, "application/xml");
 
-                    // const xslDoc = parser.parseFromString(this.xsl, "application/xml");
-                    // const xsltProcessor = new XSLTProcessor();
-                    // xsltProcessor.importStylesheet(xslDoc);
-                    // console.log(xmlDoc);
-                    // const xmlDom = xsltProcessor.transformToDocument(xmlDoc);
+    //                 // const xslDoc = parser.parseFromString(this.xsl, "application/xml");
+    //                 // const xsltProcessor = new XSLTProcessor();
+    //                 // xsltProcessor.importStylesheet(xslDoc);
+    //                 // console.log(xmlDoc);
+    //                 // const xmlDom = xsltProcessor.transformToDocument(xmlDoc);
 
-                    // const serializer = new XMLSerializer();
-                    // const html = serializer.serializeToString(xmlDom.documentElement);
-                    // console.log(html);
+    //                 // const serializer = new XMLSerializer();
+    //                 // const html = serializer.serializeToString(xmlDom.documentElement);
+    //                 // console.log(html);
 
-                    // const arrOai = new Array<OaiDataset>();
-                    // return arrOai;
-                    const arrOai = this.parseXML(response);
-                    return arrOai;
-                    // .then((data) => {
-                    //   return data;
-                    // });
-                },
-                // (error: string) => this.errorHandler(error),
-            ),
-        );
-        // const oaiDatasets = of(OAI_DATASETS);
+    //                 // const arrOai = new Array<OaiDataset>();
+    //                 // return arrOai;
+    //                 const arrOai = this.parseXML(response);
+    //                 return arrOai;
+    //                 // .then((data) => {
+    //                 //   return data;
+    //                 // });
+    //             },
+    //             // (error: string) => this.errorHandler(error),
+    //         ),
+    //     );
+    //     // const oaiDatasets = of(OAI_DATASETS);
 
-        // this.messageService.add('HeroService: fetched heroes');
-        return oaiDatasets;
-    }
+    //     // this.messageService.add('HeroService: fetched heroes');
+    //     return oaiDatasets;
+    // }
 
-    private parseXML(xmlStr: string): Array<OaiDataset> {
-        // let k = "";
-        const arr: OaiDataset[] = [];
-        const domParser = new DOMParser();
-        const doc = domParser.parseFromString(xmlStr, "application/xml");
-        const records = doc.getElementsByTagName("ListRecords")[0];
-        // // const rt = xmlNode.resumptionToken;
-        // for (let i = 0; i < records.length; i++) {
-        //     console.log(records[i].getAttribute("name"));
-        // }
+    // private parseXML(xmlStr: string): Array<OaiDataset> {
+    //     // let k = "";
+    //     const arr: OaiDataset[] = [];
+    //     const domParser = new DOMParser();
+    //     const doc = domParser.parseFromString(xmlStr, "application/xml");
+    //     const records = doc.getElementsByTagName("ListRecords")[0];
+    //     // // const rt = xmlNode.resumptionToken;
+    //     // for (let i = 0; i < records.length; i++) {
+    //     //     console.log(records[i].getAttribute("name"));
+    //     // }
 
-        const parser: xml2js.Parser = new xml2js.Parser({
-            trim: true,
-            explicitArray: false,
-            ignoreAttrs: false,
-            // mergeAttrs: true,
-        });
-        parser.parseString(records.outerHTML, function (err: Error | null, result: any) {
-            const xmlNode = result.ListRecords;
-            // const rt = xmlNode.resumptionToken;
-            for (const rNode in xmlNode.record) {
-                const item = xmlNode.record[rNode];
+    //     const parser: xml2js.Parser = new xml2js.Parser({
+    //         trim: true,
+    //         explicitArray: false,
+    //         ignoreAttrs: false,
+    //         // mergeAttrs: true,
+    //     });
+    //     parser.parseString(records.outerHTML, function (err: Error | null, result: any) {
+    //         const xmlNode = result.ListRecords;
+    //         // const rt = xmlNode.resumptionToken;
+    //         for (const rNode in xmlNode.record) {
+    //             const item = xmlNode.record[rNode];
 
-                const dc = item.metadata.resource;
-                const t = dc.titles.title;
-                const id = dc.identifier._;
+    //             const dc = item.metadata.resource;
+    //             const t = dc.titles.title;
+    //             const id = dc.identifier._;
 
-                const lang = "en"; //dc.titles.title.attributes("xml",True)->lang;
-                let title: string;
-                if (lang == "en" && t.length > 1) {
-                    title = t[1]._;
-                } else {
-                    title = t[0]._;
-                }
+    //             const lang = "en"; //dc.titles.title.attributes("xml",True)->lang;
+    //             let title: string;
+    //             if (lang == "en" && t.length > 1) {
+    //                 title = t[1]._;
+    //             } else {
+    //                 title = t[0]._;
+    //             }
 
-                let creator = "";
-                if (dc.creators.creator instanceof Array) {
-                    dc.creators.creator.forEach((person: OaiPerson) => {
-                        creator += person.creatorName + "; ";
-                    });
-                } else {
-                    creator += dc.creators.creator.creatorName._;
-                }
+    //             let creator = "";
+    //             if (dc.creators.creator instanceof Array) {
+    //                 dc.creators.creator.forEach((person: OaiPerson) => {
+    //                     creator += person.creatorName + "; ";
+    //                 });
+    //             } else {
+    //                 creator += dc.creators.creator.creatorName._;
+    //             }
 
-                let contributor = "";
-                if (dc.contributors) {
-                    if (dc.contributors.contributor instanceof Array) {
-                        dc.contributors.contributor.forEach((person: OaiPerson) => {
-                            contributor += person.contributorName + "; ";
-                        });
-                    } else {
-                        contributor += dc.contributors.contributor.contributorName;
-                    }
-                }
+    //             let contributor = "";
+    //             if (dc.contributors) {
+    //                 if (dc.contributors.contributor instanceof Array) {
+    //                     dc.contributors.contributor.forEach((person: OaiPerson) => {
+    //                         contributor += person.contributorName + "; ";
+    //                     });
+    //                 } else {
+    //                     contributor += dc.contributors.contributor.contributorName;
+    //                 }
+    //             }
 
-                // ?.map((u: any) => u.creatorName._).join("; ");
-                // foreach ($dc->creators->creator as $c) {
-                //     foreach ($c->creatorName as $d) {
-                //         if (count(explode(',',$d)) > 1) {
-                //             $creator .= explode(',',$d)[0] . ', ' . substr(explode(',',$d)[1],1,1) . '; ';
-                //         } else {
-                //             $creator .= explode(',',$d)[0];
-                //         }
+    //             // ?.map((u: any) => u.creatorName._).join("; ");
+    //             // foreach ($dc->creators->creator as $c) {
+    //             //     foreach ($c->creatorName as $d) {
+    //             //         if (count(explode(',',$d)) > 1) {
+    //             //             $creator .= explode(',',$d)[0] . ', ' . substr(explode(',',$d)[1],1,1) . '; ';
+    //             //         } else {
+    //             //             $creator .= explode(',',$d)[0];
+    //             //         }
 
-                //     }
-                // }
+    //             //     }
+    //             // }
 
-                const north = dc.geoLocations.geoLocation.geoLocationBox.northBoundLatitude;
-                const east = dc.geoLocations.geoLocation.geoLocationBox.eastBoundLongitude;
-                const south = dc.geoLocations.geoLocation.geoLocationBox.southBoundLatitude;
-                const west = dc.geoLocations.geoLocation.geoLocationBox.westBoundLongitude;
+    //             const north = dc.geoLocations.geoLocation.geoLocationBox.northBoundLatitude;
+    //             const east = dc.geoLocations.geoLocation.geoLocationBox.eastBoundLongitude;
+    //             const south = dc.geoLocations.geoLocation.geoLocationBox.southBoundLatitude;
+    //             const west = dc.geoLocations.geoLocation.geoLocationBox.westBoundLongitude;
 
-                const subject = dc.subjects.subject.map((u: any) => u._).join(", ");
+    //             const subject = dc.subjects.subject.map((u: any) => u._).join(", ");
 
-                const oaiDataset = {
-                    doi: id,
-                    title: title,
-                    creator: creator,
-                    contributor: contributor,
-                    subject: subject,
-                    north: north,
-                    south: south,
-                    east: east,
-                    west: west,
-                } as OaiDataset;
-                arr.push(oaiDataset);
-            }
-            // resolve(arr);
-        });
-        return arr;
-    }
+    //             const oaiDataset = {
+    //                 doi: id,
+    //                 title: title,
+    //                 creator: creator,
+    //                 contributor: contributor,
+    //                 subject: subject,
+    //                 north: north,
+    //                 south: south,
+    //                 east: east,
+    //                 west: west,
+    //             } as OaiDataset;
+    //             arr.push(oaiDataset);
+    //         }
+    //         // resolve(arr);
+    //     });
+    //     return arr;
+    // }
 
     // private prepareOAI(xml: any) : Array<OaiDataset> {
     //     //

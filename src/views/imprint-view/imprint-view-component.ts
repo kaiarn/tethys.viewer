@@ -1,6 +1,7 @@
-import { Options, Vue } from "vue-class-component";
+// import { Options, Vue } from "vue-class-component";
+import { Component, Vue } from "vue-facing-decorator";
 
-@Options({
+@Component({
     name: "ImprintViewComponent",
     // components: {
     //     VsInput,

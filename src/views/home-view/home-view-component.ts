@@ -1,8 +1,8 @@
-import { Options, Vue } from "vue-class-component";
+import { Component, Vue } from "vue-facing-decorator";
 import VsInput from "@/components/vs-input/vs-input.vue";
 import { Suggestion } from "@/models/dataset";
 
-@Options({
+@Component({
     name: "HomeViewComponent",
     components: {
         VsInput,

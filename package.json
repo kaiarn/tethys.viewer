@@ -11,7 +11,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.1.1",
     "@openfonts/open-sans_all": "^1.44.2",
-    "axios": "^0.27.2",
+    "axios": "^1.2.2",
     "class-transformer": "^0.5.1",
     "core-js": "^3.6.5",
     "dayjs": "^1.10.7",
@@ -19,11 +19,9 @@
     "qs": "^6.10.1",
     "rxjs": "^7.5.5",
     "vue": "^3.0.0",
-    "vue-class-component": "^8.0.0-0",
+    "vue-facing-decorator": "^2.1.13",
     "vue-matomo": "^4.1.0",
-    "vue-property-decorator": "^9.1.2",
     "vue-router": "^4.0.12",
-    "xml2js": "^0.4.23",
     "xslt3": "^2.4.0"
   },
   "devDependencies": {

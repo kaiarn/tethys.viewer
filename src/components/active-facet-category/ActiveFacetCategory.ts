@@ -1,16 +1,22 @@
-import { Options, Vue } from "vue-class-component";
-import { Prop, Emit } from "vue-property-decorator";
+import { Component, Vue, Prop, Emit } from "vue-facing-decorator";
+// import { Prop, Emit } from "vue-property-decorator";
 
-@Options({
+@Component({
     name: "ActiveFacetCategory",
 })
 export default class ActiveFacetCategory extends Vue {
     bar = "";
 
-    @Prop([Array])
+    // @Prop([Array])
+    @Prop({
+        type: Array<string>,
+    })
     filterItems!: string[];
 
-    @Prop([String])
+    // @Prop([String])
+    @Prop({
+        type: String,
+    })
     categoryName!: string;
 
     // @Prop([String])

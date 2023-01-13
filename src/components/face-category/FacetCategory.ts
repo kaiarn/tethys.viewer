@@ -1,9 +1,9 @@
 import { FacetItem } from "@/models/headers";
 // import { FilterItem } from "@/models/solr";
-import { Options, Vue } from "vue-class-component";
-import { Prop, Emit } from "vue-property-decorator";
+import { Component, Vue, Prop, Emit } from "vue-facing-decorator";
+// import { Prop, Emit } from "vue-property-decorator";
 
-@Options({
+@Component({
     name: "FacetCategory",
 })
 export default class FacetCategory extends Vue {
@@ -14,7 +14,10 @@ export default class FacetCategory extends Vue {
     @Prop()
     facetItems!: Array<FacetItem>;
 
-    @Prop([String])
+    // @Prop([String])
+    @Prop({
+        type: String,
+    })
     filterName!: string;
 
     get alias(): string {

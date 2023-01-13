@@ -1,8 +1,8 @@
 import { Dataset } from "@/models/dataset";
-import { Options, Vue } from "vue-class-component";
-import { Prop } from "vue-property-decorator";
+import { Component, Vue, Prop } from "vue-facing-decorator";
+// import { Prop } from "vue-property-decorator";
 
-@Options({
+@Component({
     name: "VsResult",
 })
 export default class VsResult extends Vue {

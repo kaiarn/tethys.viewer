@@ -1,9 +1,9 @@
 import { Subscription } from "rxjs";
-import { Options, Vue } from "vue-class-component";
+import { Component, Vue } from "vue-facing-decorator";
 import DatasetService from "../../services/dataset.service";
 import { DbDataset } from "@/models/dataset";
 
-@Options({
+@Component({
     name: "SitelinkViewComponent",
 })
 export default class SitelinkViewComponent extends Vue {

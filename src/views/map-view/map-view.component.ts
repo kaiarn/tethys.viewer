@@ -1,4 +1,4 @@
-import { Options, Vue } from "vue-class-component";
+import { Component, Vue } from "vue-facing-decorator";
 import MapComponent from "@/components/map/map.component.vue";
 // import { Marker, MapOptions, Control, icon, LatLngBoundsExpression } from "leaflet";
 import { MapOptions } from "leaflet";
@@ -7,7 +7,7 @@ import { MapOptions } from "leaflet";
 // const DEFAULT_BASE_LAYER_URL = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 // const DEFAULT_BASE_LAYER_ATTRIBUTION = '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors';
 
-@Options({
+@Component({
     name: "MapViewComponent",
     components: {
         MapComponent,

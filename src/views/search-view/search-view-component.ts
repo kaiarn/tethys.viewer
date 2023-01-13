@@ -1,5 +1,5 @@
-import { Options, Vue } from "vue-class-component";
-import { Prop } from "vue-property-decorator";
+import { Component, Vue, Prop } from "vue-facing-decorator";
+// import { Prop } from "vue-property-decorator";
 import VsInput from "@/components/vs-input/vs-input.vue";
 import VsResult from "@/components/vs-result/vs-result.vue";
 import FacetCategory from "@/components/face-category/facet-category.vue";
@@ -13,7 +13,7 @@ import { ActiveFilterCategories } from "@/models/solr";
 import { SOLR_HOST, SOLR_CORE } from "@/constants";
 import { Pagination } from "@/models/pagination";
 
-@Options({
+@Component({
     name: "SearchViewComponent",
     components: {
         VsInput,

@@ -1,7 +1,7 @@
-import { Options, Vue } from "vue-class-component";
-import { Prop } from "vue-property-decorator";
+import { Component, Vue, Prop } from "vue-facing-decorator";
+// import { Prop } from "vue-property-decorator";
 
-@Options({
+@Component({
     name: "HelloWorld",
 })
 export default class HelloWorld extends Vue {

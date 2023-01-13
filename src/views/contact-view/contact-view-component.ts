@@ -1,6 +1,6 @@
-import { Options, Vue } from "vue-class-component";
+import { Component, Vue } from "vue-facing-decorator";
 
-@Options({
+@Component({
     name: "ContactViewComponent",
     // components: {
     //     VsInput,
