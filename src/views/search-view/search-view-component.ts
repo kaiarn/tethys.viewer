@@ -121,10 +121,10 @@ export default class SearchViewComponent extends Vue {
 
         // this.facets = {};
         this.searchTerm = suggestion;
-        DatasetService.facetedSearch(suggestion, this.activeFilterCategories, this.solr.core, this.solr.host, undefined).subscribe(
-            (res: SolrResponse) => this.dataHandler(res),
-            (error: string) => this.errorHandler(error),
-        );
+        DatasetService.facetedSearch(suggestion, this.activeFilterCategories, this.solr.core, this.solr.host, undefined).subscribe({
+            next: (res: SolrResponse) => this.dataHandler(res),
+            error: (error: string) => this.errorHandler(error),
+        });
     }
 
     private dataHandler(res: SolrResponse, filterItem?: FacetItem): void {
@@ -251,8 +251,8 @@ export default class SearchViewComponent extends Vue {
         // alert(categoryName);
         delete this.activeFilterCategories[categoryName];
 
-        DatasetService.facetedSearch(this.searchTerm, this.activeFilterCategories, this.solr.core, this.solr.host, undefined).subscribe(
-            (res: SolrResponse) => {
+        DatasetService.facetedSearch(this.searchTerm, this.activeFilterCategories, this.solr.core, this.solr.host, undefined).subscribe({
+            next: (res: SolrResponse) => {
                 this.results = res.response.docs;
                 this.numFound = res.response.numFound;
 
@@ -291,7 +291,8 @@ export default class SearchViewComponent extends Vue {
                     }
                 }
             },
-            (error: string) => this.errorHandler(error),
-        );
+            error: (error: string) => this.errorHandler(error),
+            complete: () => console.log("complete"),
+        });
     }
 }

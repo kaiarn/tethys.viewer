@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve --port 3000",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "lint": "vue-cli-service lint --check",
+    "lint2": "eslint ./src --ext .js,.ts",
     "format": "prettier --check src/**/*.ts"
   },
   "dependencies": {
@@ -13,7 +14,6 @@
     "@openfonts/open-sans_all": "^1.44.2",
     "axios": "^1.2.2",
     "class-transformer": "^0.5.1",
-    "core-js": "^3.6.5",
     "dayjs": "^1.10.7",
     "leaflet": "^1.7.1",
     "qs": "^6.10.1",
@@ -26,25 +26,23 @@
   },
   "devDependencies": {
     "@types/leaflet": "^1.7.9",
-    "@types/xml2js": "^0.4.9",
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/parser": "^4.18.0",
-    "@vue/cli-plugin-babel": "~5.0.4",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.40.1",
     "@vue/cli-plugin-eslint": "~5.0.4",
     "@vue/cli-plugin-typescript": "~5.0.4",
     "@vue/cli-service": "~5.0.4",
     "@vue/compiler-sfc": "^3.0.0",
-    "@vue/eslint-config-prettier": "^6.0.0",
-    "@vue/eslint-config-typescript": "^7.0.0",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^11.0.0",
     "bulma": "^0.9.3",
-    "eslint": "^7.32.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-vue": "^7.0.0",
+    "eslint": "^8.25.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.9.0",
     "node-polyfill-webpack-plugin": "^2.0.0",
-    "prettier": "^2.2.1",
+    "prettier": "^2.7.1",
     "sass": "^1.26.5",
     "sass-loader": "^13.0.0",
-    "typescript": "~4.7.4",
+    "typescript": "^4.8.4",
     "webpack": "^5.72.1"
   }
 }

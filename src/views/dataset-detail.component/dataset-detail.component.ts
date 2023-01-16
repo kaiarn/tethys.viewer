@@ -71,13 +71,13 @@ export default class DatasetDetailComponent extends Vue {
     }
 
     private getDataset(id: number): void {
-        const newSub = DatasetService.getDataset(id).subscribe(
-            (res: DbDataset) => {
+        const newSub = DatasetService.getDataset(id).subscribe({
+            next: (res: DbDataset) => {
                 this.dataset = res;
                 this.loaded = true;
             },
-            (error: string) => this.errorHandler(error),
-        );
+            error: (error: string) => this.errorHandler(error),
+        });
         this.subscriptions.push(newSub);
     }
 

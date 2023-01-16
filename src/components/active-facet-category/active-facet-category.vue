@@ -1,9 +1,9 @@
 <template>
     <div>
-        <input v-bind:id="alias" v-bind:name="alias" type="checkbox" checked="checked" @click.prevent="deactivateFacetCategory()" class="css-checkbox" />
+        <input v-bind:id="alias" v-bind:name="alias" type="checkbox" checked="checked" class="css-checkbox" @click.prevent="deactivateFacetCategory()" />
         <label v-bind:for="alias" class="css-label">
             <span>{{ alias + ": " }}</span>
-            <a class="gbaterm" v-if="filterItems && filterItems.length > 0">{{ filterItems.join(", ") }}</a>
+            <a v-if="filterItems && filterItems.length > 0" class="gbaterm">{{ filterItems.join(", ") }}</a>
         </label>
     </div>
 </template>

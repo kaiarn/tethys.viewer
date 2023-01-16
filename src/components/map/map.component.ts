@@ -1,6 +1,4 @@
 import { Component, Vue, Prop } from "vue-facing-decorator";
-// import { Prop, Emit } from "vue-property-decorator";
-// import { Prop } from "vue-property-decorator";
 import { LatLng, LatLngBounds, Map, MapOptions, Rectangle, tileLayer, TileLayer, CRS } from "leaflet";
 // import { LayerOptions } from "./map-options";
 // import DatasetService from "../../services/dataset.service";

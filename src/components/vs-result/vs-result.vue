@@ -1,5 +1,5 @@
 <template>
-    <div v-for="document in results" :key="document.id">
+    <div v-for="document in results" v-bind:key="document.id">
         <div class="card result-list-container">
             <div class="card-content record-elem">
                 <p v-if="document.identifier && document.identifier.length > 0">
@@ -7,7 +7,7 @@
                     <!-- <span v-for="(author,index) in document.author" :key="index">{{ author }}; </span> -->
                     <!-- <span>'https://doi.org/' + {{ document.identifier[0] }}</span> -->
                     <a target="_blank" v-bind:href="'https://doi.org/' + document.identifier[0]"> {{ "https://doi.org/" + document.identifier[0] + " &#10148;" }} </a>&nbsp;
-                    <span class="disabled" v-if="document.author && document.author.length > 0">{{ document.author[0] }}</span>
+                    <span v-if="document.author && document.author.length > 0" class="disabled">{{ document.author[0] }}</span>
                 </p>
 
                 <!-- <span class="label label-info" data-container="div" data-title="Publication date">
@@ -28,7 +28,7 @@
                     <!-- <a target="_self" v-bind:href="'dataset/' + document.id" class="ng-binding">
                         {{ document.title_output }}
                     </a> -->
-                    <router-link class="ng-binding" :to="{ name: 'dataset', params: { datasetId: document.id } }">{{ document.title_output }}</router-link>
+                    <router-link class="ng-binding" v-bind:to="{ name: 'dataset', params: { datasetId: document.id } }">{{ document.title_output }}</router-link>
                 </h4>
 
                 <!-- <p v-if="document.author && document.author.length > 0">

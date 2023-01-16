@@ -47,7 +47,7 @@
             <img src="https://bulma.io/images/placeholders/256x256.png" />
         </figure> -->
         <!-- class="columns help u-full-width featured-bg-image"> -->
-        <section data-sr id="help" class="header-image align-items-center h-100">
+        <section id="help" data-sr class="header-image align-items-center h-100">
             <!-- <div class="column is-two-thirds-tablet is-half-desktop is-one-third-widescreen mx-auto">
                 <div class="search-box mx-auto">
                     <div class="field has-addons main-search-from-bg">
@@ -62,7 +62,7 @@
                     </div>
                 </div>
             </div> -->
-            <vs-input v-on:search-change="onSearch" v-bind:placeholder="'Enter your search term...'"></vs-input>
+            <vs-input v-bind:placeholder="'Enter your search term...'" @search-change="onSearch"></vs-input>
         </section>
 
         <div class="container">

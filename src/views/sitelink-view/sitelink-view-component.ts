@@ -25,11 +25,11 @@ export default class SitelinkViewComponent extends Vue {
     }
 
     getYears(): void {
-        const newSubs: Subscription = DatasetService.getYears().subscribe(
-            (res: string[]) => this.dataHandler(res),
-            (error: string) => this.errorHandler(error),
-            () => newSubs.unsubscribe(),
-        );
+        const newSubs: Subscription = DatasetService.getYears().subscribe({
+            next: (res: string[]) => this.dataHandler(res),
+            error: (error: string) => this.errorHandler(error),
+            complete: () => newSubs.unsubscribe(),
+        });
         // this.subscriptions.push(newSubs);
     }
 
@@ -43,13 +43,14 @@ export default class SitelinkViewComponent extends Vue {
 
     select(year: string): void {
         this.selected = year;
-        const newSubs = DatasetService.getDocuments(year).subscribe(
-            (res: Array<DbDataset>) => {
+        const newSubs: Subscription = DatasetService.getDocuments(year).subscribe({
+            next: (res: Array<DbDataset>) => {
                 this.datasets = res;
             },
-            (error: string) => this.errorHandler(error),
-        );
-        this.subscriptions.push(newSubs);
+            error: (error: string) => this.errorHandler(error),
+            complete: () => newSubs.unsubscribe(),
+        });
+        // this.subscriptions.push(newSubs);
     }
 
     private dataHandler(res: string[]): void {

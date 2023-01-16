@@ -1,6 +1,5 @@
 import { Component, Vue, Watch } from "vue-facing-decorator";
 // import { RouteLocation } from "vue-router";
-import HelloWorld from "./components/HelloWorld/HelloWorld.vue";
 import HomeViewComponent from "./views/home-view/home-view-component.vue";
 import HelpViewComponent from "./views/help-view/help-view-component.vue";
 import MapViewComponent from "./views/map-view/map-view.component.vue";
@@ -27,7 +26,7 @@ import { VUE_APP_PORTAL } from "./constants";
 // https://devsoniq.com/how-to-toggle-bulma-css-navbar-in-your-vue-js-project/
 @Component({
     components: {
-        HelloWorld,
+        // HelloWorld,
         HomeViewComponent,
         // VsInput,
         // VsResult,

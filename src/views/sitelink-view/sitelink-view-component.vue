@@ -15,9 +15,9 @@
             </div> -->
             <div class="columns is-centered">
                 <div class="column is-6-desktop">
-                    <div class="list" v-if="years.length > 0">
+                    <div v-if="years.length > 0" class="list">
                         <ul class="block-list has-radius is-primary">
-                            <li v-for="(year, index) in years" :key="index" :class="{ highlight: year == selected }" @click="select(year)">
+                            <li v-for="(year, index) in years" v-bind:key="index" v-bind:class="{ highlight: year == selected }" @click="select(year)">
                                 {{ year }}
                             </li>
                         </ul>
@@ -27,7 +27,7 @@
             <div class="columns is-centered">
                 <div class="column is-6-desktop">
                     <ol v-if="datasets.length > 0">
-                        <li v-for="(dataset, index) in datasets" :key="index">
+                        <li v-for="(dataset, index) in datasets" v-bind:key="index">
                             <div class="post">
                                 <header class="post-header">
                                     <h2 class="post-title">
@@ -39,11 +39,11 @@
                                 </div>
                                 <div class="post-description">
                                     <!-- @foreach ($document->authors as $author) -->
-                                    <div v-for="(author, index) in dataset.authors" :key="index">
+                                    <div v-for="(author, index_a) in dataset.authors" v-bind:key="index_a">
                                         <em>Author: {{ author.full_name }}</em>
                                         <br />
                                     </div>
-                                    <div v-for="(title, index) in dataset.titles" :key="index">
+                                    <div v-for="(title, index_t) in dataset.titles" v-bind:key="index_t">
                                         <em>{{ title.type }}: {{ title.value }}</em>
                                         <br />
                                     </div>

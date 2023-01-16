@@ -13,13 +13,13 @@
                 <!-- <img src="./assets/images/TETHYS-Logo.svg" width="240px" height="86" alt="TETHYS Logo" /> -->
                 <img src="./assets/images/TETHYS-Logo.svg" width="240" height="86" />
             </a>
-            <a id="menu-icon" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" :class="active ? 'is-active' : ''" @click="showMobilemenu">
+            <a id="menu-icon" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" v-bind:class="active ? 'is-active' : ''" @click="showMobilemenu">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
         </div>
-        <div id="navMenu" class="navbar-menu" :class="active ? 'is-active' : ''">
+        <div id="navMenu" class="navbar-menu" v-bind:class="active ? 'is-active' : ''">
             <ul class="navbar-start" style="flex-grow: 1; justify-content: center">
                 <li class="navbar-item">
                     <!-- <a class="navbar-link is-arrowless active" href="#">STARTSEITE</a> -->

@@ -1,5 +1,5 @@
 import { AxiosRequestConfig } from "axios";
-import * as qs from "qs";
+import { stringify } from "qs";
 
 export const axiosRequestConfiguration: AxiosRequestConfig = {
     // responseType: "text",
@@ -17,7 +17,7 @@ export const axiosRequestConfiguration: AxiosRequestConfig = {
 
     paramsSerializer: {
         serialize: (params: Record<string, number>) => {
-            return qs.stringify(params, { arrayFormat: "repeat" });
+            return stringify(params, { arrayFormat: "repeat" });
         },
     },
 };

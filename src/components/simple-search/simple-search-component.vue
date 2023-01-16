@@ -3,7 +3,7 @@
         <div class="search-box mx-auto">
             <div class="field has-addons main-search-from-bg">
                 <div class="control is-expanded">
-                    <input id="search_query" class="input is-medium" type="text" name="q" autocomplete="off" v-model="display" />
+                    <input id="search_query" v-model="display" class="input is-medium" type="text" name="q" autocomplete="off" />
                     <!-- <p>Message is: {{ display }}</p>  v-on:input="searchChanged"-->
                 </div>
 

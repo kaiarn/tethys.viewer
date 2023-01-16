@@ -38,9 +38,9 @@
             </div>
         </div> -->
         <!-- <simple-search-component></simple-search-component> -->
-        <vs-input v-on:search-change="onSearch" v-bind:placeholder="'Enter your search term...'"></vs-input>
+        <vs-input v-bind:placeholder="'Enter your search term...'" @search-change="onSearch"></vs-input>
     </div>
-    <section class="section" v-if="loaded">
+    <section v-if="loaded" class="section">
         <div class="container">
             <!-- <span class="is-size-5"> Basic Table </span>
             <br /> -->
@@ -64,7 +64,7 @@
                     </div>
 
                     <div class="card record-elem">
-                        <div class="columns" v-if="dataset.hasOwnProperty('titles')">
+                        <div v-if="dataset.hasOwnProperty('titles')" class="columns">
                             <div class="column is-3-desktop is-4-tablet label">Title/<br />title:</div>
                             <!-- <div class="column is-9-desktop is-8-tablet">{{ dataset.titles[0].value }}</div> -->
                             <div class="column is-9-desktop is-8-tablet">
@@ -75,7 +75,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="columns" v-if="dataset.hasOwnProperty('abstracts')">
+                        <div v-if="dataset.hasOwnProperty('abstracts')" class="columns">
                             <div class="column is-3-desktop is-4-tablet label">
                                 Zusammenfassung/<br />
                                 abstract:
@@ -88,29 +88,29 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="columns" v-if="dataset.hasOwnProperty('abstracts')">
+                        <div v-if="dataset.hasOwnProperty('abstracts')" class="columns">
                             <div class="column is-3-desktop is-4-tablet label">Serieninformation/<br />series information:</div>
-                            <div class="column is-9-desktop is-8-tablet" v-if="dataset.hasSeriesInformationAbstract()">
+                            <div v-if="dataset.hasSeriesInformationAbstract()" class="column is-9-desktop is-8-tablet">
                                 <p>{{ dataset.SeriesInformationAbstract?.value }}</p>
                                 <br />
                                 <p v-if="dataset.hasTranslatedSeriesInformationAbstract()">
                                     {{ dataset.TranslatedSeriesInformationAbstract?.value }}
                                 </p>
                             </div>
-                            <div class="column is-9-desktop is-8-tablet" v-else>-</div>
+                            <div v-else class="column is-9-desktop is-8-tablet">-</div>
                         </div>
-                        <div class="columns" v-if="dataset.hasOwnProperty('abstracts')">
+                        <div v-if="dataset.hasOwnProperty('abstracts')" class="columns">
                             <div class="column is-3-desktop is-4-tablet label">Methodik/<br />method:</div>
-                            <div class="column is-9-desktop is-8-tablet" v-if="dataset.hasMethodsAbstract()">
+                            <div v-if="dataset.hasMethodsAbstract()" class="column is-9-desktop is-8-tablet">
                                 {{ dataset.MethodsAbstract.value }}
                             </div>
-                            <div class="column is-9-desktop is-8-tablet" v-else>-</div>
+                            <div v-else class="column is-9-desktop is-8-tablet">-</div>
                         </div>
 
                         <div class="columns">
                             <div class="column is-3-desktop is-4-tablet label">Downloads/<br />downloads:</div>
-                            <div class="column is-9-desktop is-8-tablet" v-if="dataset.files.length > 0">
-                                <table id="items" v-if="dataset.hasEmbargoPassed()" class="table is-bordered is-striped">
+                            <div v-if="dataset.files.length > 0" class="column is-9-desktop is-8-tablet">
+                                <table v-if="dataset.hasEmbargoPassed()" id="items" class="table is-bordered is-striped">
                                     <thead>
                                         <tr>
                                             <th class="table-header">Path Name</th>
@@ -119,7 +119,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr v-for="file in dataset.files" :key="file.id">
+                                        <tr v-for="file in dataset.files" v-bind:key="file.id">
                                             <td>
                                                 <a class="link-label" target="_blank" v-bind:href="portal + file.id"> {{ file.label }} </a>
                                             </td>
@@ -210,7 +210,7 @@
                         <div class="column">
                             <h3 class="label uppercase">Lizenz/License</h3>
                             <p v-if="dataset.hasLicenses()">
-                                <label v-for="license in dataset.licenses" :key="license.id">
+                                <label v-for="license in dataset.licenses" v-bind:key="license.id">
                                     <span class="normal label">
                                         {{ license.name }}
                                     </span>

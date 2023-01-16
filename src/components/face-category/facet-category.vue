@@ -7,9 +7,9 @@
         <div class="panel-body">
             <!-- e.g.language -->
             <ul class="filter-items list-unstyled" v-bind:class="{ limited: facetItems.length > 1 && collapsed }">
-                <li v-for="(item, index) in facetItems" :key="index" class="list-group-item titlecase">
+                <li v-for="(item, index) in facetItems" v-bind:key="index" class="list-group-item titlecase">
                     <!-- <span :class="item.Active ? 'disabled' : ''" @click.prevent="activateItem(item)">{{ item.val }} ({{ item.count }}) </span> -->
-                    <span :class="item.active ? 'disabled' : ''" @click.prevent="activateItem(item)">{{ item.val }} ({{ item.count }}) </span>
+                    <span v-bind:class="item.active ? 'disabled' : ''" @click.prevent="activateItem(item)">{{ item.val }} ({{ item.count }}) </span>
                 </li>
             </ul>
             <!-- <ul class="overflowing" v-if="overflowing == true">
@@ -18,7 +18,7 @@
                 </li>
             </ul> -->
         </div>
-        <div class="card-footer" v-if="facetItems.length > 2">
+        <div v-if="facetItems.length > 2" class="card-footer">
             <p class="card-footer-item">
                 <!-- <span @click="toggle()">{{ uncollapseLabelText }}</span> -->
                 <span v-if="collapsed" @click="toggle()">

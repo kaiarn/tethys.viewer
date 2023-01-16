@@ -153,11 +153,11 @@ export default class VsInput extends Vue {
     }
 
     private request(): void {
-        DatasetService.searchTerm(this.display, this.solr.core, this.solr.host).subscribe(
-            (res: Dataset[]) => this.dataHandler(res),
-            (error: string) => this.errorHandler(error),
-            () => (this.loading = false),
-        );
+        DatasetService.searchTerm(this.display, this.solr.core, this.solr.host).subscribe({
+            next: (res: Dataset[]) => this.dataHandler(res),
+            error: (error: string) => this.errorHandler(error),
+            complete: () => (this.loading = false),
+        });
     }
 
     private dataHandler(datasets: Dataset[]): void {

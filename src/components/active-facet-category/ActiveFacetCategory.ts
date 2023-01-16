@@ -16,6 +16,7 @@ export default class ActiveFacetCategory extends Vue {
     // @Prop([String])
     @Prop({
         type: String,
+        required: true,
     })
     categoryName!: string;
 
@@ -51,7 +52,7 @@ export default class ActiveFacetCategory extends Vue {
     //     }
     // }
 
-    @Emit("clearFacetCategory")
+    @Emit("clear-facet-category")
     deactivateFacetCategory(): string {
         // filterItem.Category = this.alias;
         // filterItem.Active = true;

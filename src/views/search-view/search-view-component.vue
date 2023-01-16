@@ -1,7 +1,7 @@
 <template>
     <div id="page_style" class="rows site-content page__style page__description" autocomplete="off">
         <div class="container-fluid banner mz-5">
-            <vs-input v-on:search-change="onSearch" v-bind:propDisplay="searchTerm" v-bind:placeholder="'Enter your search term...'"></vs-input>
+            <vs-input v-bind:propDisplay="searchTerm" v-bind:placeholder="'Enter your search term...'" @search-change="onSearch"></vs-input>
         </div>
         <div class="column is-half is-offset-one-quarter" style="padding-top: 0; margin-top: 0">
             <!-- <div class="tabs is-centered">
@@ -27,7 +27,7 @@
                 </ul>
             </div> -->
             <div v-if="results.length > 0" class="result-list-info">
-                <div class="resultheader" v-if="hasSearchTerm()">
+                <div v-if="hasSearchTerm()" class="resultheader">
                     Your search term {{ "'" + stringSearchTerm + "'" }} yielded <strong>{{ numFound }}</strong> results:
                 </div>
             </div>
@@ -57,7 +57,7 @@
         <div class="columns">
             <div id="id-side-bar" class="column is-4 sidebar_column" style="padding-top: 1.2rem; padding-right: 1.5rem; padding-left: 1.5rem">
                 <div id="externals" class="">
-                    <div v-for="(facetItems, key, index) in facets" :key="index" name="external_card" style="margin-bottom: 0px">
+                    <div v-for="(facetItems, key, index) in facets" v-bind:key="index" name="external_card" style="margin-bottom: 0px">
                         <facet-category v-bind:facetItems="facetItems" v-bind:filterName="key" @filter="onFilter"></facet-category>
                     </div>
                     <!-- <div class="card" name="external_card" style="margin-bottom: 0px">
@@ -109,9 +109,9 @@
             </div>
 
             <div class="col col-8 column is-8 results_column" style="padding-top: 1.2rem; padding-right: 1rem; padding-left: 1rem">
-                <div class="column" v-if="activeFilterCategories && Object.keys(activeFilterCategories).length > 0">
-                    <span class="active-filter-items" v-for="(values, key, index) in activeFilterCategories" :key="index">
-                        <active-facet-category v-bind:filterItems="values" :categoryName="key" @clearFacetCategory="onClearFacetCategory"></active-facet-category>
+                <div v-if="activeFilterCategories && Object.keys(activeFilterCategories).length > 0" class="column">
+                    <span v-for="(values, key, index) in activeFilterCategories" v-bind:key="index" class="active-filter-items">
+                        <active-facet-category v-bind:filterItems="values" v-bind:categoryName="key" @clear-facet-category="onClearFacetCategory"></active-facet-category>
                     </span>
                 </div>
                 <div class="results">

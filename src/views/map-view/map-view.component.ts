@@ -1,5 +1,6 @@
 import { Component, Vue } from "vue-facing-decorator";
-import MapComponent from "@/components/map/map.component.vue";
+import { defineAsyncComponent } from "vue";
+// import MapComponent from "@/components/map/map.component.vue";
 // import { Marker, MapOptions, Control, icon, LatLngBoundsExpression } from "leaflet";
 import { MapOptions } from "leaflet";
 
@@ -10,8 +11,11 @@ import { MapOptions } from "leaflet";
 @Component({
     name: "MapViewComponent",
     components: {
-        MapComponent,
+        MapComponent: defineAsyncComponent(() => import("@/components/map/map.component.vue")),
     },
+    // components: {
+    //     MapComponent,
+    // },
 })
 export default class MapViewComponent extends Vue {
     public mapOptions: MapOptions = {

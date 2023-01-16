@@ -6,19 +6,19 @@
                 <div class="field has-addons main-search-from-bg">
                     <div class="control is-expanded">
                         <input
-                            v-on:input="searchChanged"
                             id="search_query"
+                            v-model="display"
                             class="input is-medium"
                             type="text"
                             name="q"
                             autocomplete="off"
-                            v-model="display"
                             v-bind:placeholder="placeholder"
-                            v-on:keydown.down="onArrowDown"
-                            v-on:keydown.up="onArrowUp"
-                            v-on:keydown.enter="onEnter"
+                            @input="searchChanged"
+                            @keydown.down="onArrowDown"
+                            @keydown.up="onArrowUp"
+                            @keydown.enter="onEnter"
                             @keydown.tab="close"
-                            v-on:focus="focus"
+                            @focus="focus"
                         />
                         <!-- <p>Display is: {{ display }}</p> -->
                         <!-- v-on:input="searchChanged" -->
@@ -35,17 +35,17 @@
         </div>
         <!-- <div class="column is-half is-offset-one-quarter"> -->
         <div class="column is-two-thirds-tablet is-half-desktop is-one-third-widescreen mx-auto">
-            <ul class="autocomplete-results pure-u-23-24" v-show="showResults">
-                <li class="loading" v-if="isLoading">Loading results...</li>
+            <ul v-show="showResults" class="autocomplete-results pure-u-23-24">
+                <li v-if="isLoading" class="loading">Loading results...</li>
 
                 <li
-                    v-else
                     v-for="(result, i) in suggestions"
-                    :key="i"
+                    v-else
+                    v-bind:key="i"
+                    v-bind:ref="setItemRef"
                     class="autocomplete-result-item"
-                    :class="{ 'is-active': isSelected(i) }"
+                    v-bind:class="{ 'is-active': isSelected(i) }"
                     @click.prevent="select(result)"
-                    :ref="setItemRef"
                 >
                     <div class="small-label">
                         <label>{{ result.value }} ({{ result.type }})</label>
