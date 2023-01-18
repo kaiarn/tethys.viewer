@@ -1,5 +1,4 @@
 import { Component, Vue, Prop } from "vue-facing-decorator";
-// import { Prop } from "vue-property-decorator";
 import VsInput from "@/components/vs-input/vs-input.vue";
 import VsResult from "@/components/vs-result/vs-result.vue";
 import FacetCategory from "@/components/face-category/facet-category.vue";
@@ -292,7 +291,7 @@ export default class SearchViewComponent extends Vue {
                 }
             },
             error: (error: string) => this.errorHandler(error),
-            complete: () => console.log("complete"),
+            complete: () => console.log("clear facet category completed"),
         });
     }
 }

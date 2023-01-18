@@ -13,7 +13,15 @@
                 <!-- <img src="./assets/images/TETHYS-Logo.svg" width="240px" height="86" alt="TETHYS Logo" /> -->
                 <img src="./assets/images/TETHYS-Logo.svg" width="240" height="86" />
             </a>
-            <a id="menu-icon" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" v-bind:class="active ? 'is-active' : ''" @click="showMobilemenu">
+            <a
+                id="menu-icon"
+                role="button"
+                class="navbar-burger"
+                aria-label="menu"
+                aria-expanded="false"
+                v-bind:class="active ? 'is-active' : ''"
+                @click="showMobilemenu"
+            >
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>

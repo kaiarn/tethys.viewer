@@ -1,6 +1,5 @@
 import { Dataset } from "@/models/dataset";
 import { Component, Vue, Prop } from "vue-facing-decorator";
-// import { Prop } from "vue-property-decorator";
 
 @Component({
     name: "VsResult",

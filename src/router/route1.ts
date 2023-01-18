@@ -1,9 +1,5 @@
-// import Vue from 'vue';
-// import Router from 'vue-router';
-import { createWebHistory, createRouter } from "vue-router";
+import { createWebHistory, createRouter, Router } from "vue-router";
 import DatasetDetailComponent from "@/views/dataset-detail.component/dataset-detail.component";
-
-// Vue.use(Router);
 
 // export default new Router({
 //   mode: 'history',
@@ -16,14 +12,9 @@ import DatasetDetailComponent from "@/views/dataset-detail.component/dataset-det
 //   ],
 // });
 
-const route1 = createRouter({
+const route1: Router = createRouter({
     history: createWebHistory(),
     routes: [
-        // {
-        //   path: '/',
-        //   name: 'Route1',
-        //   component: Route1,
-        // },
         {
             path: "/10.24341/tethys.:datasetId",
             name: "dataset2",

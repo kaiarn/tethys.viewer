@@ -111,7 +111,11 @@
             <div class="col col-8 column is-8 results_column" style="padding-top: 1.2rem; padding-right: 1rem; padding-left: 1rem">
                 <div v-if="activeFilterCategories && Object.keys(activeFilterCategories).length > 0" class="column">
                     <span v-for="(values, key, index) in activeFilterCategories" v-bind:key="index" class="active-filter-items">
-                        <active-facet-category v-bind:filterItems="values" v-bind:categoryName="key" @clear-facet-category="onClearFacetCategory"></active-facet-category>
+                        <active-facet-category
+                            v-bind:filterItems="values"
+                            v-bind:categoryName="key"
+                            @clear-facet-category="onClearFacetCategory"
+                        ></active-facet-category>
                     </span>
                 </div>
                 <div class="results">
@@ -124,7 +128,9 @@
         <div class="container-fluid" style="padding-top: 3.8em">
             <div class="columns is-mobile partner-logos">
                 <div class="column col-sm text-center">
-                    <a target="_blank" href="https://www.re3data.org/repository/r3d100013400"><img src="@/assets/site/img/re3-data-logo-mono.jpg" alt="re3 data logo" /></a>
+                    <a target="_blank" href="https://www.re3data.org/repository/r3d100013400"
+                        ><img src="@/assets/site/img/re3-data-logo-mono.jpg" alt="re3 data logo"
+                    /></a>
                 </div>
                 <div class="column col-sm text-center">
                     <a target="_blank" href="http://www.geosphere.at/">

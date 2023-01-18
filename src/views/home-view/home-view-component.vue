@@ -74,18 +74,20 @@
                 </div>
                 <div class="column is-full text-left">
                     <p>
-                        TETHYS RDR ist ein publizierendes Forschungsdatenrepositorium der Geologischen Bundesanstalt (GBA), das an der GBA generierte geowissenschaftliche
-                        Forschungsdaten veröffentlicht.
+                        TETHYS RDR ist ein publizierendes Forschungsdatenrepositorium der Geologischen Bundesanstalt (GBA), das an der GBA generierte
+                        geowissenschaftliche Forschungsdaten veröffentlicht.
                     </p>
                     <p>
-                        Zum derzeitigen Stand wird TETHYS RDR in deutscher Sprache bereitgestellt. Die englische Version befindet sich in Vorbereitung und wird sukzessive ebenfalls
-                        zur Verfügung gestellt. Die Forschungsdatenpublikationen und die dazugehörigen Metadaten können in Deutsch und in Englisch veröffentlicht werden. Tethys RDR
-                        hat den Anspruch, publizierte Datensätze unverändert, langfristig und nachhaltig bereitzustellen. Dadurch ist Tethys ein Forschungsdatenrepositorium, das
-                        ein permanentes Referenzieren ermöglicht und somit die darin publizierten Datensätze zitierfähig macht.
+                        Zum derzeitigen Stand wird TETHYS RDR in deutscher Sprache bereitgestellt. Die englische Version befindet sich in Vorbereitung und wird
+                        sukzessive ebenfalls zur Verfügung gestellt. Die Forschungsdatenpublikationen und die dazugehörigen Metadaten können in Deutsch und in
+                        Englisch veröffentlicht werden. Tethys RDR hat den Anspruch, publizierte Datensätze unverändert, langfristig und nachhaltig
+                        bereitzustellen. Dadurch ist Tethys ein Forschungsdatenrepositorium, das ein permanentes Referenzieren ermöglicht und somit die darin
+                        publizierten Datensätze zitierfähig macht.
                     </p>
                     <p>
-                        Der Name Tethys kommt ursprünglich aus der griechischen Mythologie und benennt eine Titanin und Meeresgöttin. Ende des 19. Jahrhunderts entdeckte Eduard
-                        Suess (1831–1914), ein bedeutender österreichischer Geologe, den mesozoischen Ozean und benannte ihn nach dieser Tethys.
+                        Der Name Tethys kommt ursprünglich aus der griechischen Mythologie und benennt eine Titanin und Meeresgöttin. Ende des 19. Jahrhunderts
+                        entdeckte Eduard Suess (1831–1914), ein bedeutender österreichischer Geologe, den mesozoischen Ozean und benannte ihn nach dieser
+                        Tethys.
                     </p>
                 </div>
             </section>
@@ -102,8 +104,8 @@
                             <img src="@/assets/site/img/box-1-hover.jpg" alt="Datenarchivierung" />
                             <div class="card-body box-1-hover">
                                 <p class="text-white">
-                                    Tethys RDR publiziert und archiviert nach den FAIR Prinzipien* nachhaltig so wie sicher geowissenschaftliche Datensätze in offenen, frei
-                                    lesbaren Formaten. * FAIR data
+                                    Tethys RDR publiziert und archiviert nach den FAIR Prinzipien* nachhaltig so wie sicher geowissenschaftliche Datensätze in
+                                    offenen, frei lesbaren Formaten. * FAIR data
                                 </p>
                             </div>
                         </div>
@@ -120,8 +122,8 @@
                             <img src="@/assets/site/img/box-2-hover.jpg" alt="DATENPUBLIKATION" />
                             <div class="card-body box-1-hover">
                                 <p class="text-white">
-                                    Die Datensätze werden mit standardisierten Metadatenschemen publiziert und sind somit nicht nur auffindbar, wiederverwendbar und auch
-                                    maschinenlesbar, sondern können dadurch auch einfach zitiert werden.
+                                    Die Datensätze werden mit standardisierten Metadatenschemen publiziert und sind somit nicht nur auffindbar, wiederverwendbar
+                                    und auch maschinenlesbar, sondern können dadurch auch einfach zitiert werden.
                                 </p>
                             </div>
                         </div>
@@ -138,8 +140,8 @@
                             <img src="@/assets/site/img/box-3-hover.jpg" alt="BEGUTACHTUNG" />
                             <div class="card-body box-1-hover">
                                 <p class="text-white">
-                                    Alle im Tethys RDR publizierten Datensätze werden auf technische sowie inhaltliche Vollständigkeit geprüft und werden bei Bedarf auch einer
-                                    fachlichen Begutachtung unterworfen. Ein klassischer Peer Review-Prozess ist in Vorbereitung.
+                                    Alle im Tethys RDR publizierten Datensätze werden auf technische sowie inhaltliche Vollständigkeit geprüft und werden bei
+                                    Bedarf auch einer fachlichen Begutachtung unterworfen. Ein klassischer Peer Review-Prozess ist in Vorbereitung.
                                 </p>
                             </div>
                         </div>
@@ -162,9 +164,10 @@
                     <h1 class="text-white">HABEN SIE FRAGEN?</h1>
 
                     <p class="text-white text center p-5">
-                        Tethys RDR ist ein Datenverlag der Geologischen Bundesanstalt (GBA), der ausschließlich an der GBA generierte geowissenschaftliche Forschungsdaten
-                        publiziert. Die Datenpublikationen können sowohl in deutscher, als auch in englischer Sprache publiziert werden. Durch die Bereitstellung der
-                        Datenpublikation zusammen mit Metadaten nach standardisierten Schemata werden die Publikationen auffindbar und zitierbar.
+                        Tethys RDR ist ein Datenverlag der Geologischen Bundesanstalt (GBA), der ausschließlich an der GBA generierte geowissenschaftliche
+                        Forschungsdaten publiziert. Die Datenpublikationen können sowohl in deutscher, als auch in englischer Sprache publiziert werden. Durch
+                        die Bereitstellung der Datenpublikation zusammen mit Metadaten nach standardisierten Schemata werden die Publikationen auffindbar und
+                        zitierbar.
                     </p>
 
                     <div class="mx-auto my-5" style="width: 170px">
@@ -181,7 +184,9 @@
         <div class="container-fluid">
             <div class="columns is-mobile partner-logos">
                 <div class="column col-sm text-center">
-                    <a target="_blank" href="https://www.re3data.org/repository/r3d100013400"><img src="@/assets/site/img/re3-data-logo-mono.jpg" alt="re3 data logo" /></a>
+                    <a target="_blank" href="https://www.re3data.org/repository/r3d100013400"
+                        ><img src="@/assets/site/img/re3-data-logo-mono.jpg" alt="re3 data logo"
+                    /></a>
                 </div>
                 <div class="column col-sm text-center">
                     <a target="_blank" href="http://www.geosphere.at/">

@@ -6,7 +6,9 @@
                     <!-- <span>Author: {{ document.identifier.join(', ') }}</span> -->
                     <!-- <span v-for="(author,index) in document.author" :key="index">{{ author }}; </span> -->
                     <!-- <span>'https://doi.org/' + {{ document.identifier[0] }}</span> -->
-                    <a target="_blank" v-bind:href="'https://doi.org/' + document.identifier[0]"> {{ "https://doi.org/" + document.identifier[0] + " &#10148;" }} </a>&nbsp;
+                    <a target="_blank" v-bind:href="'https://doi.org/' + document.identifier[0]">
+                        {{ "https://doi.org/" + document.identifier[0] + " &#10148;" }} </a
+                    >&nbsp;
                     <span v-if="document.author && document.author.length > 0" class="disabled">{{ document.author[0] }}</span>
                 </p>
 
@@ -28,7 +30,9 @@
                     <!-- <a target="_self" v-bind:href="'dataset/' + document.id" class="ng-binding">
                         {{ document.title_output }}
                     </a> -->
-                    <router-link class="ng-binding" v-bind:to="{ name: 'dataset', params: { datasetId: document.id } }">{{ document.title_output }}</router-link>
+                    <router-link class="ng-binding" v-bind:to="{ name: 'dataset', params: { datasetId: document.id } }">{{
+                        document.title_output
+                    }}</router-link>
                 </h4>
 
                 <!-- <p v-if="document.author && document.author.length > 0">

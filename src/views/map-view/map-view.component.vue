@@ -20,7 +20,9 @@
                     <li><a href="javascript:window.open(window.location.href.split('?')[0]+'?layer=geofast','_self')">Geofast Datensätze</a></li> -->
                     <li><a href="javascript:window.open(window.location.href.split('?')[0],'_self')">alle Datenpublikationen</a></li>
                     <li><a href="javascript:window.open(window.location.href.split('?')[0]+'?layer=gk50','_self')">GK50 Kartendaten</a></li>
-                    <li><a href="javascript:window.open(window.location.href.split('?')[0]+'?layer=geofast','_self')">Geofast Datensätze</a></li>
+                    <li>
+                        <a href="javascript:window.open(window.location.href.split('?')[0]+'?layer=geofast','_self')">Geofast Datensätze</a>
+                    </li>
                 </ul>
             </div>
 

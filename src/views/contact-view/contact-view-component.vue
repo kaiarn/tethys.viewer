@@ -22,13 +22,19 @@
                         <a class="social-media" href="mailto:kontakt@geosphere.at"><i class="fas fa-envelope pr-2"></i> kontakt(at)geosphere.at </a>
                     </li>
                     <li>
-                        <a class="social-media" href="https://twitter.com/GeoSphere_AT" target="_blank"> <i class="fab fa-twitter"></i> twitter.com/GeoSphere_AT </a>
+                        <a class="social-media" href="https://twitter.com/GeoSphere_AT" target="_blank">
+                            <i class="fab fa-twitter"></i> twitter.com/GeoSphere_AT
+                        </a>
                     </li>
                     <li>
-                        <a class="social-media" href="https://www.facebook.com/GeoSphere.at" target="_blank"> <i class="fab fa-facebook"></i> www.facebook.com/GeoSphere.at </a>
+                        <a class="social-media" href="https://www.facebook.com/GeoSphere.at" target="_blank">
+                            <i class="fab fa-facebook"></i> www.facebook.com/GeoSphere.at
+                        </a>
                     </li>
                     <li>
-                        <a class="social-media" href="https://www.instagram.com/GeoSphere_AT" target="_blank"> <i class="fab fa-instagram"></i> www.instagram.com/GeoSphere_AT </a>
+                        <a class="social-media" href="https://www.instagram.com/GeoSphere_AT" target="_blank">
+                            <i class="fab fa-instagram"></i> www.instagram.com/GeoSphere_AT
+                        </a>
                     </li>
                     <li>
                         <a class="social-media" href="https://at.linkedin.com/company/geosphereaustria" target="_blank">

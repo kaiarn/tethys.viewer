@@ -14,7 +14,6 @@ export default class FacetCategory extends Vue {
     @Prop()
     facetItems!: Array<FacetItem>;
 
-    // @Prop([String])
     @Prop({
         type: String,
     })

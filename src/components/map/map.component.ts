@@ -7,7 +7,8 @@ import { OaiDataset } from "@/models/oai";
 
 const DEFAULT_BASE_LAYER_NAME = "BaseLayer";
 // const DEFAULT_BASE_LAYER_URL = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
-const DEFAULT_BASE_LAYER_ATTRIBUTION = '&copy; <a href="http://basemap.at" target="_blank">Basemap.at</a>, <a href="http://www.geologie.ac.at" target="_blank">Geologie.ac.at</a>';
+const DEFAULT_BASE_LAYER_ATTRIBUTION =
+    '&copy; <a href="http://basemap.at" target="_blank">Basemap.at</a>, <a href="http://www.geologie.ac.at" target="_blank">Geologie.ac.at</a>';
 
 @Component({
     // selector: "app-map",

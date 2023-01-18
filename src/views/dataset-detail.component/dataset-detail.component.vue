@@ -214,7 +214,9 @@
                                     <span class="normal label">
                                         {{ license.name }}
                                     </span>
-                                    <span v-if="openAccessLicences.includes(license.name)" class="normal label uppercase"><i class="fas fa-lock-open"></i> Open Access</span>
+                                    <span v-if="openAccessLicences.includes(license.name)" class="normal label uppercase"
+                                        ><i class="fas fa-lock-open"></i> Open Access</span
+                                    >
                                 </label>
                             </p>
                         </div>
@@ -244,7 +246,9 @@
         <div class="container-fluid" style="padding-top: 3.8em">
             <div class="columns is-mobile partner-logos">
                 <div class="column col-sm text-center">
-                    <a target="_blank" href="https://www.re3data.org/repository/r3d100013400"><img src="@/assets/site/img/re3-data-logo-mono.jpg" alt="re3 data logo" /></a>
+                    <a target="_blank" href="https://www.re3data.org/repository/r3d100013400"
+                        ><img src="@/assets/site/img/re3-data-logo-mono.jpg" alt="re3 data logo"
+                    /></a>
                 </div>
                 <div class="column col-sm text-center">
                     <a target="_blank" href="http://www.geosphere.at/">

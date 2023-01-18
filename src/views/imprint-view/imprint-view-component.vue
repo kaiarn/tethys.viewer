@@ -29,8 +29,8 @@
                 <p class="lead">Hinweise und Haftungsausschluss</p>
                 <p>Eine Haftung oder Garantie für Aktualität, Richtigkeit und Vollständigkeit der zur Verfügung gestellten Daten ist ausgeschlossen.</p>
                 <p>
-                    Dieser Hinweis gilt auch für alle anderen Webseiten, auf die durch Hyperlinks verwiesen wird. Die GeoSphere Austria ist für den Inhalt von Webseiten, die
-                    mittels einer solchen Verbindung erreicht werden, nicht verantwortlich.
+                    Dieser Hinweis gilt auch für alle anderen Webseiten, auf die durch Hyperlinks verwiesen wird. Die GeoSphere Austria ist für den Inhalt von
+                    Webseiten, die mittels einer solchen Verbindung erreicht werden, nicht verantwortlich.
                 </p>
             </div>
         </section>

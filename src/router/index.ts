@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter } from "vue-router";
+import { createWebHistory, createRouter, Router } from "vue-router";
 import HomeViewComponent from "@/views/home-view/home-view-component.vue";
 import HelpViewComponent from "@/views/help-view/help-view-component.vue";
 // import MapViewComponent from "@/views/map-view/map-view.component.vue";
@@ -77,7 +77,7 @@ const routes = [
     },
 ];
 
-const index = createRouter({
+const index: Router = createRouter({
     history: createWebHistory(),
     routes,
     // scrollBehavior(to, from, savedPosition) {

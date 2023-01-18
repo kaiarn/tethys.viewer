@@ -12,14 +12,8 @@ const get = <T>(url: string, queryParams?: any): Observable<T> => {
     return defer(() => axiosInstance.get<T>(url, { params: queryParams })).pipe(map((result: AxiosResponse) => result.data));
 };
 
-// const post = <T>(
-//   url: string,
-//   body: object,
-//   queryParams?: object
-// ): Observable<T | void> => {
-//   return defer(() =>
-//     axiosInstance.post<T>(url, body, { params: queryParams })
-//   ).pipe(map((result) => result.data));
+// const post = <T>(url: string, body: object, queryParams?: any): Observable<T | void> => {
+//     return defer(() => axiosInstance.post<T>(url, body, { params: queryParams })).pipe(map((result: AxiosResponse) => result.data));
 // };
 
 // const put = <T>(

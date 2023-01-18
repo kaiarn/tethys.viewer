@@ -3,7 +3,6 @@
         <section class="section">
             <div class="title has-text-centered">
                 <h1 class="title">Sitelinks for Web Crawlers</h1>
-                <!-- <p class="lead">Want to keep updated or need further information?</p> -->
                 <hr class="center-line" />
             </div>
             <!-- <div class="column">

@@ -24,7 +24,17 @@ class DatasetService {
         const base = host + path;
 
         //const fields = 'id,server_date_published,abstract_output,title_output,title_additional,author,subject'; // fields we want returned
-        const fields = ["id", "licence", "server_date_published", "abstract_output", "title_output", "title_additional", "author", "subject", "doctype"].toString();
+        const fields = [
+            "id",
+            "licence",
+            "server_date_published",
+            "abstract_output",
+            "title_output",
+            "title_additional",
+            "author",
+            "subject",
+            "doctype",
+        ].toString();
 
         //var dismaxFields = "title^3 abstract^2 subject^1";
         const qfFields = "title^3 author^2 subject^1";
@@ -68,7 +78,18 @@ class DatasetService {
         const base = host + path;
 
         //const fields = 'id,server_date_published,abstract_output,title_output,title_additional,author,subject'; // fields we want returned
-        const fields = ["id", "licence", "server_date_published", "abstract_output", "identifier", "title_output", "title_additional", "author", "subject", "doctype"].toString();
+        const fields = [
+            "id",
+            "licence",
+            "server_date_published",
+            "abstract_output",
+            "identifier",
+            "title_output",
+            "title_additional",
+            "author",
+            "subject",
+            "doctype",
+        ].toString();
 
         // const qfFields = "title^3 author^2 subject^1";
         // let params = "fl=" + fields;

@@ -7,13 +7,11 @@ import { Component, Vue, Prop, Emit } from "vue-facing-decorator";
 export default class ActiveFacetCategory extends Vue {
     bar = "";
 
-    // @Prop([Array])
     @Prop({
         type: Array<string>,
     })
     filterItems!: string[];
 
-    // @Prop([String])
     @Prop({
         type: String,
         required: true,

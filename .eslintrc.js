@@ -32,7 +32,7 @@ module.exports = {
         semi: "error",
         // "@vue-eslint/printWidth": ["error", 120],
         "vue/v-bind-style": ["warn", "longform"], //autofix
-        "vue/prop-name-casing": ["error", "camelCase"],
+        "vue/prop-name-casing": ["error", "camelCase"], //autofix
         // https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/attribute-hyphenation.md
         "vue/attribute-hyphenation": [
             "error",
