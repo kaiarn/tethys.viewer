@@ -232,6 +232,31 @@
                     </div>
                     <div class="card">
                         <div class="column">
+                            <h3 class="label uppercase">Referenzen/References</h3>
+                            <ul v-if="dataset.references.length > 0">
+                                <li v-for="(reference, i) in dataset.references" v-bind:key="reference.id">
+                                    <a
+                                        v-if="reference.type == 'DOI' || reference.type == 'URL'"
+                                        target="_blank"
+                                        class="link-label"
+                                        v-bind:href="reference.value"
+                                    >
+                                        {{ `${reference.relation} (${reference.type}): ${reference.label}` }}
+                                    </a>
+                                    <span v-else class="normal label">
+                                        {{ `${reference.relation} (${reference.type}): ${reference.value}` }}
+                                    </span>
+                                    <span v-if="dataset.references.length > 0 && i < dataset.references.length - 1" class="normal label">--</span>
+                                    <!-- <span v-if="openAccessLicences.includes(license.name)" class="normal label uppercase"
+                                        ><i class="fas fa-lock-open"></i> Open Access</span
+                                    > -->
+                                </li>
+                            </ul>
+                            <p v-else>-</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="column">
                             <h3 class="label uppercase">Embargo</h3>
                             <p v-if="dataset.embargo_date">
                                 <span>{{ getHumanDate(dataset.embargo_date) }}</span>

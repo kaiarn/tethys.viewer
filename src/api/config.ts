@@ -1,4 +1,4 @@
-import { AxiosRequestConfig, AxiosRequestHeaders } from "axios";
+import { AxiosRequestConfig } from "axios";
 import { stringify } from "qs";
 
 // let headers: AxiosRequestConfig['headers'] =

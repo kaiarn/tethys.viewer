@@ -96,6 +96,7 @@ export class DbDataset {
         public user: Person,
         public subjects: Array<Subject>,
         public licenses: Array<License>,
+        public references: Array<Reference>,
         public files: Array<DbFile>,
         private coverage?: Coverage,
         public project?: Project,
@@ -349,6 +350,15 @@ export interface License {
     name: string; // "CC-BY-4.0"
     pod_allowed: boolean;
     sort_order: number;
+}
+
+export interface Reference {
+    id: number;
+    document_id: number;
+    type: string;
+    relation: string;
+    value: string;
+    label: string;
 }
 
 export interface Project {
