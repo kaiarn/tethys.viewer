@@ -68,10 +68,10 @@
                             <div class="column is-3-desktop is-4-tablet label">Title/<br />title:</div>
                             <!-- <div class="column is-9-desktop is-8-tablet">{{ dataset.titles[0].value }}</div> -->
                             <div class="column is-9-desktop is-8-tablet">
-                                <p>{{ dataset.MainTitle.value }}</p>
+                                <p>{{ dataset.MainTitle?.value }}</p>
                                 <br />
                                 <p v-if="dataset.hasTranslatedTitle()">
-                                    {{ dataset.TranslatedTitle.value }}
+                                    {{ dataset.TranslatedTitle?.value }}
                                 </p>
                             </div>
                         </div>
@@ -81,10 +81,10 @@
                                 abstract:
                             </div>
                             <div class="column is-9-desktop is-8-tablet">
-                                <p>{{ dataset.MainAbstract.value }}</p>
+                                <p>{{ dataset.MainAbstract?.value }}</p>
                                 <br />
                                 <p v-if="dataset.hasTranslatedAbstract()">
-                                    {{ dataset.TranslatedAbstract.value }}
+                                    {{ dataset.TranslatedAbstract?.value }}
                                 </p>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                         <div v-if="dataset.hasOwnProperty('abstracts')" class="columns">
                             <div class="column is-3-desktop is-4-tablet label">Methodik/<br />method:</div>
                             <div v-if="dataset.hasMethodsAbstract()" class="column is-9-desktop is-8-tablet">
-                                {{ dataset.MethodsAbstract.value }}
+                                {{ dataset.MethodsAbstract?.value }}
                             </div>
                             <div v-else class="column is-9-desktop is-8-tablet">-</div>
                         </div>
@@ -114,7 +114,7 @@
                                     <thead>
                                         <tr>
                                             <th class="table-header">Path Name</th>
-                                            <th class="table-header">File Extension</th>
+                                            <th class="table-header">File Ext.</th>
                                             <th class="table-header">File Size</th>
                                         </tr>
                                     </thead>
@@ -122,12 +122,14 @@
                                         <tr v-for="file in dataset.files" v-bind:key="file.id">
                                             <td>
                                                 <a class="link-label" target="_blank" v-bind:href="portal + file.id"> {{ file.label }} </a>
+                                                <br />
+                                                <span>md5: {{ file.hashvalues.find((e) => e.type === "md5")?.value }}</span>
                                             </td>
                                             <td>
                                                 <span>{{ getExtension(file.path_name) }}</span>
                                             </td>
                                             <td>
-                                                <span>{{ formatSize(file.file_size, 2) }}</span>
+                                                <span>{{ formatSize(file.file_size) }}</span>
                                             </td>
                                         </tr>
                                     </tbody>

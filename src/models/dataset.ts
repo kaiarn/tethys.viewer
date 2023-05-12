@@ -370,18 +370,31 @@ export interface Project {
     updated_at: string;
 }
 
-export interface DbFile {
-    id: number;
-    document_id: number;
-    path_name: string;
-    label: string;
-    comment?: string;
-    mime_type: string;
-    language?: string;
-    file_size: bigint;
-    visible_in_frontdoor: boolean;
-    visible_in_oai: boolean;
-    sort_order: Int16Array;
-    created_at: string;
-    updated_at: string;
+export class DbFile {
+    constructor(
+        public id: number,
+        public document_id: number,
+        public path_name: string,
+        public label: string,
+        public mime_type: string,
+        public file_size: number,
+        public visible_in_frontdoor: boolean,
+        public visible_in_oai: boolean,
+        public sort_order: Int16Array,
+        public created_at: string,
+        public updated_at: string,
+        public hashvalues: Array<HashValue>,
+        public comment?: string,
+        public language?: string,
+    ) {}
+
+    public get HashValue(): Nullable<HashValue> {
+        return this.hashvalues.find((e) => e.type === "md5");
+    }
+}
+
+export interface HashValue {
+    file_id: number;
+    type: string;
+    value: string;
 }
