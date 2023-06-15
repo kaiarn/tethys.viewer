@@ -9,11 +9,14 @@ import advancedFormat from "dayjs/plugin/advancedFormat";
 import VsInput from "@/components/vs-input/vs-input.vue";
 import { Suggestion } from "@/models/dataset";
 import { VUE_APP_PORTAL } from "@/constants";
+// import DataMetricsBadge from "data-metrics-badge/dist/data-metrics-badge.js";
+import DataMetricsBadge from "@/components/datacite/DataMetricsBadge.vue";
 
 @Component({
     name: "DatasetDetailComponent",
     components: {
         VsInput,
+        DataMetricsBadge,
     },
 })
 export default class DatasetDetailComponent extends Vue {
@@ -28,6 +31,12 @@ export default class DatasetDetailComponent extends Vue {
     public loaded = false;
     public openAccessLicences: Array<string> = ["CC-BY-4.0", "CC-BY-SA-4.0"];
     public portal = VUE_APP_PORTAL + "/api/file/download/";
+
+    public post = {
+        views: 25,
+        downloads: 1262,
+        citations: 2424,
+    };
 
     created(): void {
         dayjs.extend(advancedFormat);

@@ -98,6 +98,7 @@ export class DbDataset {
         public licenses: Array<License>,
         public references: Array<Reference>,
         public files: Array<DbFile>,
+        public identifier: Identifier,
         private coverage?: Coverage,
         public project?: Project,
     ) {}
@@ -397,4 +398,14 @@ export interface HashValue {
     file_id: number;
     type: string;
     value: string;
+}
+
+export interface Identifier {
+    created_at: string;
+    dataset_id: number;
+    id: number;
+    status: string; //'findable'
+    type: string; //'doi'
+    updated_at: string; //'2023-03-09T09:48:28.000Z'
+    value: string; //'10.24341/tethys.209'
 }

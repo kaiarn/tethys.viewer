@@ -156,6 +156,9 @@
                     <div class="card">
                         <div class="column">
                             <h2 class="label uppercase">Details</h2>
+                            <!-- <data-metrics-badge doi="10.7272/q6g15xs4" display="regular"></data-metrics-badge> -->
+                            <!-- <data-metrics-badge doi="10.24341/tethys.209" display="small" v-bind:data-input="post"></data-metrics-badge> -->
+                            <data-metrics-badge v-bind:doi="dataset.identifier.value" display="small"></data-metrics-badge>
                         </div>
                     </div>
                     <div class="card">

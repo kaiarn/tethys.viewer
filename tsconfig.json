@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
+    //what module code is generated
     "module": "esnext",
     "strict": true,
     "jsx": "preserve",
