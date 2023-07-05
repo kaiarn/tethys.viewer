@@ -21,7 +21,7 @@ import DataMetricsBadge from "@/components/datacite/DataMetricsBadge.vue";
 })
 export default class DatasetDetailComponent extends Vue {
     @Prop()
-    datasetId!: number;
+    datasetId!: string;
 
     // @Prop()
     // identifier!: string;
@@ -43,8 +43,8 @@ export default class DatasetDetailComponent extends Vue {
 
     created(): void {
         dayjs.extend(advancedFormat);
-        if (typeof this.datasetId === "number") {
-            this.getDataset(this.datasetId);
+        if (!isNaN(Number(this.datasetId))) {
+            this.getDataset(Number(this.datasetId));
         } else {
             this.getDatasetByIdentifier(this.datasetId);
         }
