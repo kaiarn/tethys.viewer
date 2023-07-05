@@ -2,7 +2,7 @@
     <div v-bind:title="'Metrics for DOI: ' + doi">
         <div v-if="doi">
             <!-- <div v-if="display == 'small'"> -->
-            <SmallWidget v-bind:doi="doi" v-bind:display="display" :data-input="dataObject" />
+            <SmallWidget v-bind:doi="doi" v-bind:display="display" v-bind:data-input="dataObject" />
             <!-- </div> -->
         </div>
         <a v-else>There is no DOI</a>

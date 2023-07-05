@@ -17,10 +17,16 @@ const route1: Router = createRouter({
     routes: [
         {
             path: "/10.24341/tethys.:datasetId",
-            name: "dataset2",
+            name: "dataset3",
             component: DatasetDetailComponent,
             props: true,
         },
+        // {
+        //     path: "/10.24341/:identifier",
+        //     name: "dataset2",
+        //     component: DatasetDetailComponent,
+        //     props: true,
+        // },
     ],
     // scrollBehavior(to, from, savedPosition) {
     scrollBehavior() {

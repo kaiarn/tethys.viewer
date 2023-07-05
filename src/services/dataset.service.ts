@@ -204,6 +204,18 @@ class DatasetService {
         return dataset;
     }
 
+    public getDatasetByDoi(doi: string): Observable<DbDataset> {
+        // const host = "https:" + VUE_APP_PORTAL;
+        const host = VUE_APP_PORTAL;
+        const path = "/api/dataset/10.24341/tethys." + doi;
+        const apiUrl = host + path;
+        const dataset = api.get<DbDataset>(apiUrl).pipe(map((res) => this.prepareDataset(res)));
+        // const dataset = api.get<DbDataset>(apiUrl).pipe(map((res) => this.prepareDataset(res, apiUrl)));
+
+        // this.messageService.add('HeroService: fetched heroes');
+        return dataset;
+    }
+
     // public getOaiDatasets(): Observable<OaiDataset[]> {
     //     const apiUrl = "https://data.tethys.at/oai?verb=ListRecords&metadataPrefix=oai_datacite";
     //     const oaiDatasets = api.get<string>(apiUrl).pipe(

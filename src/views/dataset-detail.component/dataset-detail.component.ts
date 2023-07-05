@@ -23,6 +23,9 @@ export default class DatasetDetailComponent extends Vue {
     @Prop()
     datasetId!: number;
 
+    // @Prop()
+    // identifier!: string;
+
     searchTerm: string | Suggestion = "";
 
     private subscriptions: Array<Subscription> = [];
@@ -40,7 +43,11 @@ export default class DatasetDetailComponent extends Vue {
 
     created(): void {
         dayjs.extend(advancedFormat);
-        this.getDataset(this.datasetId);
+        if (typeof this.datasetId === "number") {
+            this.getDataset(this.datasetId);
+        } else {
+            this.getDatasetByIdentifier(this.datasetId);
+        }
     }
 
     beforeUnmount(): void {
@@ -87,6 +94,19 @@ export default class DatasetDetailComponent extends Vue {
             },
             error: (error: string) => this.errorHandler(error),
         });
+
+        this.subscriptions.push(newSub);
+    }
+
+    private getDatasetByIdentifier(id: string): void {
+        const newSub = DatasetService.getDatasetByDoi(id).subscribe({
+            next: (res: DbDataset) => {
+                this.dataset = res;
+                this.loaded = true;
+            },
+            error: (error: string) => this.errorHandler(error),
+        });
+
         this.subscriptions.push(newSub);
     }
 

@@ -2,11 +2,15 @@
 const webpack = require("webpack");
 // const { defineConfig } = require("@vue/cli-service");
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
+const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
-    publicPath: "/",
-    // chainWebpack: config => {
-    //     config
+    publicPath: "/",    
+    chainWebpack: config => {
+        const vueRule = config.module.rule("vue");
+        vueRule.uses.clear();
+        // const tsRule = config.module.rule("ts");
+        // tsRule.uses.clear();
     //       .plugin('define')
     //       .tap(args => {
     //           args[0] = {
@@ -16,7 +20,7 @@ module.exports = {
     //           }
     //           return args
     //        })
-    //   },
+    },
     pages: {
         index: {
             // entry for the page
@@ -28,7 +32,56 @@ module.exports = {
     //     disableHostCheck: true,
     // },
     configureWebpack: {
-        plugins: [
+        devtool: "source-map",
+        module: {
+            rules: [
+                {
+                    test: /\.vue$/,
+                    loader: 'vue-loader',
+                    options: {
+                        // loaders: {
+                        // 	ts: 'ts-loader',
+                        // },                       
+                        cacheDirectory: 'C:\\Users\\kaiarn\\Documents\\Software\\tethys.viewer\\node_modules\\.cache\\vue-loader',
+                        cacheIdentifier: '39baf1b4',
+                        babelParserPlugins: ['jsx', 'classProperties', 'decorators-legacy'],
+                    },
+                },
+                // {
+                //     test: /\.(js|jsx|ts|tsx)$/,
+                //     // exclude: /(node_modules|bower_components)/,
+                //     exclude: file => (
+                //       /node_modules/.test(file) &&
+                //       !/\.vue\.js/.test(file)
+                //     ),
+                //     exclude: /node_modules/,
+                //     use: {
+                //         loader: "babel-loader",
+                //         options: {
+                //             presets: [                               
+                //                 ["@babel/preset-env", {}],
+                //                 "babel-preset-typescript-vue3", //because of new vue setup method
+                //                 // "@babel/preset-typescript"
+                //             ],
+                //             plugins: [
+                //                 // "@babel/plugin-transform-runtime",
+                //                 ["@babel/plugin-proposal-decorators", { legacy: true }],
+
+                //                 "@babel/proposal-class-properties",
+                //             ],
+                //         },
+                //     },
+                // },
+            ],
+        },
+        resolve: {
+            alias: {
+                vue$: 'vue/dist/vue.runtime.esm-bundler.js'
+            },
+            extensions : ['.tsx', '.ts', '.mjs', '.js', '.jsx', '.vue', '.json', '.wasm'],
+        },
+        plugins: [           
+            // new VueLoaderPlugin(),
             new webpack.DefinePlugin({
                 APP_URL: JSON.stringify(process.env.APP_URL),
                 VUE_APP_PORTAL: JSON.stringify(process.env.VUE_APP_PORTAL),
