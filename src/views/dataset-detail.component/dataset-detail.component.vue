@@ -81,7 +81,7 @@
                                     v-if="reference.type === 'DOI'"
                                     target="_blank"
                                     class="link-label"
-                                    v-bind:href="'https://doi.org/' + reference.dataset.identifier"
+                                    v-bind:href="'https://doi.org/' + reference.dataset.identifier.value"
                                 >
                                     {{ "https://doi.org/" + reference.dataset.identifier.value }}
                                 </a>
