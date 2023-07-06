@@ -43,9 +43,11 @@ export default class DatasetDetailComponent extends Vue {
 
     created(): void {
         dayjs.extend(advancedFormat);
-        if (!isNaN(Number(this.datasetId))) {
+        if (!this.datasetId.includes(".")) {
+            // get datset by publish_id
             this.getDataset(Number(this.datasetId));
         } else {
+            // get datset by doi_value
             this.getDatasetByIdentifier(this.datasetId);
         }
     }
