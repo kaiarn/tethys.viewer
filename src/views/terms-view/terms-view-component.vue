@@ -41,9 +41,9 @@
                 </p>
                 <h2 class="lead">Datenschutz-Bestimmungen</h2>
                 <p>
-                    Mit dieser Datenschutzerklärung möchte unsere gastgebende Einrichtung, die „Geologische Bundesanstalt“, die Öffentlichkeit über Art, Umfang
-                    und Zweck der von uns erhobenen, verwendeten und verarbeiteten personenbezogenen Daten informieren. Darüber hinaus werden betroffene
-                    Personen mittels dieser Datenschutzerklärung über die ihnen zustehenden Rechte informiert.
+                    Mit dieser Datenschutzerklärung möchte unsere gastgebende Einrichtung, die „GeoSphere Austria“, die Öffentlichkeit über Art, Umfang und
+                    Zweck der von uns erhobenen, verwendeten und verarbeiteten personenbezogenen Daten informieren. Darüber hinaus werden betroffene Personen
+                    mittels dieser Datenschutzerklärung über die ihnen zustehenden Rechte informiert.
                 </p>
                 <p>
                     Die Nutzung der Internetseiten von Tethys RDR ist ohne Angabe personenbezogener Daten möglich. Wenn eine betroffene Person jedoch unsere

@@ -308,7 +308,7 @@
                 <div class="column col-sm text-center">
                     <a target="_blank" href="http://www.geosphere.at/">
                         <img src="@/assets/site/img/geosphere-austria-logo.jpg" class="pb-3" alt="logo geosphere austria" />
-                        <!-- <img src="@/assets/site/img/gbaLogoRGB_web.png" alt="Geologische Bundesanstalt logo" /> -->
+                        <!-- <img src="@/assets/site/img/gbaLogoRGB_web.png" alt="GeoSphere Austria logo" /> -->
                     </a>
                 </div>
                 <div class="column col-sm text-center">

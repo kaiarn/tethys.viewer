@@ -10,10 +10,10 @@
                     </div>
                     <div class="card-content">
                         <p class="card-text">
-                            Tethys RDR ist ein Datenverlag der Geologischen Bundesanstalt (GBA), der ausschließlich an der GBA generierte geowissenschaftliche
-                            Forschungsdat en publiziert. Die Datenpublikationen können sowohl in deutscher, als auch in englischer Sprache publiziert werden.
-                            Durch die Bereitstellung der Datenpublikation zusammen mit Metadaten nach standardisierten Schemata werden die Publikationen
-                            auffindbar und zitierbar.
+                            TETHYS RDR ist ein publizierendes Forschungsdatenrepositorium der GeoSphere Austria, das darauf spezialisiert ist,
+                            geowissenschaftliche Forschungsdaten zu sammeln, zu speichern und der Öffentlichkeit zugänglich zu machen. Die Datenpublikationen
+                            können sowohl in deutscher, als auch in englischer Sprache publiziert werden. Durch die Bereitstellung der Datenpublikation zusammen
+                            mit Metadaten nach standardisierten Schemata werden die Publikationen auffindbar und zitierbar.
                         </p>
                     </div>
                     <div class="card-footer">
@@ -35,8 +35,8 @@
                     </div>
                     <div class="card-content">
                         <p class="card-text">
-                            GBA-Angehörigkeit oder in Kooperation mit der GBA gemeinsame Publikation der Daten. Im Besitz eines eigenen Zugangscodes zu sein
-                            bzw. um den Zugangscode anzufragen (Kontakt).
+                            Angehörigkeit als MitarbeiterIn von GeoSphere Austria oder die gemeinsame Publikation der Daten in Kooperation mit GeoSphere
+                            Austria. Im Besitz eines eigenen Zugangscodes zu sein bzw. um den Zugangscode anzufragen (Kontakt).
                         </p>
                         <p class="card-text">Die Datenpublikationsrichtlinien gelesen, verstanden und akzeptiert zu haben.</p>
                         <p class="card-text">Die Datensätze vollständig und fachlich korrekt hochladen.</p>

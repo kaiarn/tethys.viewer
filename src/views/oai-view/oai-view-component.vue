@@ -19,7 +19,7 @@
         </div>
         <div class="column is-full text-left">
             <p class="paragraph-justify">
-                Die OAI-PMH Basis URL für das Research Data Repository der Geologischen Bundesanstalt lautet
+                Die OAI-PMH Basis URL für das Research Data Repository der GeoSphere Austria lautet
                 <a href="https://tethys.at/oai">https://tethys.at/oai</a> <br />
                 Derzeit unterstützt das OAI-Service den Metadatenstandard DC (OAI-PMH Dublin Core) und eingeschränkt den Standard DataCite (aktuell in dieser
                 Testkonfiguration noch ohne Vergabe einer im Schema verpflichtenden DOI).

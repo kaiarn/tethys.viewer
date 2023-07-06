@@ -74,8 +74,8 @@
                 </div>
                 <div class="column is-full text-left">
                     <p>
-                        TETHYS RDR ist ein publizierendes Forschungsdatenrepositorium der Geologischen Bundesanstalt (GBA), das an der GBA generierte
-                        geowissenschaftliche Forschungsdaten veröffentlicht.
+                        TETHYS RDR ist ein publizierendes Forschungsdatenrepositorium der GeoSphere Austria, das darauf spezialisiert ist, geowissenschaftliche
+                        Forschungsdaten zu sammeln, zu speichern und der Öffentlichkeit zugänglich zu machen.
                     </p>
                     <p>
                         Zum derzeitigen Stand wird TETHYS RDR in deutscher Sprache bereitgestellt. Die englische Version befindet sich in Vorbereitung und wird
@@ -86,7 +86,7 @@
                     </p>
                     <p>
                         Der Name Tethys kommt ursprünglich aus der griechischen Mythologie und benennt eine Titanin und Meeresgöttin. Ende des 19. Jahrhunderts
-                        entdeckte Eduard Suess (1831–1914), ein bedeutender österreichischer Geologe, den mesozoischen Ozean und benannte ihn nach dieser
+                        entdeckte Eduard Suess (1831-1914), ein bedeutender österreichischer Geologe, den mesozoischen Ozean und benannte ihn nach dieser
                         Tethys.
                     </p>
                 </div>
@@ -164,10 +164,10 @@
                     <h1 class="text-white">HABEN SIE FRAGEN?</h1>
 
                     <p class="text-white text center p-5">
-                        Tethys RDR ist ein Datenverlag der Geologischen Bundesanstalt (GBA), der ausschließlich an der GBA generierte geowissenschaftliche
-                        Forschungsdaten publiziert. Die Datenpublikationen können sowohl in deutscher, als auch in englischer Sprache publiziert werden. Durch
-                        die Bereitstellung der Datenpublikation zusammen mit Metadaten nach standardisierten Schemata werden die Publikationen auffindbar und
-                        zitierbar.
+                        TETHYS RDR ist ein publizierendes Forschungsdatenrepositorium der GeoSphere Austria, das darauf spezialisiert ist, geowissenschaftliche
+                        Forschungsdaten zu sammeln, zu speichern und der Öffentlichkeit zugänglich zu machen. Die Datenpublikationen können sowohl in deutscher,
+                        als auch in englischer Sprache publiziert werden. Durch die Bereitstellung der Datenpublikation zusammen mit Metadaten nach
+                        standardisierten Schemata werden die Publikationen auffindbar und zitierbar.
                     </p>
 
                     <div class="mx-auto my-5" style="width: 170px">
@@ -191,7 +191,7 @@
                 <div class="column col-sm text-center">
                     <a target="_blank" href="http://www.geosphere.at/">
                         <img src="@/assets/site/img/geosphere-austria-logo.jpg" alt="logo geosphere austria" />
-                        <!-- <img src="@/assets/site/img/gbaLogoRGB_web.png" alt="Geologische Bundesanstalt logo" /> -->
+                        <!-- <img src="@/assets/site/img/gbaLogoRGB_web.png" alt="GeoSphere Austria logo" /> -->
                     </a>
                 </div>
                 <div class="column col-sm text-center">
