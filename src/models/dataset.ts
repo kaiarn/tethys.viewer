@@ -11,7 +11,7 @@ export interface Dataset {
     doctype: string;
     geo_location: string;
     id: number;
-    identifier: Array<string>;
+    identifier: Identifier;
     language: string;
     licence: string;
     publisher_name: string;
@@ -99,6 +99,7 @@ export class DbDataset {
         public references: Array<Reference>,
         public files: Array<DbFile>,
         public identifier: Identifier,
+        public referenced_by: Array<Reference>,
         private coverage?: Coverage,
         public project?: Project,
     ) {}
@@ -360,6 +361,7 @@ export interface Reference {
     relation: string;
     value: string;
     label: string;
+    dataset: Dataset;
 }
 
 export interface Project {

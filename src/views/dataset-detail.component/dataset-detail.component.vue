@@ -61,6 +61,32 @@
                                 >
                             </label>
                         </div>
+
+                        <div v-for="reference in dataset.references" v-bind:key="reference.id" class="columns">
+                            <div class="column is-3-desktop is-4-tablet label">{{ reference.relation }}</div>
+                            <div class="column is-9-desktop is-8-tablet">
+                                <!-- {{ "https://doi.org/" + reference.value }} -->
+                                {{ reference.type }}:
+                                <a v-if="reference.type === 'DOI'" target="_blank" class="link-label" v-bind:href="'https://doi.org/' + reference.value">
+                                    {{ "https://doi.org/" + reference.value }}
+                                </a>
+                            </div>
+                        </div>
+                        <div v-for="reference in dataset.referenced_by" v-bind:key="reference.id" class="columns">
+                            <div class="column is-3-desktop is-4-tablet label">has newer version:</div>
+                            <div class="column is-9-desktop is-8-tablet">
+                                <!-- {{ "https://doi.org/" + reference.value }} -->
+                                {{ reference.type }}:
+                                <a
+                                    v-if="reference.type === 'DOI'"
+                                    target="_blank"
+                                    class="link-label"
+                                    v-bind:href="'https://doi.org/' + reference.dataset.identifier"
+                                >
+                                    {{ "https://doi.org/" + reference.dataset.identifier.value }}
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="card record-elem">
