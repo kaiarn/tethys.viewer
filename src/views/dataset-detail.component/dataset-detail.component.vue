@@ -65,10 +65,9 @@
                         <div v-for="reference in dataset.references" v-bind:key="reference.id" class="columns">
                             <div class="column is-3-desktop is-4-tablet label">{{ reference.relation }}</div>
                             <div class="column is-9-desktop is-8-tablet">
-                                <!-- {{ "https://doi.org/" + reference.value }} -->
                                 {{ reference.type }}:
-                                <a v-if="reference.type === 'DOI'" target="_blank" class="link-label" v-bind:href="'https://doi.org/' + reference.value">
-                                    {{ "https://doi.org/" + reference.value }}
+                                <a v-if="reference.type === 'DOI'" target="_blank" class="link-label" v-bind:href="reference.value">
+                                    {{ reference.value }}
                                 </a>
                             </div>
                         </div>
