@@ -88,6 +88,8 @@
                             <li class="list-group-item"><router-link to="/oai">OAI</router-link></li>
                             <li class="list-group-item"><a href="https://www.geosphere.at/" target="_blank">geosphere.at</a></li>
                             <li class="list-group-item"><a href="https://www.geologie.ac.at/news/news" target="_blank">News</a></li>
+                            <li class="list-group-item"><a href="docs/PreservationPlanTethys.pdf" target="_blank">Preservation Plan</a></li>
+                            <li class="list-group-item"><a href="docs/HandbuchTethys.pdf" target="_blank">Manual</a></li>
                         </ul>
                     </div>
                 </div>

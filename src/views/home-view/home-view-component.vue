@@ -85,6 +85,11 @@
                         publizierten Datensätze zitierfähig macht.
                     </p>
                     <p>
+                        Der Erhaltungsplan
+                        <a href="docs/PreservationPlanTethys.pdf" target="_blank" class="text-secondary"> (Preservation Plan) </a> beschreibt den Ansatz von
+                        Tethys zur Definition und Umsetzung von Erhaltungsmaßnahmen.
+                    </p>
+                    <p>
                         Der Name Tethys kommt ursprünglich aus der griechischen Mythologie und benennt eine Titanin und Meeresgöttin. Ende des 19. Jahrhunderts
                         entdeckte Eduard Suess (1831-1914), ein bedeutender österreichischer Geologe, den mesozoischen Ozean und benannte ihn nach dieser
                         Tethys.
@@ -106,6 +111,9 @@
                                 <p class="text-white">
                                     Tethys RDR publiziert und archiviert nach den FAIR Prinzipien* nachhaltig so wie sicher geowissenschaftliche Datensätze in
                                     offenen, frei lesbaren Formaten. * FAIR data
+                                </p>
+                                <p class="text-white">
+                                    <a href="docs/PreservationPlanTethys.pdf" target="_blank" class="text-secondary2">Preservation Plan</a>
                                 </p>
                             </div>
                         </div>

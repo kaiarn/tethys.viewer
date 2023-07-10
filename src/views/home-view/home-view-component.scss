@@ -80,3 +80,28 @@ input{
 .partner-logos {
     padding: 3em 0;
 }
+
+
+a.text-secondary {
+    color: #494f54 !important;
+    text-decoration: underline;
+}
+
+a.text-secondary:focus,
+a.text-secondary:hover {
+    color: #494f54 !important;
+    text-decoration: underline;
+}
+
+
+
+a.text-secondary2 {
+    color: #fff !important;
+    text-decoration: underline;
+}
+
+a.text-secondary2:focus,
+a.text-secondary2:hover {
+    color: #fff !important;
+    text-decoration: underline;
+}
