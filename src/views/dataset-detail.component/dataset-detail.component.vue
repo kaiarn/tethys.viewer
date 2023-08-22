@@ -148,7 +148,7 @@
                                             <td>
                                                 <a class="link-label" target="_blank" v-bind:href="portal + file.id"> {{ file.label }} </a>
                                                 <br />
-                                                <span>md5: {{ file.hashvalues.find((e) => e.type === "md5")?.value }}</span>
+                                                <!-- <span>md5: {{ file.hashvalues.find((e) => e.type === "md5")?.value }}</span> -->
                                             </td>
                                             <td>
                                                 <span>{{ getExtension(file.path_name) }}</span>
