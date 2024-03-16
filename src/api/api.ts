@@ -8,6 +8,7 @@ import { AxiosResponse } from "axios";
 
 const axiosInstance = initializeAxios(axiosRequestConfiguration);
 
+// eslint-disable-next-line
 const get = <T>(url: string, queryParams?: any): Observable<T> => {
     return defer(() => axiosInstance.get<T>(url, { params: queryParams })).pipe(map((result: AxiosResponse) => result.data));
 };

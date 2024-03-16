@@ -23,7 +23,10 @@ export interface Dataset {
 }
 
 export class Suggestion {
-    constructor(public value: string, public type: SearchType) {}
+    constructor(
+        public value: string,
+        public type: SearchType,
+    ) {}
     // value!: string;
     // type!: SearchType;
 }

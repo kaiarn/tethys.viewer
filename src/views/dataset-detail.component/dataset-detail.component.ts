@@ -10,13 +10,13 @@ import VsInput from "@/components/vs-input/vs-input.vue";
 import { Suggestion } from "@/models/dataset";
 import { VUE_APP_PORTAL } from "@/constants";
 // import DataMetricsBadge from "data-metrics-badge/dist/data-metrics-badge.js";
-import DataMetricsBadge from "@/components/datacite/DataMetricsBadge.vue";
+// import DataMetricsBadge from "@/components/datacite/DataMetricsBadge.vue";
 
 @Component({
     name: "DatasetDetailComponent",
     components: {
         VsInput,
-        DataMetricsBadge,
+        // DataMetricsBadge,
     },
 })
 export default class DatasetDetailComponent extends Vue {

@@ -6,6 +6,7 @@
             <a class="navbar-item" v-bind:href="app_url">
                 <!-- <img src="./assets/images/TETHYS-Logo.svg" width="240px" height="86" alt="TETHYS Logo" /> -->
                 <img src="./assets/images/TETHYS-Logo.svg" width="240" height="86" />
+                <img src="./assets/images/cts-logo.png" width="80" height="80" />
             </a>
             <a
                 id="menu-icon"

@@ -1,17 +1,11 @@
 <template>
     <!-- <HelloWorld msg="Welcome to Your Vue.js plus TypeScript App" /> -->
-
-    <!-- <link
-        rel="stylesheet"
-        href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-        crossorigin="anonymous"
-    /> -->
     <nav class="navbar navbar-light border-bottom" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="/">
                 <!-- <img src="./assets/images/TETHYS-Logo.svg" width="240px" height="86" alt="TETHYS Logo" /> -->
                 <img src="./assets/images/TETHYS-Logo.svg" width="240" height="86" />
+                <img src="./assets/images/cts-logo.png" width="80" height="80" />
             </a>
             <a
                 id="menu-icon"

@@ -1,25 +1,25 @@
 /* eslint @typescript-eslint/no-var-requires: "off" */
 const webpack = require("webpack");
 // const { defineConfig } = require("@vue/cli-service");
-const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
-const { VueLoaderPlugin } = require('vue-loader');
+// const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
+const { VueLoaderPlugin } = require("vue-loader");
 
 module.exports = {
-    publicPath: "/",    
-    chainWebpack: config => {
+    publicPath: "/",
+    chainWebpack: (config) => {
         const vueRule = config.module.rule("vue");
         vueRule.uses.clear();
         // const tsRule = config.module.rule("ts");
         // tsRule.uses.clear();
-    //       .plugin('define')
-    //       .tap(args => {
-    //           args[0] = {
-    //              ...args[0],
-    //              VUE_APP_PORTAL: JSON.stringify(process.env.PORTAL),
-    //              // other stuff
-    //           }
-    //           return args
-    //        })
+        //       .plugin('define')
+        //       .tap(args => {
+        //           args[0] = {
+        //              ...args[0],
+        //              VUE_APP_PORTAL: JSON.stringify(process.env.PORTAL),
+        //              // other stuff
+        //           }
+        //           return args
+        //        })
     },
     pages: {
         index: {
@@ -37,14 +37,14 @@ module.exports = {
             rules: [
                 {
                     test: /\.vue$/,
-                    loader: 'vue-loader',
+                    loader: "vue-loader",
                     options: {
                         // loaders: {
                         // 	ts: 'ts-loader',
-                        // },                       
-                        cacheDirectory: 'C:\\Users\\kaiarn\\Documents\\Software\\tethys.viewer\\node_modules\\.cache\\vue-loader',
-                        cacheIdentifier: '39baf1b4',
-                        babelParserPlugins: ['jsx', 'classProperties', 'decorators-legacy'],
+                        // },
+                        cacheDirectory: "C:\\Users\\kaiarn\\Documents\\Software\\tethys.viewer\\node_modules\\.cache\\vue-loader",
+                        cacheIdentifier: "39baf1b4",
+                        babelParserPlugins: ["jsx", "classProperties", "decorators-legacy"],
                     },
                 },
                 // {
@@ -58,7 +58,7 @@ module.exports = {
                 //     use: {
                 //         loader: "babel-loader",
                 //         options: {
-                //             presets: [                               
+                //             presets: [
                 //                 ["@babel/preset-env", {}],
                 //                 "babel-preset-typescript-vue3", //because of new vue setup method
                 //                 // "@babel/preset-typescript"
@@ -76,19 +76,22 @@ module.exports = {
         },
         resolve: {
             alias: {
-                vue$: 'vue/dist/vue.runtime.esm-bundler.js'
+                vue$: "vue/dist/vue.runtime.esm-bundler.js",
             },
-            extensions : ['.tsx', '.ts', '.mjs', '.js', '.jsx', '.vue', '.json', '.wasm'],
+            extensions: [".tsx", ".ts", ".mjs", ".js", ".jsx", ".vue", ".json", ".wasm"],
         },
-        plugins: [           
-            // new VueLoaderPlugin(),
+        plugins: [
+            new VueLoaderPlugin(),
             new webpack.DefinePlugin({
+                __VUE_OPTIONS_API__: "true",
+                __VUE_PROD_DEVTOOLS__: "false",
+                __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: "false",
                 APP_URL: JSON.stringify(process.env.APP_URL),
                 VUE_APP_PORTAL: JSON.stringify(process.env.VUE_APP_PORTAL),
                 SOLR_HOST: JSON.stringify(process.env.SOLR_HOST),
                 SOLR_CORE: JSON.stringify(process.env.SOLR_CORE),
             }),
-            new NodePolyfillPlugin(),
+            // new NodePolyfillPlugin(),
         ],
     },
 };

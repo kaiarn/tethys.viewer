@@ -82,7 +82,7 @@ export default class BaseWidget extends Vue {
         return `${value.toLocaleString("en-us")} ${label}s`;
     }
 
-    public formatNumbers(num: any) {
+    public formatNumbers(num: number) {
         if (num < 1e3) return num;
         if (num >= 1e3 && num < 1e6) return `${+(num / 1e3).toFixed(1)}K`;
         if (num >= 1e6 && num < 1e9) return `${+(num / 1e6).toFixed(1)}M`;

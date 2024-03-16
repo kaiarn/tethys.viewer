@@ -66,7 +66,7 @@ export default class App extends Vue {
         // }
     }
 
-    public showMobilemenu(event: PointerEvent): void {
+    public showMobilemenu(event: MouseEvent): void {
         // Don't follow the link
         event.preventDefault();
         this.active = !this.active;
