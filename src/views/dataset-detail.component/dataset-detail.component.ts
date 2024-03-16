@@ -8,7 +8,7 @@ import advancedFormat from "dayjs/plugin/advancedFormat";
 // import SimpleSearchComponent from "@/components/simple-search/simple-search-component.vue";
 import VsInput from "@/components/vs-input/vs-input.vue";
 import { Suggestion } from "@/models/dataset";
-import { VUE_APP_PORTAL } from "@/constants";
+import { VUE_API } from "@/constants";
 // import DataMetricsBadge from "data-metrics-badge/dist/data-metrics-badge.js";
 // import DataMetricsBadge from "@/components/datacite/DataMetricsBadge.vue";
 
@@ -33,7 +33,7 @@ export default class DatasetDetailComponent extends Vue {
     private error = "";
     public loaded = false;
     public openAccessLicences: Array<string> = ["CC-BY-4.0", "CC-BY-SA-4.0"];
-    public portal = VUE_APP_PORTAL + "/api/file/download/";
+    public portal = VUE_API + "/api/file/download/";
 
     public post = {
         views: 25,

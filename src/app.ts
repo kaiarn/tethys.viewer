@@ -11,7 +11,7 @@ import ContactViewComponent from "./views/contact-view/contact-view-component.vu
 import SitelinkViewComponent from "./views/sitelink-view/sitelink-view-component.vue";
 import ImprintViewComponent from "./views/imprint-view/imprint-view-component.vue";
 import TermsViewComponent from "./views/terms-view/terms-view-component";
-import { VUE_APP_PORTAL } from "./constants";
+import { VUE_API } from "./constants";
 // import VsInput from "./components/vs-input/vs-input.vue";
 // import VsResult from "./components/vs-result/vs-result.vue";
 // import FacetCategory from "./components/face-category/facet-category.vue";
@@ -46,7 +46,7 @@ import { VUE_APP_PORTAL } from "./constants";
 })
 export default class App extends Vue {
     public active = false;
-    public portal = VUE_APP_PORTAL + "/login";
+    public portal = VUE_API + "/login";
 
     mounted(): void {
         // const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll(".navbar-burger"), 0);

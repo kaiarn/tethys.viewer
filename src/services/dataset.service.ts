@@ -5,7 +5,7 @@ import { map } from "rxjs/operators";
 import { Dataset, DbDataset, Suggestion } from "@/models/dataset";
 import { SolrResponse } from "@/models/headers";
 import { ActiveFilterCategories } from "@/models/solr";
-import { VUE_APP_PORTAL } from "@/constants";
+import { VUE_API } from "@/constants";
 // import { deserialize, instanceToInstance } from "class-transformer";
 import { deserialize } from "class-transformer";
 // import { OAI_DATASETS } from "./mock-oai-datasets";
@@ -171,8 +171,8 @@ class DatasetService {
 
     public getYears(): Observable<string[]> {
         // const heroes = of(HEROES);
-        // const host = "https:" + VUE_APP_PORTAL;
-        const host = VUE_APP_PORTAL;
+        // const host = "https:" + VUE_API;
+        const host = VUE_API;
         const path = "/api/years";
         const base = host + path;
 
@@ -182,8 +182,8 @@ class DatasetService {
     }
 
     public getDocuments(year: string): Observable<Array<DbDataset>> {
-        // const host = "https:" + VUE_APP_PORTAL;
-        const host = VUE_APP_PORTAL;
+        // const host = "https:" + VUE_API;
+        const host = VUE_API;
         const path = "/api/sitelinks/" + year;
         const base = host + path;
 
@@ -193,8 +193,8 @@ class DatasetService {
     }
 
     public getDataset(id: number): Observable<DbDataset> {
-        // const host = "https:" + VUE_APP_PORTAL;
-        const host = VUE_APP_PORTAL;
+        // const host = "https:" + VUE_API;
+        const host = VUE_API;
         const path = "/api/dataset/" + id;
         const apiUrl = host + path;
         const dataset = api.get<DbDataset>(apiUrl).pipe(map((res) => this.prepareDataset(res)));
@@ -205,8 +205,8 @@ class DatasetService {
     }
 
     public getDatasetByDoi(doi: string): Observable<DbDataset> {
-        // const host = "https:" + VUE_APP_PORTAL;
-        const host = VUE_APP_PORTAL;
+        // const host = "https:" + VUE_API;
+        const host = VUE_API;
         const path = "/api/dataset/10.24341/tethys." + doi;
         const apiUrl = host + path;
         const dataset = api.get<DbDataset>(apiUrl).pipe(map((res) => this.prepareDataset(res)));

@@ -15,7 +15,7 @@ module.exports = {
         //       .tap(args => {
         //           args[0] = {
         //              ...args[0],
-        //              VUE_APP_PORTAL: JSON.stringify(process.env.PORTAL),
+        //              VUE_API: JSON.stringify(process.env.PORTAL),
         //              // other stuff
         //           }
         //           return args
@@ -87,7 +87,7 @@ module.exports = {
                 __VUE_PROD_DEVTOOLS__: "false",
                 __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: "false",
                 APP_URL: JSON.stringify(process.env.APP_URL),
-                VUE_APP_PORTAL: JSON.stringify(process.env.VUE_APP_PORTAL),
+                VUE_API: JSON.stringify(process.env.VUE_API),
                 SOLR_HOST: JSON.stringify(process.env.SOLR_HOST),
                 SOLR_CORE: JSON.stringify(process.env.SOLR_CORE),
             }),
