@@ -55,7 +55,7 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a v-bind:href="portal" class="button is-primary custom-button">
+                        <a v-bind:href="portal" target="_blank" class="button is-primary custom-button">
                             <i class="fas fa-sign-in-alt"></i>
                             <!-- <fa :icon="['fas', 'phone']" class="fas fa-sign-in-alt" /> -->
                             <!-- </span> -->
@@ -139,7 +139,7 @@
     </footer>
 
     <div class="container-fluid">
-        <div class="copyright-notice">Copyright 2022 TETHYS RDR</div>
+        <div class="copyright-notice">&#169; {{ currentYear }} TETHYS RDR</div>
     </div>
 
     <!-- <vs-input
@@ -238,7 +238,7 @@ footer .card-title {
     margin-bottom: 0;
 }
 .list-group-flush > .list-group-item {
-    border-width: 0 0 1px;
+    border-width: 0;
 }
 
 .list-group-item:first-child {

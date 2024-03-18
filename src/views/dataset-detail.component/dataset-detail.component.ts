@@ -5,7 +5,6 @@ import DatasetService from "../../services/dataset.service";
 import { Subscription } from "rxjs";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
-// import SimpleSearchComponent from "@/components/simple-search/simple-search-component.vue";
 import VsInput from "@/components/vs-input/vs-input.vue";
 import { Suggestion } from "@/models/dataset";
 import { VUE_API } from "@/constants";

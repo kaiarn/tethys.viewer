@@ -151,6 +151,8 @@
 <script lang="ts">
 import SearchViewComponent from "./search-view-component";
 export default SearchViewComponent;
+// import tailwind ss
+import "@/index.css";
 </script>
 
 <style scoped></style>

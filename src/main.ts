@@ -7,6 +7,8 @@ import index from "./router/index";
 import route1 from "./router/route1";
 import "@fortawesome/fontawesome-free/css/all.css";
 import VueMatomo from "vue-matomo";
+//  add tailwind style
+// import "./index.css";
 
 const host = window.location.host;
 const parts = host.split(".");
