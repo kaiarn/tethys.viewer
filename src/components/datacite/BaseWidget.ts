@@ -4,6 +4,14 @@ import testLogo from "@/assets/datacite/testLogo.vue";
 
 const APIURL = "https://api.datacite.org";
 
+interface DataciteResponse {
+    // [key: string]: any;
+    views: number;
+    downloads: number;
+    citations: number;
+    datacite: number;
+}
+
 @ComponentBase({
     name: "BaseWidget",
     components: {
@@ -19,7 +27,7 @@ export default class BaseWidget extends Vue {
             return ["citations", "views", "downloads"].some((r) => keys.includes(r));
         },
     })
-    dataInput = {};
+    dataInput!: DataciteResponse;
 
     @Prop({
         type: String,
@@ -98,7 +106,7 @@ export default class BaseWidget extends Vue {
         return true;
     }
 
-    private grabMetrics(data: any) {
+    private grabMetrics(data: DataciteResponse) {
         this.views = (this.formatNumbers(data.views) as string) || "";
         this.downloads = (this.formatNumbers(data.downloads) as string) || "";
         this.citations = (this.formatNumbers(data.citations) as string) || "";

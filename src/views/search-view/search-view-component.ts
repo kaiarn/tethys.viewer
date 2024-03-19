@@ -10,7 +10,8 @@ import { Suggestion, Dataset, SearchType } from "@/models/dataset";
 import { SolrResponse, FacetFields, FacetItem, FacetResults, FacetInstance } from "@/models/headers";
 import { ActiveFilterCategories } from "@/models/solr";
 import { SOLR_HOST, SOLR_CORE } from "@/constants";
-import { Pagination } from "@/models/pagination";
+import { IPagination } from "@/models/pagination";
+import PaginationComponent from "@/components/Pagination.vue";
 
 @Component({
     name: "SearchViewComponent",
@@ -19,6 +20,7 @@ import { Pagination } from "@/models/pagination";
         VsResult,
         FacetCategory,
         ActiveFacetCategory,
+        PaginationComponent,
     },
 })
 export default class SearchViewComponent extends Vue {
@@ -35,11 +37,11 @@ export default class SearchViewComponent extends Vue {
     searchTerm: string | Suggestion = "";
     // activeFilterCategories: Object = {};
     activeFilterCategories: ActiveFilterCategories = new ActiveFilterCategories(); // = new Array<ActiveFilterCategory>();
-    pagination: Pagination = {
+    pagination: IPagination = {
         total: 0,
-        per_page: 2,
-        current_page: 0,
-        // last_page: 0,
+        perPage: 10,
+        currentPage: 1,
+        // lastPage: 0,
         data: [],
     };
     loaded = false;
@@ -84,7 +86,7 @@ export default class SearchViewComponent extends Vue {
     beforeMount(): void {
         // this.rdrAPI = new DatasetService();
         if (this.display != "" && this.type != undefined) {
-            const enumKey = this.getEnumKeyByEnumValue(SearchType, this.type);
+            const enumKey: "Title" | "Author" | "Subject" | null = this.getEnumKeyByEnumValue(SearchType, this.type);
             if (enumKey) {
                 const suggestion = new Suggestion(this.display, SearchType[enumKey]);
                 this.onSearch(suggestion);
@@ -133,9 +135,10 @@ export default class SearchViewComponent extends Vue {
 
         // pagination
         this.pagination["total"] = res.response.numFound;
-        this.pagination["per_page"] = res.responseHeader.params.rows;
-        this.pagination["current_page"] = 1;
+        this.pagination["perPage"] = res.responseHeader.params.rows as number;
+        // this.pagination["currentPage"] = 1;
         this.pagination["data"] = res.response.docs;
+        this.pagination.lastPage = Math.ceil(this.pagination.total / this.pagination.perPage);
 
         // facets
         // const facet_fields = res.facet_counts.facet_fields;
@@ -194,7 +197,20 @@ export default class SearchViewComponent extends Vue {
         // this.loading = false;
     }
 
+    onMenuClick(page: number) {
+        const test = page;
+        console.log(test);
+        this.pagination.currentPage = page;
+        const start = page * this.pagination.perPage - this.pagination.perPage;
+
+        DatasetService.facetedSearch(this.searchTerm, this.activeFilterCategories, this.solr.core, this.solr.host, start.toString()).subscribe(
+            (res: SolrResponse) => this.dataHandler(res),
+            (error: string) => this.errorHandler(error),
+        );
+    }
+
     onFilter(facetItem: FacetItem): void {
+        this.pagination.currentPage = 1;
         // console.log(facetItem.val);
         // if (!this.activeFilterCategories.hasOwnProperty(facetItem.category)) {
         if (!Object.prototype.hasOwnProperty.call(this.activeFilterCategories, facetItem.category)) {
@@ -257,8 +273,8 @@ export default class SearchViewComponent extends Vue {
 
                 // pagination
                 this.pagination["total"] = res.response.numFound;
-                this.pagination["per_page"] = res.responseHeader.params.rows;
-                this.pagination["current_page"] = 1;
+                this.pagination["perPage"] = res.responseHeader.params.rows as number;
+                this.pagination["currentPage"] = 1;
                 this.pagination["data"] = res.response.docs;
 
                 const facet_fields: FacetFields = res.facets;
@@ -294,4 +310,6 @@ export default class SearchViewComponent extends Vue {
             complete: () => console.log("clear facet category completed"),
         });
     }
+
+    // onPaging(page: number): void {}
 }

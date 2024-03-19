@@ -1,6 +1,5 @@
 import { Component, Vue, Prop } from "vue-facing-decorator";
 import { DbDataset } from "@/models/dataset";
-// import { Prop } from "vue-property-decorator";
 import DatasetService from "../../services/dataset.service";
 import { Subscription } from "rxjs";
 import dayjs from "dayjs";
@@ -29,7 +28,7 @@ export default class DatasetDetailComponent extends Vue {
 
     private subscriptions: Array<Subscription> = [];
     public dataset = {} as DbDataset;
-    private error = "";
+    private error: string = "";
     public loaded = false;
     public openAccessLicences: Array<string> = ["CC-BY-4.0", "CC-BY-SA-4.0"];
     public portal = VUE_API + "/api/file/download/";
@@ -93,7 +92,10 @@ export default class DatasetDetailComponent extends Vue {
                 this.dataset = res;
                 this.loaded = true;
             },
-            error: (error: string) => this.errorHandler(error),
+            // error: (error: string) => this.errorHandler(error),
+            error: (error: string) => {
+                this.error = error;
+            },
         });
 
         this.subscriptions.push(newSub);

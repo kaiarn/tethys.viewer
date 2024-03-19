@@ -119,10 +119,14 @@
                     </span>
                 </div>
                 <div class="results">
+                    <PaginationComponent class="mb-5" v-bind:data="pagination" @menu-click="onMenuClick"></PaginationComponent>
                     <!-- Results section -->
                     <vs-result v-bind:datasets="results"></vs-result>
+                    <PaginationComponent class="mt-5" v-bind:data="pagination" @menu-click="onMenuClick"></PaginationComponent>
                 </div>
             </div>
+
+            <!-- <PaginationComponent v-bind:data="pagination"></PaginationComponent> -->
         </div>
 
         <div class="container-fluid" style="padding-top: 3.8em">

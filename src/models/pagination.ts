@@ -1,9 +1,9 @@
 import { Dataset } from "./dataset";
 
-export interface Pagination {
+export interface IPagination {
     total: number;
-    per_page?: number;
-    current_page: number;
-    last_page?: number;
+    perPage: number;
+    currentPage: number;
+    lastPage?: number;
     data: Array<Dataset>;
 }
