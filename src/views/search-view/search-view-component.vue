@@ -37,21 +37,6 @@
                     <strong> 0</strong> results:
                 </div>
             </div>
-
-            <!-- <div id="id-pro-sign-in" class="notification" style="">
-                    <button
-                        class="delete"
-                        onclick="dismissProNotification();"
-                    ></button>
-                    It appears that you're not signed in. You'll need to
-                    <a href="/pro" target="_self">signup for Pro</a> or become a
-                    <a
-                        href="https://coil.com/?ref=InfinitySearch2229"
-                        target="_self"
-                        >Coil member</a
-                    >
-                    to access our results.
-                </div> -->
         </div>
 
         <div class="columns">
@@ -60,51 +45,6 @@
                     <div v-for="(facetItems, key, index) in facets" v-bind:key="index" name="external_card" style="margin-bottom: 0px">
                         <facet-category v-bind:facetItems="facetItems" v-bind:filterName="key" @filter="onFilter"></facet-category>
                     </div>
-                    <!-- <div class="card" name="external_card" style="margin-bottom: 0px">
-                        <header class="card-header">
-                            <p class="card-header-title" style="font-weight: normal; padding-right: 5px">
-                                <a
-                                    id="https://en.wikipedia.org/w/index.php?search="
-                                    href="https://en.wikipedia.org/w/index.php?search=test"
-                                    name="external_link_0"
-                                    style="display: block"
-                                    rel="noreferrer noopener"
-                                    target="_self"
-                                >
-                                    <img src="/static/images/favicons/wikipedia.ico" name="external_icon_0'" class="external-icon" />
-                                    <span hidden="" class="external-text" name="external_text_0" style="font-size: 0.95rem; display: inline"> Wikipedia Results </span>
-                                </a>
-                            </p>
-                        </header>
-                    </div>
-                    <div class="card" name="external_card" style="margin-bottom: 0px">
-                        <header class="card-header">
-                            <p class="card-header-title" style="font-weight: normal; padding-right: 5px">
-                                <a
-                                    id="https://duckduckgo.com/?q="
-                                    href="https://duckduckgo.com/?q=test"
-                                    name="external_link_1"
-                                    style="display: block"
-                                    rel="noreferrer noopener"
-                                    target="_self"
-                                >
-                                    <img src="/static/images/favicons/duckduckgo.ico" name="external_icon_1'" class="external-icon" />
-                                    <span hidden="" class="external-text" name="external_text_1" style="font-size: 0.95rem; display: inline"> DuckDuckGo Results </span>
-                                </a>
-                            </p>
-                            <span
-                                class="clickableIcon"
-                                onclick="removeExternalClickable(this)"
-                                style="cursor: pointer; display: block; margin: auto; margin-right: 6px; min-width: 0.5em"
-                            >
-                                <img
-                                    class="handle fa-ellipsis-v"
-                                    src="/static/images/fa/ellipsis-v.svg"
-                                    style="cursor: pointer; display: block; margin: auto; margin-right: 12px; min-width: 0.5em; width: 16px; height: 16px"
-                                />
-                            </span>
-                        </header>
-                    </div> -->
                 </div>
             </div>
 
@@ -119,9 +59,11 @@
                     </span>
                 </div>
                 <div class="results">
+                    <!-- pagination before search results -->
                     <PaginationComponent class="mb-5" v-bind:data="pagination" @menu-click="onMenuClick"></PaginationComponent>
                     <!-- Results section -->
                     <vs-result v-bind:datasets="results"></vs-result>
+                    <!-- pagination after serach results -->
                     <PaginationComponent class="mt-5" v-bind:data="pagination" @menu-click="onMenuClick"></PaginationComponent>
                 </div>
             </div>

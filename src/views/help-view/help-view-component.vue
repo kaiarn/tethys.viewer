@@ -82,6 +82,7 @@
                 </div>
             </div>
         </div>
+        <SectionBannerStarOnGitHub />
     </div>
 </template>
 

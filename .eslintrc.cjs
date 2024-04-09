@@ -25,9 +25,17 @@ module.exports = {
         // parser: "@typescript-eslint/parser",
     },
     rules: {
+        // indent: [
+        //     'error',
+        //     2,
+        //     {
+        //       SwitchCase: 1,
+        //       ignoredNodes: ['ConditionalExpression'], <-- I add this line
+        //     },
+        //   ],
         "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
         "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
-        "@typescript-eslint/indent": ["error", 4, { ignoredNodes: ["PropertyDefinition"] }],
+        "@typescript-eslint/indent": ["error", 4, {"SwitchCase": 1, ignoredNodes: ["PropertyDefinition"] }],
         "arrow-parens": "off",
         semi: "error",
         // "@vue-eslint/printWidth": ["error", 120],

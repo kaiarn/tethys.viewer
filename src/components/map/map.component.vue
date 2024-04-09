@@ -12,7 +12,7 @@ export default MapComponent;
 </script>
 
 <style lang="scss" scoped>
-@import "~bulma/sass/utilities/initial-variables.sass";
+@import "~bulma/sass/utilities/initial-variables.scss";
 .mapDesktop {
     overflow: hidden;
     position: absolute;

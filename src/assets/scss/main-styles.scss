@@ -5,7 +5,7 @@
 // @import '~leaflet/dist/leaflet.css';
 
 // 1. Import the initial variables
-@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/utilities/index.scss";
 
 
 // 2. Set your own initial (brand) variables
@@ -36,27 +36,28 @@ $table-striped-row-even-hover-background-color: #ecf2fa;
 
 // 4. Import the rest of bulma, only what you need from Bulma
 // @import "../../node_modules/bulma/sass/utilities/_all.sass";
-@import "~bulma/sass/grid/_all.sass";
-@import "~bulma/sass/base/_all.sass";
-@import "~bulma/sass/elements/box.sass";
-@import "~bulma/sass/elements/button.sass";
-@import "~bulma/sass/elements/container.sass";
-@import "~bulma/sass/elements/content.sass";
-@import "~bulma/sass/elements/title.sass";
-@import "~bulma/sass/elements/icon.sass";
-@import "~bulma/sass/elements/table.sass";
-@import "~bulma/sass/form/_all.sass";
-@import "~bulma/sass/helpers/_all.sass";
-@import "~bulma/sass/components/navbar.sass";
+@import "~bulma/sass/grid/_index.scss";
+@import "~bulma/sass/base/_index.scss";
+@import "~bulma/sass/elements/box.scss";
+@import "~bulma/sass/elements/button.scss";
+// @import "~bulma/sass/elements/container.sass";
+@import "~bulma/sass/layout/container.scss";
+@import "~bulma/sass/elements/content.scss";
+@import "~bulma/sass/elements/title.scss";
+@import "~bulma/sass/elements/icon.scss";
+@import "~bulma/sass/elements/table.scss";
+@import "~bulma/sass/form/_index.scss";
+@import "~bulma/sass/helpers/_index.scss";
+@import "~bulma/sass/components/navbar.scss";
 // @import "~bulma/sass/components/tabs.sass";
 // @import "~bulma/sass/components/media.sass";
-@import "~bulma/sass/components/modal.sass";
-@import "~bulma/sass/components/card.sass";
+@import "~bulma/sass/components/modal.scss";
+@import "~bulma/sass/components/card.scss";
 
 
-@import "~bulma/sass/components/panel.sass";
+@import "~bulma/sass/components/panel.scss";
 
-@import "~bulma/sass/layout/_all.sass";
+@import "~bulma/sass/layout/_index.scss";
 
 .button {
     text-decoration: none;

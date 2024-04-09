@@ -11,7 +11,7 @@ import { SolrResponse, FacetFields, FacetItem, FacetResults, FacetInstance } fro
 import { ActiveFilterCategories } from "@/models/solr";
 import { SOLR_HOST, SOLR_CORE } from "@/constants";
 import { IPagination } from "@/models/pagination";
-import PaginationComponent from "@/components/Pagination.vue";
+import PaginationComponent from "@/components/PaginationComponent.vue";
 
 @Component({
     name: "SearchViewComponent",
@@ -198,8 +198,8 @@ export default class SearchViewComponent extends Vue {
     }
 
     onMenuClick(page: number) {
-        const test = page;
-        console.log(test);
+        // const test = page;
+        // console.log(test);
         this.pagination.currentPage = page;
         const start = page * this.pagination.perPage - this.pagination.perPage;
 
